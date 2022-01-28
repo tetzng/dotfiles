@@ -1,3 +1,9 @@
+# view
+set -g theme_display_date yes
+set -g theme_date_format "+%F %H:%M"
+set -g theme_display_git_default_branch yes
+set -g theme_color_scheme dark
+
 # peco
 set fish_plugins theme peco
 
@@ -14,8 +20,8 @@ alias ...="cd ../.."
 alias ..="cd .."
 alias b="bundle"
 alias be="bundle exec"
-alias c.="code ."
 alias c="code"
+alias c.="code ."
 alias cf="nvim ~/.config/fish/config.fish"
 alias cl="clear"
 alias cp='cp -i'
@@ -61,3 +67,4 @@ alias v="nvim"
 alias vp="nvim ~/.config/nvim/dein.toml"
 alias vv="nvim ~/.config/nvim/init.vim"
 
+source /usr/local/opt/asdf/libexec/asdf.fish
