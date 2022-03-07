@@ -1,0 +1,75 @@
+# Colors (One Dark - https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
+colors:
+  primary:
+    background: "#282c34"
+    foreground: "#abb2bf"
+  cursor:
+    text: CellBackground
+    cursor: "#528bff" # syntax-cursor-color
+  selection:
+    text: CellForeground
+    background: "#3e4451" # syntax-selection-color
+  normal:
+    black: "#5c6370" # mono-3
+    red: "#e06c75" # red 1
+    green: "#98c379"
+    yellow: "#e5c07b" # orange 2
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#828997" # mono-2
+
+window:
+  opacity: 0.9
+  dimensions:
+    columns: 200
+    lines: 60
+  padding:
+    x: 8
+    y: 4
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  size: 16.0
+  normal:
+    family: "Cica"
+    style: Regular
+  bold:
+    family: "Cica"
+    style: Bold
+  italic:
+    family: "Cica"
+    style: Italic
+  bold_italic:
+    family: "Cica"
+    style: Bold Itali
+
+  offset:
+    y: 1
+  use_thin_strokes: true
+
+# env
+env:
+  TERM: alacritty
+
+key_bindings:
+  - {
+      key: Comma,
+      mods: Command,
+      command:
+        {
+          program: "sh",
+          args: ["-c", "open ~/.config/alacritty/alacritty.yml"],
+        },
+    }
+  - { key: N, mods: Command, action: SpawnNewInstance }
+  - { key: Space, mods: Alt, chars: " " }
+  - { key: Back, mods: Super, chars: "\x15" } # delete word/line
+  - { key: Left, mods: Alt, chars: "\x1bb" } # one word left
+  - { key: Right, mods: Alt, chars: "\x1bf" } # one word right
+  - { key: Left, mods: Command, chars: "\x1bOH", mode: AppCursor } # Home
+  - { key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor } # End
+  - { key: J, mods: Control, chars: "\n" } # tmux prefix
