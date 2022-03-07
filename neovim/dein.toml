@@ -15,9 +15,6 @@ repo = 'nvim-lua/plenary.nvim'
 repo = 'nvim-telescope/telescope.nvim'
 
 [[plugins]]
-repo = 'sainnhe/gruvbox-material'
-
-[[plugins]]
 repo = 'lambdalisue/fern.vim'
 
 [[plugins]]
@@ -32,20 +29,13 @@ do = './install --all'
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
-repo = 'Shougo/denite.nvim'
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-  let g:deoplete#enable_at_startup = 1
-  set completeopt+=noinsert
-'''
+repo = 'Shougo/ddu.vim'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'sainnhe/gruvbox-material'
 
 [[plugins]]
 repo = 'ful1e5/onedark.nvim'
