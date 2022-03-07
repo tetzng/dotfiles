@@ -173,8 +173,17 @@ require('nvim-treesitter.configs').setup {
 }
 EOF
 
-"" gruvbox
-set background=dark
-colorscheme gruvbox-material
+let g:onedark_sidebars = ["qf", "vista_kind", "terminal", "packer"]
+let g:onedark_transparent = "true"
+let g:onedark_comment_style = "NONE"
+let g:onedark_keyword_style = "NONE"
+let g:onedark_function_style = "NONE"
+let g:onedark_variable_style = "NONE"
 
+" Change the "hint" color to the "orange0" color, and make the "error" color bright red
+let g:onedark_colors = {
+  \ 'hint': 'orange0',
+  \ 'error': '#ff0000'
+\ }
 
+colorscheme onedark

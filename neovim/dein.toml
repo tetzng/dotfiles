@@ -46,3 +46,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'ful1e5/onedark.nvim'
