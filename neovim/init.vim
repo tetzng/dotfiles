@@ -2,10 +2,6 @@
 let mapleader="\<Space>"
 
 " normal
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 nnoremap ; :
 nnoremap : ;
 nnoremap x "_x
@@ -20,10 +16,10 @@ nnoremap gj j
 nnoremap gk k
 nnoremap > >>
 nnoremap < <<
-nnoremap <CR> A<CR><Esc>
 nnoremap MM ddkP
 nnoremap mm ddp
-nnoremap tt Yp
+nnoremap tt yyp
+nnoremap TT yyP
 nnoremap <C-h> gT
 nnoremap <C-l> gt
 nnoremap vs :vs<CR>
@@ -31,20 +27,22 @@ nnoremap sp :sp<CR>
 nnoremap tabe :tabe<CR>
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>d :noh<CR>
-nmap <silent> <C-[><C-[> ;nohlsearch<CR><Esc>
+nmap <silent> <Esc><Esc> ;nohlsearch<CR><Esc>
 
 " insert
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
-inoremap <C-l> <Del>
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap < <><LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
+inoremap <C-d> <Del>
+
+" NOTE: 括弧の補完いったん辞める
+" inoremap { {}<LEFT>
+" inoremap [ []<LEFT>
+" inoremap ( ()<LEFT>
+" inoremap < <><LEFT>
+" inoremap " ""<LEFT>
+" inoremap ' ''<LEFT>
 
 " visual
 vnoremap H ^
