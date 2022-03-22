@@ -65,3 +65,6 @@ abbr -a v.   "nvim ."
 abbr -a vp   "nvim ~/development/dotfiles/neovim/dein.toml"
 abbr -a vv   "nvim ~/development/dotfiles/neovim/init.vim"
 
+# starship
+starship init fish | source
+
