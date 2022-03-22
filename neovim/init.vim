@@ -55,7 +55,7 @@ let g:python_host_prog = '$HOME/.asdf/shims/python'
 let g:python3_host_prog = '$HOME/.asdf/shims/python3'
 
 " dein settings {{{
-" dein自体の自動インストール
+" dein install
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:dein_dir = s:cache_home . '/dein'
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -69,7 +69,6 @@ let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  " call dein#add('Shougo/deoplete.nvim')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
@@ -98,6 +97,8 @@ endif
 " set options
 set termguicolors
 set number
+set helplang=ja,en
+set laststatus=3
 
 " map prefix
 let g:mapleader = "\<Space>"
@@ -202,7 +203,7 @@ nnoremap <silent> [ff]o  :<C-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=-
 nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
 nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
 
-"" lialine
+"" lualine
 lua << END
 require('lualine').setup {
   options = {
@@ -212,6 +213,7 @@ require('lualine').setup {
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
+    globalstatus = true,
   },
   sections = {
     lualine_a = {'mode'},
@@ -256,8 +258,9 @@ let g:onedark_variable_style = "NONE"
 
 " Change the "hint" color to the "orange0" color, and make the "error" color bright red
 let g:onedark_colors = {
+  \ 'bg_visual': 'blue1',
   \ 'hint': 'orange0',
-  \ 'error': '#ff0000'
+  \ 'error': 'red2'
 \ }
 
 colorscheme onedark
