@@ -14,55 +14,54 @@ function fish_user_key_bindings
   bind \cr peco_select_history # Bind for prco history to Ctrl+r
 end
 
-# alias
-alias ....="cd ../../.."
-alias ...="cd ../.."
-alias ..="cd .."
-alias b="bundle"
-alias be="bundle exec"
-alias c="code"
-alias c.="code ."
-alias cf="nvim ~/development/dotfiles/fish/config.fish"
-alias cl="clear"
-alias cp='cp -i'
-alias d="docker"
-alias dc="docker compose"
-alias dev="cd ~/development"
-alias g="git"
-alias ga.="git add ."
-alias ga="git add"
-alias gaa="git add ."
-alias gb="git branch"
-alias gc="git commit"
-alias gca='git commit --amend'
-alias gcho="git checkout"
-alias gchob="git checkout -b"
-alias gd="git diff"
-alias gf='git fetch'
-alias gfp='git fetch -p'
-alias gi='git init'
-alias gl='git log'
-alias gll="git pull"
-alias glo='git log --oneline'
-alias gr='git remote'
-alias gs="git status"
-alias gsh="git push"
-alias gsho="git push origin HEAD"
-alias gsw="git switch"
-alias k="tree -C"
-alias la='ls -a'
-alias mkpr='hub pull-request -o'
-alias mv='mv -i'
-alias nb="git switch -c"
-alias pro="cd ~/projects"
-alias r="rails"
-alias rm="rm -i"
-alias rs="rspec"
-alias rsf="rspec --format documentation"
-alias ruboa="rubocop -A"
-alias scf="source ~/.config/fish/config.fish"
-alias tc="nvim ~/development/dotfiles/tmux/.tmux.conf"
-alias v="nvim"
-alias v.="nvim ."
-alias vp="nvim ~/development/dotfiles/neovim/dein.toml"
-alias vv="nvim ~/development/dotfiles/neovim/init.vim"
+# abbr
+abbr -a ....   "cd ../../.."
+abbr -a ...   "cd ../.."
+abbr -a ..   "cd .."
+abbr -a b   "bundle"
+abbr -a be   "bundle exec"
+abbr -a c   "code"
+abbr -a c.   "code ."
+abbr -a cf   "nvim ~/development/dotfiles/fish/config.fish"
+abbr -a cl   "clear"
+abbr -a d   "docker"
+abbr -a dc   "docker compose"
+abbr -a dev   "cd ~/development"
+abbr -a g   "git"
+abbr -a ga.   "git add ."
+abbr -a ga   "git add"
+abbr -a gaa   "git add ."
+abbr -a gb   "git branch"
+abbr -a gc   "git commit"
+abbr -a gca   'git commit --amend'
+abbr -a gcho   "git checkout"
+abbr -a gchob   "git checkout -b"
+abbr -a gd   "git diff"
+abbr -a gf   'git fetch'
+abbr -a gfp   'git fetch -p'
+abbr -a gi   'git init'
+abbr -a gl   'git log'
+abbr -a gll   "git pull"
+abbr -a glo   'git log --oneline'
+abbr -a gr   'git remote'
+abbr -a gs   "git status"
+abbr -a gsh   "git push"
+abbr -a gsho   "git push origin HEAD"
+abbr -a gsw   "git switch"
+abbr -a k   "tree -C"
+abbr -a l   'exa'
+abbr -a la   'exa -a'
+abbr -a mkpr   'hub pull-request -o'
+abbr -a nb   "git switch -c"
+abbr -a pro   "cd ~/projects"
+abbr -a r   "rails"
+abbr -a rs   "rspec"
+abbr -a rsf   "rspec --format documentation"
+abbr -a ruboa   "rubocop -A"
+abbr -a scf   "source ~/.config/fish/config.fish"
+abbr -a tc   "nvim ~/development/dotfiles/tmux/.tmux.conf"
+abbr -a v   "nvim"
+abbr -a v.   "nvim ."
+abbr -a vp   "nvim ~/development/dotfiles/neovim/dein.toml"
+abbr -a vv   "nvim ~/development/dotfiles/neovim/init.vim"
+
