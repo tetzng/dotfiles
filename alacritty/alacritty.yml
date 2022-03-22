@@ -56,6 +56,10 @@ env:
   TERM: alacritty
 
 key_bindings:
+  # Vi Mode
+  - { key: Space, mods: Shift|Command, mode: ~Search, action: ToggleViMode }
+
+  # Mac OS
   - {
       key: Comma,
       mods: Command,
