@@ -4,15 +4,8 @@ set -g theme_date_format "+%F %H:%M"
 set -g theme_display_git_default_branch yes
 set -g theme_color_scheme dark
 
-# peco
-set fish_plugins theme peco
-
 # asdf
 source /usr/local/opt/asdf/libexec/asdf.fish
-
-function fish_user_key_bindings
-  bind \cr peco_select_history # Bind for prco history to Ctrl+r
-end
 
 # abbr
 abbr -a ....   "cd ../../.."
@@ -67,4 +60,3 @@ abbr -a vv   "nvim ~/development/dotfiles/neovim/init.vim"
 
 # starship
 starship init fish | source
-

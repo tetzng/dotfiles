@@ -77,3 +77,5 @@ key_bindings:
   - { key: Left, mods: Command, chars: "\x1bOH", mode: AppCursor } # Home
   - { key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor } # End
   - { key: J, mods: Control, chars: "\n" } # tmux prefix
+  - { key: C, mods: Alt, chars: "\ec" } # fzf
+
