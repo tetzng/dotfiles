@@ -51,7 +51,13 @@ font:
     y: 1
   use_thin_strokes: true
 
-# env
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - --login
+    - -c
+    - "/usr/local/bin/tmux a -t 0 || /usr/local/bin/tmux -u"
+
 env:
   TERM: alacritty
 
@@ -78,4 +84,3 @@ key_bindings:
   - { key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor } # End
   - { key: J, mods: Control, chars: "\n" } # tmux prefix
   - { key: C, mods: Alt, chars: "\ec" } # fzf
-
