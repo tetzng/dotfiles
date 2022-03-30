@@ -27,6 +27,7 @@ nnoremap sp :sp<CR>
 nnoremap tabe :tabe<CR>
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>d :noh<CR>
+nnoremap <C-p> <cmd>call ddu#start({})<CR>
 nmap <silent> <Esc><Esc> ;nohlsearch<CR><Esc>
 
 " insert
@@ -100,18 +101,36 @@ set number
 set helplang=ja,en
 set laststatus=3
 
-" map prefix
-let g:mapleader = "\<Space>"
-nnoremap <Leader> <Nop>
-xnoremap <Leader> <Nop>
-nnoremap [dev]    <Nop>
-xnoremap [dev]    <Nop>
-nmap     m        [dev]
-xmap     m        [dev]
-nnoremap [ff]     <Nop>
-xnoremap [ff]     <Nop>
-nmap     z        [ff]
-xmap     z        [ff]
+"" ddu.vim
+call ddc#custom#patch_global('sources', ['nvim-lsp'])
+call ddc#custom#patch_global('sourceOptions', {
+      \ '_': { 'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank']},
+      \ 'nvim-lsp': {
+      \   'mark': 'lsp',
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
+      \ })
+
+call ddc#custom#patch_global('sourceParams', {
+      \ 'nvim-lsp': { 'kindLabels': { 'Class': 'c' } },
+      \ })
+
+call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
+call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
+      \ 'clangd': {'mark': 'C'},
+      \ })
+call ddc#custom#patch_filetype('markdown', 'sourceParams', {
+      \ 'around': {'maxSize': 100},
+      \ })
+
+inoremap <silent><expr> <TAB>
+\ ddc#map#pum_visible() ? '<C-n>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#map#manual_complete()
+
+inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
+
+call ddc#enable()
 
 "" ddu.vim
 call ddu#custom#patch_global({
@@ -157,48 +176,6 @@ function! s:ddu_filter_my_settings() abort
   \ <Cmd>close<CR>
 endfunction
 
-"" coc.nvim
-let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-fzf-preview', 'coc-lists']
-
-inoremap <silent> <expr> <C-Space> coc#refresh()
-nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
-nmap     <silent> [dev]rn <Plug>(coc-rename)
-nmap     <silent> [dev]a  <Plug>(coc-codeaction-selected)iw
-
-function! s:coc_typescript_settings() abort
-  nnoremap <silent> <buffer> [dev]f :<C-u>CocCommand eslint.executeAutofix<CR>:CocCommand prettier.formatFile<CR>
-endfunction
-
-augroup coc_ts
-  autocmd!
-  autocmd FileType typescript,typescriptreact call <SID>coc_typescript_settings()
-augroup END
-
-function! s:show_documentation() abort
-  if index(['vim','help'], &filetype) >= 0
-    execute 'h ' . expand('<cword>')
-  elseif coc#rpc#ready()
-    call CocActionAsync('doHover')
-  endif
-endfunction
-
-"" fzf-preview
-let $BAT_THEME                     = 'gruvbox-dark'
-let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
-
-nnoremap <silent> <C-p>  :<C-u>CocCommand fzf-preview.FromResources buffer project_mru project<CR>
-nnoremap <silent> [ff]s  :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nnoremap <silent> [ff]gg :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> [ff]b  :<C-u>CocCommand fzf-preview.Buffers<CR>
-nnoremap          [ff]f  :<C-u>CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<Space>
-xnoremap          [ff]f  "sy:CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-
-nnoremap <silent> [ff]q  :<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>
-nnoremap <silent> [ff]rf :<C-u>CocCommand fzf-preview.CocReferences<CR>
-nnoremap <silent> [ff]d  :<C-u>CocCommand fzf-preview.CocDefinition<CR>
-nnoremap <silent> [ff]t  :<C-u>CocCommand fzf-preview.CocTypeDefinition<CR>
-nnoremap <silent> [ff]o  :<C-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=--exact --add-fzf-arg=--no-sort<CR>
-
 "" fern
 nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
 nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
@@ -213,7 +190,6 @@ require('lualine').setup {
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
-    globalstatus = true,
   },
   sections = {
     lualine_a = {'mode'},
@@ -242,6 +218,12 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = {
     "typescript",
     "tsx",
+    "lua",
+    "yaml",
+    "html",
+    "ruby",
+    "go",
+    "toml",
   },
   highlight = {
     enable = true,
