@@ -1,11 +1,11 @@
-# view
-set -g theme_display_date yes
-set -g theme_date_format "+%F %H:%M"
-set -g theme_display_git_default_branch yes
-set -g theme_color_scheme dark
+# color scheme
+scheme set tokyonight
 
 # asdf
 source /usr/local/opt/asdf/libexec/asdf.fish
+
+# starship
+starship init fish | source
 
 # abbr
 abbr -a ..      "cd .."
@@ -25,6 +25,7 @@ abbr -a c.      "code ."
 abbr -a ca      "bat"
 abbr -a caa     "hoge"
 abbr -a cf      "nvim $DEV/dotfiles/fish/config.fish"
+abbr -a ch      "open -a 'Google Chrome'" 
 abbr -a cl      "clear"
 abbr -a d       "docker"
 abbr -a da      "docker attach"
@@ -79,6 +80,3 @@ abbr -a v       "nvim"
 abbr -a v.      "nvim ."
 abbr -a vp      "nvim $DEV/dotfiles/neovim/dein.toml"
 abbr -a vv      "nvim $DEV/dotfiles/neovim/init.vim"
-
-# starship
-starship init fish | source

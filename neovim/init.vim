@@ -1,3 +1,68 @@
+" python
+let g:python_host_prog = '$HOME/.asdf/shims/python'
+let g:python3_host_prog = '$HOME/.asdf/shims/python3'
+
+"" dein
+let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
+let s:dein_dir = s:cache_home . '/dein'
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if !isdirectory(s:dein_repo_dir)
+  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+endif
+let &runtimepath = s:dein_repo_dir .",". &runtimepath
+
+let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  let g:deoplete#enable_at_startup = 1
+
+  call dein#load_toml(s:toml_file)
+  call dein#end()
+  call dein#save_state()
+endif
+
+if has('vim_starting') && dein#check_install()
+  call dein#install()
+endif
+
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif
+
+" set options
+set termguicolors
+set number
+set helplang=ja,en
+set laststatus=3
+
+" color
+syntax on
+" let g:tokyonight_style = "storm"
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+
+" Change the "hint" color to the "orange" color, and make the "error" color bright red
+let g:tokyonight_colors = {
+  \ 'hint': 'orange',
+  \ 'error': '#ff0000'
+\ }
+
+colorscheme tokyonight
+
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 " mapping
 let mapleader="\<Space>"
 
@@ -37,14 +102,6 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Del>
 
-" NOTE: 括弧の補完いったん辞める
-" inoremap { {}<LEFT>
-" inoremap [ []<LEFT>
-" inoremap ( ()<LEFT>
-" inoremap < <><LEFT>
-" inoremap " ""<LEFT>
-" inoremap ' ''<LEFT>
-
 " visual
 vnoremap H ^
 vnoremap L $
@@ -52,56 +109,7 @@ vnoremap > >gv
 vnoremap < <gv
 vnoremap tt yP
 
-let g:python_host_prog = '$HOME/.asdf/shims/python'
-let g:python3_host_prog = '$HOME/.asdf/shims/python3'
-
-" dein settings {{{
-" dein install
-let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
-let s:dein_dir = s:cache_home . '/dein'
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-if !isdirectory(s:dein_repo_dir)
-  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
-endif
-let &runtimepath = s:dein_repo_dir .",". &runtimepath
-
-" プラグイン読み込み＆キャッシュ作成
-let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-  let g:deoplete#enable_at_startup = 1
-
-  call dein#load_toml(s:toml_file)
-  call dein#end()
-  call dein#save_state()
-endif
-
-" 不足プラグインの自動インストール
-if has('vim_starting') && dein#check_install()
-  call dein#install()
-endif
-" }}}
-
-" plugin remove check {{{
-let s:removed_plugins = dein#check_clean()
-if len(s:removed_plugins) > 0
-  call map(s:removed_plugins, "delete(v:val, 'rf')")
-  call dein#recache_runtimepath()
-endif
-" }}}
-
-" set options
-set termguicolors
-set number
-set helplang=ja,en
-set laststatus=3
-
-"" ddu.vim
+"" ddc.vim
 call ddc#custom#patch_global('sources', ['nvim-lsp'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': { 'matchers': ['matcher_head'],
@@ -185,7 +193,7 @@ lua << END
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = 'tokyonight',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
@@ -231,18 +239,5 @@ require('nvim-treesitter.configs').setup {
 }
 EOF
 
-let g:onedark_sidebars = ["qf", "vista_kind", "terminal", "packer"]
-let g:onedark_transparent = "true"
-let g:onedark_comment_style = "NONE"
-let g:onedark_keyword_style = "NONE"
-let g:onedark_function_style = "NONE"
-let g:onedark_variable_style = "NONE"
-
-" Change the "hint" color to the "orange0" color, and make the "error" color bright red
-let g:onedark_colors = {
-  \ 'bg_visual': 'blue1',
-  \ 'hint': 'orange0',
-  \ 'error': 'red2'
-\ }
-
-colorscheme onedark
+"" Autopairs
+lua require'nvim-autopairs'.setup()
