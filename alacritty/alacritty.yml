@@ -81,7 +81,7 @@ schemes:
 colors: *tokyo-night-storm
 
 window:
-  opacity: 0.9
+  # opacity: 0.9
   dimensions:
     columns: 200
     lines: 60
@@ -120,6 +120,7 @@ shell:
 
 env:
   TERM: alacritty
+  SHELL: /usr/local/bin/fish
 
 key_bindings:
   # Vi Mode
