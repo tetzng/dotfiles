@@ -2,7 +2,7 @@
 scheme set tokyonight
 
 # asdf
-source /usr/local/opt/asdf/libexec/asdf.fish
+source (brew --prefix asdf)/libexec/asdf.fish
 
 # starship
 starship init fish | source
