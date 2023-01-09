@@ -1,10 +1,14 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
+# plugin manager
 eval "$(sheldon source)"
+
+# starship
 eval "$(starship init zsh)"
 
-. /usr/local/opt/asdf/libexec/asdf.sh
+# asdf
+# . /usr/local/opt/asdf/libexec/asdf.sh
 
 if type brew &>/dev/null
 then
@@ -16,5 +20,7 @@ fi
 
 . /usr/local/etc/profile.d/z.sh
 
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
 # Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
