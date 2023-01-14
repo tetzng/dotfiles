@@ -46,6 +46,9 @@ return {
   {
     'williamboman/mason.nvim',
     event = "VimEnter",
+    config = function()
+      require("pluginconfig/mason")
+    end,
   },
   {
     'williamboman/mason-lspconfig',
