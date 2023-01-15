@@ -44,8 +44,6 @@ require("lazy").setup({
 
 -- lsp
 local lsp_config = require('lspconfig')
-local mason = require('mason')
-local mason_lspconfig = require('mason-lspconfig')
 local mason_null_ls = require('mason-null-ls')
 local null_ls = require('null-ls')
 
@@ -54,7 +52,6 @@ require('lspsaga').setup()
 -- require('lsp_signature').setup({ hint_enable = false })
 require('fidget').setup()
 
-mason.setup()
 mason_null_ls.setup({
   ensure_installed = { 'prettier' },
   automatic_installation = true,
@@ -85,24 +82,6 @@ null_ls.setup({
     }),
     null_ls.builtins.completion.spell,
   },
-})
-
-mason_lspconfig.setup({
-  ensure_installed = {
-    'tsserver',
-    'eslint',
-  },
-  automatic_installation = true,
-})
-
-mason_lspconfig.setup_handlers({
-  function(server_name)
-    local opts = {
-      capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    }
-
-    lsp_config[server_name].setup(opts)
-  end,
 })
 
 -- nvim-cmp

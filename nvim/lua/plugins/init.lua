@@ -53,6 +53,9 @@ return {
   {
     'williamboman/mason-lspconfig',
     event = "VimEnter",
+    config = function()
+      require("pluginconfig/mason-lspconfig")
+    end,
   },
   {
     'jose-elias-alvarez/null-ls.nvim',
