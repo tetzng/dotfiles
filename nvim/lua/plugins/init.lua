@@ -60,6 +60,9 @@ return {
   {
     'jose-elias-alvarez/null-ls.nvim',
     event = "VimEnter",
+    config = function()
+      require("pluginconfig/null-ls")
+    end,
   },
   {
     'jayp0521/mason-null-ls.nvim',
