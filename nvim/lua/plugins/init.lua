@@ -69,10 +69,6 @@ return {
     event = "VimEnter",
   },
   {
-    'stevearc/dressing.nvim',
-    event = "VimEnter",
-  },
-  {
     'tami5/lspsaga.nvim',
     event = "VimEnter",
   },
@@ -181,6 +177,9 @@ return {
         require("lazy").load({ plugins = { "dressing.nvim" } })
         return vim.ui.input(...)
       end
+    end,
+    config = function()
+      require("pluginconfig/dressing")
     end,
   },
 

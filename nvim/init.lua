@@ -46,7 +46,6 @@ require("lazy").setup({
 local lsp_config = require('lspconfig')
 local mason_null_ls = require('mason-null-ls')
 
-require('dressing').setup()
 require('lspsaga').setup()
 -- require('lsp_signature').setup({ hint_enable = false })
 require('fidget').setup()
