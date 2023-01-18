@@ -83,11 +83,6 @@ cmp.setup({
   },
 })
 
--- Telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = 'Find files by Telescope' })
-vim.keymap.set("n", "<Leader>f", builtin.live_grep, { desc = 'Grep files by Telescope' })
-
 -- Fern
 vim.keymap.set({ 'n' }, '<Leader>e', '<Cmd>Fern . -drawer -toggle<CR>')
 
