@@ -77,27 +77,7 @@ return {
     event = "VimEnter",
   },
   {
-    'onsails/lspkind-nvim',
-    event = "VimEnter",
-  },
-  {
     'j-hui/fidget.nvim',
-    event = "VimEnter",
-  },
-  {
-    'hrsh7th/nvim-cmp',
-    event = "VimEnter",
-  },
-  {
-    'hrsh7th/cmp-nvim-lsp',
-    event = "VimEnter",
-  },
-  {
-    'hrsh7th/cmp-buffer',
-    event = "VimEnter",
-  },
-  {
-    'hrsh7th/cmp-path',
     event = "VimEnter",
   },
   {
@@ -137,10 +117,17 @@ return {
     event = "VimEnter",
     dependencies = {
       { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-nvim-lsp-signature-help" },
+      { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-nvim-lua" },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "hrsh7th/cmp-cmdline" },
+      { "petertriho/cmp-git" },
+      { 'onsails/lspkind-nvim' },
     },
     config = function()
+      require("pluginconfig/nvim-cmp")
     end,
   },
   -- Better `vim.notify()`
