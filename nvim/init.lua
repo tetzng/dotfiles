@@ -48,7 +48,6 @@ local mason_null_ls = require('mason-null-ls')
 
 require('lspsaga').setup()
 -- require('lsp_signature').setup({ hint_enable = false })
-require('fidget').setup()
 
 mason_null_ls.setup({
   ensure_installed = { 'prettier' },
