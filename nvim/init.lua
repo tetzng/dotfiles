@@ -43,10 +43,8 @@ require("lazy").setup({
 })
 
 -- lsp
-local lsp_config = require('lspconfig')
 local mason_null_ls = require('mason-null-ls')
 
-require('lspsaga').setup()
 -- require('lsp_signature').setup({ hint_enable = false })
 
 mason_null_ls.setup({

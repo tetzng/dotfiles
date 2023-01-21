@@ -71,6 +71,9 @@ return {
   {
     'tami5/lspsaga.nvim',
     event = "VimEnter",
+    config = function()
+      require("pluginconfig/lspsaga")
+    end,
   },
   {
     'ray-x/lsp_signature.nvim',
