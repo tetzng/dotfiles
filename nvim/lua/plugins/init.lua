@@ -67,6 +67,9 @@ return {
   {
     'jayp0521/mason-null-ls.nvim',
     event = "VimEnter",
+    config = function()
+      require("pluginconfig/mason-null-ls")
+    end,
   },
   {
     'tami5/lspsaga.nvim',

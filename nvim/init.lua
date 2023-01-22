@@ -42,15 +42,7 @@ require("lazy").setup({
   },
 })
 
--- lsp
-local mason_null_ls = require('mason-null-ls')
-
 -- require('lsp_signature').setup({ hint_enable = false })
-
-mason_null_ls.setup({
-  ensure_installed = { 'prettier' },
-  automatic_installation = true,
-})
 
 -- Fern
 vim.keymap.set({ 'n' }, '<Leader>e', '<Cmd>Fern . -drawer -toggle<CR>')
