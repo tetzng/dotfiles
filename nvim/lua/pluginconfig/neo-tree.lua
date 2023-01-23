@@ -2,14 +2,18 @@
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 -- If you want icons for diagnostic errors, you'll need to define them somewhere:
--- vim.fn.sign_define("DiagnosticSignError",
---   { text = " ", texthl = "DiagnosticSignError" })
--- vim.fn.sign_define("DiagnosticSignWarn",
---   { text = " ", texthl = "DiagnosticSignWarn" })
--- vim.fn.sign_define("DiagnosticSignInfo",
---   { text = " ", texthl = "DiagnosticSignInfo" })
--- vim.fn.sign_define("DiagnosticSignHint",
---   { text = "", texthl = "DiagnosticSignHint" })
+vim.fn.sign_define("DiagnosticSignError",
+  -- { text = "󿙙 ", texthl = "DiagnosticSignError" })
+  { text = "x ", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn",
+  { text = "! ", texthl = "DiagnosticSignWarn" })
+  -- { text = "󿔩 ", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo",
+  { text = "i ", texthl = "DiagnosticSignInfo" })
+  -- { text = " ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint",
+  { text = "? ", texthl = "DiagnosticSignHint" })
+  -- { text = " ", texthl = "DiagnosticSignHint" })
 -- NOTE: this is changed from v1.x, which used the old style of highlight groups
 -- in the form "LspDiagnosticsSignWarning"
 
@@ -141,7 +145,7 @@ require("neo-tree").setup({
   filesystem = {
     filtered_items = {
       visible = false, -- when true, they will just be displayed differently than normal items
-      hide_dotfiles = true,
+      hide_dotfiles = false,
       hide_gitignored = true,
       hide_hidden = true, -- only works on Windows for hidden files/directories
       hide_by_name = {
@@ -152,10 +156,10 @@ require("neo-tree").setup({
         --"*/src/*/tsconfig.json",
       },
       always_show = { -- remains visible even if other settings would normally hide it
-        --".gitignored",
+        ".gitignored",
       },
       never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
-        --".DS_Store",
+        ".DS_Store",
         --"thumbs.db"
       },
       never_show_by_pattern = { -- uses glob style patterns
