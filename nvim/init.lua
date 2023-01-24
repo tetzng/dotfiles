@@ -1,6 +1,5 @@
 require('keymaps')
 require('options')
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 -- lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
@@ -42,9 +41,6 @@ require("lazy").setup({
   },
 })
 
--- require('lsp_signature').setup({ hint_enable = false })
-
 -- Fern
 vim.keymap.set({ 'n' }, '<Leader>e', '<Cmd>Fern . -drawer -toggle<CR>')
 
--- require('lazy').setup("plugins", lazy_config)

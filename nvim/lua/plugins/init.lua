@@ -78,10 +78,13 @@ return {
       require("pluginconfig/lspsaga")
     end,
   },
-  {
-    'ray-x/lsp_signature.nvim',
-    event = "VimEnter",
-  },
+  -- {
+  --   'ray-x/lsp_signature.nvim',
+  --   event = "VimEnter",
+  --   config = function()
+  --     require('lsp_signature').setup({ hint_enable = false })
+  --   end,
+  -- },
   {
     'j-hui/fidget.nvim',
     event = "VimEnter",
@@ -97,10 +100,10 @@ return {
     'lambdalisue/fern.vim',
     event = "VimEnter",
   },
-  {
-    'nvim-lua/plenary.nvim',
-    event = "VimEnter",
-  },
+  -- {
+  --   'nvim-lua/plenary.nvim',
+  --   event = "VimEnter",
+  -- },
   {
     'nvim-lua/telescope.nvim',
     tag = '0.1.1',
