@@ -295,4 +295,9 @@ return {
 			})
 		end,
 	},
+  {
+    "slim-template/vim-slim",
+    event = "FileType",
+    filetypes = {"slim"},
+	},
 }
