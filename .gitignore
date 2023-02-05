@@ -1,1 +1,32 @@
+/*
+/.**
+
+!/.asdfrc
+!/.gemrc
+!/.zshenv
+!/.Brewfile
+
+!/.config/
+!/.config/alacritty
+!/.config/alacritty/**
+!/.config/bat
+!/.config/bat/**
+!/.config/fish
+!/.config/fish/**
+/.config/fish/fish_variables
+!/.config/gh-dash
+!/.config/nvim
+!/.config/silicon
+!/.config/tmux
+!/.config/tmux/**
+!/.config/zsh
+!/.config/starship.toml
+# !/.config/**
+# /.config/yarn/
+/.config/sheldon/**
+
+!/README.md
+!/LICENSE
+!.gitignore
+node_modules
 .DS_Store
