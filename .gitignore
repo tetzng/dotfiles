@@ -21,9 +21,8 @@
 !/.config/tmux/**
 !/.config/zsh
 !/.config/starship.toml
-# !/.config/**
-# /.config/yarn/
-/.config/sheldon/**
+!/.config/sheldon
+!/.config/sheldon/plugins.toml
 
 !/README.md
 !/LICENSE
