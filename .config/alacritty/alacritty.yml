@@ -112,15 +112,15 @@ font:
     y: 1
 
 shell:
-  program: /usr/local/bin/fish
+  program: /opt/homebrew/bin/fish
   args:
     - --login
     - -c
-    - "/usr/local/bin/tmux a -t 0 || /usr/local/bin/tmux -u"
+    - "/opt/homebrew/bin/tmux a -t 0 || /opt/homebrew/bin/tmux -u"
 
 env:
   TERM: alacritty
-  SHELL: /usr/local/bin/fish
+  SHELL: /opt/homebrew/bin/fish
 
 key_bindings:
   # Vi Mode
