@@ -1,11 +1,15 @@
-# color scheme
-scheme set tokyonight
+if status is-interactive
+  # Homebrew
+  eval (/opt/homebrew/bin/brew shellenv)
 
-# asdf
-source (brew --prefix asdf)/libexec/asdf.fish
+  # color scheme
+  scheme set tokyonight
 
-# starship
-starship init fish | source
+  # asdf
+  source (brew --prefix asdf)/libexec/asdf.fish
+
+  # starship
+  starship init fish | source
 
 # abbr
 abbr -a .. "cd .."
@@ -74,3 +78,4 @@ abbr -a tm tmux
 abbr -a v nvim
 abbr -a v. "nvim ."
 abbr -a vv "nvim $DEV/dotfiles/nvim"
+end
