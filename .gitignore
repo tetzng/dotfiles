@@ -15,15 +15,17 @@
 !/.config/fish/**
 /.config/fish/fish_variables
 !/.config/gh-dash
+!/.config/lazygit
+!/.config/lazygit/config.yml
 !/.config/nvim
 !/.config/nvim/**
+!/.config/sheldon
+!/.config/sheldon/plugins.toml
 !/.config/silicon
+!/.config/starship.toml
 !/.config/tmux
 !/.config/tmux/**
 !/.config/zsh
-!/.config/starship.toml
-!/.config/sheldon
-!/.config/sheldon/plugins.toml
 
 !/README.md
 !/LICENSE

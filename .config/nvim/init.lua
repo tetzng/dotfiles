@@ -9,7 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
       'clone',
       '--filter=blob:none',
       'https://github.com/folke/lazy.nvim.git',
-      '--branch=stable', -- latest stable release
+      '--branch=stable',
       lazypath,
   })
 end
@@ -20,8 +20,8 @@ require("lazy").setup({
         { import = "plugins" },
     },
     defaults = {
-        lazy = true, -- every plugin is lazy-loaded by default
-        version = "*", -- try installing the latest stable version for plugins that support semver
+        lazy = true,
+        version = "*",
     },
     ui = {
         icons = {
