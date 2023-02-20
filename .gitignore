@@ -14,7 +14,11 @@
 !/.config/fish
 !/.config/fish/**
 /.config/fish/fish_variables
+!/.config/gh
+!/.config/gh/config.yml
 !/.config/gh-dash
+!/.config/kitty
+!/.config/kitty/**
 !/.config/lazygit
 !/.config/lazygit/config.yml
 !/.config/nvim
@@ -22,10 +26,15 @@
 !/.config/sheldon
 !/.config/sheldon/plugins.toml
 !/.config/silicon
+!/.config/skhd
+!/.config/skhd/**
 !/.config/starship.toml
 !/.config/tmux
 !/.config/tmux/**
+!/.config/yabai
+!/.config/yabai/**
 !/.config/zsh
+!/.config/zsh/zshrc
 
 !/README.md
 !/LICENSE
