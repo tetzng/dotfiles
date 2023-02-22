@@ -7,6 +7,6 @@ prompt: enabled
 # A pager program to send command output to. Example value: less
 pager: delta
 # Aliases allow you to create nicknames for gh commands
-aliases:
-    co: pr checkout
+# aliases:
+#   co: pr checkout
 browser: open -a 'Google Chrome'
