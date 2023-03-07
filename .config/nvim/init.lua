@@ -44,6 +44,3 @@ else
 		},
 	})
 end
-
--- Fern
-vim.keymap.set({ 'n' }, '<Leader>e', '<Cmd>Fern . -drawer -toggle<CR>')
