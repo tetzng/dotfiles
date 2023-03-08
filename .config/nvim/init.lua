@@ -24,7 +24,7 @@ else
 		},
 		defaults = {
 			lazy = true,
-			version = "*",
+			-- version = "*",
 		},
 		ui = {
 			icons = {
