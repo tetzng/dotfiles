@@ -21,6 +21,8 @@
 !/.config/kitty/**
 !/.config/lazygit
 !/.config/lazygit/config.yml
+!/.config/ngrok
+!/.config/ngrok/ngrok.yml
 !/.config/nvim
 !/.config/nvim/**
 !/.config/sheldon
