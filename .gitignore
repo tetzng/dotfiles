@@ -33,6 +33,8 @@
 !/.config/starship.toml
 !/.config/tmux
 !/.config/tmux/**
+!/.config/wezterm
+!/.config/wezterm/**
 !/.config/yabai
 !/.config/yabai/**
 !/.config/zsh
