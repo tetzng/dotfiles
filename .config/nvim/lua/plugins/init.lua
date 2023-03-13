@@ -303,4 +303,8 @@ return {
     event = "FileType",
     filetypes = { "slim" },
   },
+  {
+    "github/copilot.vim",
+    event = "InsertEnter",
+  }
 }
