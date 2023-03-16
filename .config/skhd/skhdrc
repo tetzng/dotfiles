@@ -143,3 +143,15 @@
 
 # toggle sticky(+float), topmost, picture-in-picture
 # alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
+
+# resize window to bottom left quarter of screen
+# shift + alt - left : yabai -m window --grid 2:2:0:1:1:1
+
+# resize window to  bottom right quarter of screen
+# shift + alt - right : yabai -m window --grid 2:2:1:1:1:1
+
+# resize window to top left quarter of screen
+# shift + alt - up : yabai -m window --grid 2:2:0:0:1:1
+
+# resize window to top right quarter of screen
+# shift + alt - down : yabai -m window --grid 2:2:1:0:1:1
