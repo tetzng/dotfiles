@@ -17,6 +17,8 @@
 !/.config/gh
 !/.config/gh/config.yml
 !/.config/gh-dash
+!/.config/git
+!/.config/git/ignore
 !/.config/kitty
 !/.config/kitty/**
 !/.config/lazygit
