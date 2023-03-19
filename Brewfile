@@ -1,9 +1,7 @@
 tap "heroku/brew"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "weaveworks/tap"
 # Library for command-line editing
@@ -136,6 +134,8 @@ cask "appcleaner"
 cask "around"
 # Trains AIs to understand and translate texts
 cask "deepl"
+# Voice and text chat software
+cask "discord"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Draw.io is free online diagram software
@@ -154,6 +154,8 @@ cask "github"
 # Web browser
 cask "google-chrome"
 cask "google-japanese-ime"
+# Screenshot and screen recording tool
+cask "gyazo"
 # Keymap tool for Happy Hacking Keyboard Professional (Hybrid models only)
 cask "hhkb-keymap-tool"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -166,6 +168,8 @@ cask "keycastr"
 cask "kitty"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
+# Web browser
+cask "microsoft-edge"
 # Spreadsheet software
 cask "microsoft-excel"
 # Online collaborative whiteboard platform
