@@ -42,6 +42,8 @@
 !/.config/yabai/**
 !/.config/zsh
 !/.config/zsh/zshrc
+!/.github
+!/.github/**
 
 !/README.md
 !/LICENSE
