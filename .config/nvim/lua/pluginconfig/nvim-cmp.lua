@@ -3,16 +3,26 @@ local lspkind = require('lspkind')
 cmp.setup {
     snippet = {
         expand = function(args)
-          require 'luasnip'.lsp_expand(args.body)
+            require 'luasnip'.lsp_expand(args.body)
         end
     },
 
     enabled = true,
     mapping = cmp.mapping.preset.insert({
-        ['<C-u>'] = cmp.mapping.scroll_docs( -4),
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        --  ['<C-m>'] = cmp.mapping.complete(),
+        ["<CR>"] = cmp.mapping({
+            i = function(fallback)
+                if cmp.visible() and cmp.get_active_entry() then
+                    cmp.confirm({ select = true })
+                else
+                    fallback()
+                end
+            end,
+            s = cmp.mapping.confirm({ select = true }),
+            c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+        }),
     }),
     window = {
         completion = cmp.config.window.bordered(),
@@ -21,7 +31,34 @@ cmp.setup {
     formatting = {
         fields = { 'abbr', 'kind', 'menu' },
         format = lspkind.cmp_format({
-            mode = 'text',
+            mode = 'symbol_text',
+            symbol_map = {
+                Text = "󿞃",
+                Method = "󿚦",
+                Function = "󿞔",
+                Constructor = "",
+                Field = "󿰠",
+                Variable = "󿔪",
+                Class = "",
+                Interface = "",
+                Module = "",
+                Property = "󿰠",
+                Unit = "󿥬",
+                Value = "󿢟",
+                Enum = "",
+                Keyword = "󿠊",
+                Snippet = "",
+                Color = "󿣗",
+                File = "󿜘",
+                Reference = "󿜆",
+                Folder = "󿝊",
+                EnumMember = "",
+                Constant = "󿣾",
+                Struct = "󿭄",
+                Event = "",
+                Operator = "󿚔",
+                TypeParameter = ""
+            },
         }),
     },
 
@@ -43,8 +80,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 require('mason-lspconfig').setup_handlers {
     function(server_name)
-      lspconfig[server_name].setup {
-          capabilities = capabilities,
-      }
+        lspconfig[server_name].setup {
+            capabilities = capabilities,
+        }
     end,
 }

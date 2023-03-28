@@ -44,6 +44,7 @@ vim.opt.timeoutlen = 300
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
 vim.opt.updatetime = 200 -- save swap file and trigger CursorHold
+vim.opt.whichwrap = "b,s,h,l,[,],<,>,~"
 vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
 vim.go.winminwidth = 5 -- minimum window width
 vim.opt.wrap = false -- Disable line wrap
