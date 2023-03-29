@@ -23,6 +23,8 @@ brew "git"
 brew "git-delta"
 # Prevents you from committing sensitive information to a git repo
 brew "git-secrets"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Simple terminal UI for git commands
@@ -68,6 +70,8 @@ cask "fig"
 cask "font-cica"
 # Web browser
 cask "google-chrome"
+# Tools to protect your emails and files
+cask "gpg-suite"
 # Screenshot and screen recording tool
 cask "gyazo"
 # Keyboard customizer
@@ -92,6 +96,8 @@ cask "spotify"
 cask "tableplus"
 # Open-source code editor
 cask "visual-studio-code"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "GarageBand", id: 682658836
