@@ -1,6 +1,7 @@
 [user]
   name = Teppei Taguchi
   email = tetzng.tt@gmail.com
+	signingkey = E1682121ED271AAE
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
@@ -50,11 +51,6 @@
 [merge]
 	ff = false
 
-[gpg]
-	format = ssh
-
 [commit]
 	gpgsign = true
 
-[include]
-  path = ~/.config/git/config.private
