@@ -1,8 +1,6 @@
 tap "heroku/brew"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-tap "homebrew/core"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -61,6 +59,8 @@ cask "alacritty"
 cask "around"
 # Trains AIs to understand and translate texts
 cask "deepl"
+# Voice and text chat software
+cask "discord"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Reimagine your terminal
@@ -68,10 +68,16 @@ cask "fig"
 cask "font-cica"
 # Web browser
 cask "google-chrome"
+# Screenshot and screen recording tool
+cask "gyazo"
 # Keyboard customizer
 cask "karabiner-elements"
 # Open-source keystroke visualizer
 cask "keycastr"
+# Web browser
+cask "microsoft-edge"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Collaboration platform for API development
