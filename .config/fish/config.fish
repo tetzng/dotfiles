@@ -1,3 +1,5 @@
+set -gx GPG_TTY (tty)
+
 if status is-interactive
   # Homebrew
   eval (/opt/homebrew/bin/brew shellenv)
