@@ -1,10 +1,11 @@
-function fish_greeting -d "What's up, fish?"
+function fish_greeting -d "Display system information as a greeting"
     set_color $fish_color_autosuggestion
-    uname -nmsr
 
-    # TODO: `command -q -s` only works on fish 2.5+, so hold off on that for now
-    command -s uptime >/dev/null
-    and command uptime
+    set -l system_info (system_profiler SPSoftwareDataType | string collect)
+    set -l sys_version (echo "$system_info" | rg "System Version: (.+)" -r '$1' | string trim)
+    set -l kernel_version (echo "$system_info" | rg "Kernel Version: (.+)" -r '$1' | string trim)
+    set -l time_since_boot (echo "$system_info" | rg "Time since boot: (.+)" -r '$1' | string trim)
 
-    set_color normal
+    echo "You're running $sys_version with $kernel_version,"
+    echo "and your system has been up for $time_since_boot."
 end

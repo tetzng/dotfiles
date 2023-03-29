@@ -1,6 +1,8 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
+export GPG_TTY=$(tty)
+
 # plugin manager
 eval "$(sheldon source)"
 

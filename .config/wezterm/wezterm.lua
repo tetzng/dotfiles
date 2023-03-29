@@ -6,7 +6,7 @@ config.font = wezterm.font_with_fallback({
   { family = "Cica", assume_emoji_presentation = true },
 })
 config.font_size = 16.0
-config.default_prog = { '/usr/local/bin/fish', '-l' }
+config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 config.color_scheme = 'tokyonight_storm'
 config.window_close_confirmation = "NeverPrompt"
 config.window_background_opacity = 0.9
