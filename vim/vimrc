@@ -1,9 +1,162 @@
+" The default vimrc file.
+"
+" Maintainer:	Bram Moolenaar <Bram@vim.org>
+" Last change:	2022 Mar 03
+"
+" This is loaded if no vimrc file was found.
+" Except when Vim is run with "-u NONE" or "-C".
+" Individual settings can be reverted with ":set option&".
+" Other commands can be reverted as mentioned below.
+
+" When started as "evim", evim.vim will already have done these settings.
+if v:progname =~? "evim"
+  finish
+endif
+
+" Bail out if something that ran earlier, e.g. a system wide vimrc, does not
+" want Vim to use these default values.
+if exists('skip_defaults_vim')
+  finish
+endif
+
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+" Avoid side effects when it was already reset.
+if &compatible
+  set nocompatible
+endif
+
+" When the +eval feature is missing, the set command above will be skipped.
+" Use a trick to reset compatible only when the +eval feature is missing.
+silent! while 0
+  set nocompatible
+silent! endwhile
+
+" Allow backspacing over everything in insert mode.
+set backspace=indent,eol,start
+
+set history=200		" keep 200 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set wildmenu		" display completion matches in a status line
+
+set ttimeout		" time out for key codes
+set ttimeoutlen=100	" wait up to 100ms after Esc for special key
+
+" Show @@@ in the last line if it is truncated.
+set display=truncate
+
+" Show a few lines of context around the cursor.  Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching when it's possible to timeout.
+if has('reltime')
+  set incsearch
+endif
+
+" Do not recognize octal numbers for Ctrl-A and Ctrl-X, most users find it
+" confusing.
+set nrformats-=octal
+
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries.
+if has('win32')
+  set guioptions-=t
+endif
+
+" Don't use Q for Ex mode, use it for formatting.  Except for Select mode.
+" Revert with ":unmap Q".
+map Q gq
+sunmap Q
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+" Revert with ":iunmap <C-U>".
+inoremap <C-U> <C-G>u<C-U>
+
+" In many terminal emulators the mouse works just fine.  By enabling it you
+" can position the cursor, Visually select and scroll with the mouse.
+" Only xterm can grab the mouse events when using the shift key, for other
+" terminals use ":", select text and press Esc.
+if has('mouse')
+  if &term =~ 'xterm'
+    set mouse=a
+  else
+    set mouse=nvi
+  endif
+endif
+
+" Only do this part when Vim was compiled with the +eval feature.
+if 1
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  " Revert with ":filetype off".
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that you can revert them with:
+  " ":augroup vimStartup | exe 'au!' | augroup END"
+  augroup vimStartup
+    au!
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid, when inside an event handler
+    " (happens when dropping a file on gvim) and for a commit message (it's
+    " likely a different one than last time).
+    autocmd BufReadPost *
+      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+      \ |   exe "normal! g`\""
+      \ | endif
+
+  augroup END
+
+  " Quite a few people accidentally type "q:" instead of ":q" and get confused
+  " by the command line window.  Give a hint about how to get out.
+  " If you don't like this you can put this in your vimrc:
+  " ":augroup vimHints | exe 'au!' | augroup END"
+  augroup vimHints
+    au!
+    autocmd CmdwinEnter *
+	  \ echohl Todo | 
+	  \ echo 'You discovered the command-line window! You can close it with ":q".' |
+	  \ echohl None
+  augroup END
+
+endif
+
+" Switch syntax highlighting on when the terminal has colors or when using the
+" GUI (which always has colors).
+if &t_Co > 2 || has("gui_running")
+  " Revert with ":syntax off".
+  syntax on
+
+  " I like highlighting strings inside C comments.
+  " Revert with ":unlet c_comment_strings".
+  let c_comment_strings=1
+endif
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+" Revert with: ":delcommand DiffOrig".
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+if has('langmap') && exists('+langremap')
+  " Prevent that the langmap option applies to characters that result from a
+  " mapping.  If set (default), this may break plugins (but it's backward
+  " compatible).
+  set nolangremap
+endif
+
 " mapping
 let mapleader="\<Space>"
 
 " normal
-nnoremap ; :
-nnoremap : ;
 nnoremap x "_x
 nnoremap s "_s
 nnoremap H ^
@@ -14,8 +167,6 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap gj j
 nnoremap gk k
-nnoremap > >>
-nnoremap < <<
 nnoremap MM ddkP
 nnoremap mm ddp
 nnoremap tt yyp
@@ -28,11 +179,9 @@ nnoremap tabe :tabe<CR>
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>d :noh<CR>
 nnoremap <C-p> <cmd>call ddu#start({})<CR>
-nmap <silent> <Esc><Esc> ;nohlsearch<CR><Esc>
+nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
 " insert
-inoremap <C-k> <Up>
-inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Del>
@@ -44,203 +193,215 @@ vnoremap > >gv
 vnoremap < <gv
 vnoremap tt yP
 
-if !exists('g:vscode')
-  " python
-  let g:python_host_prog = '$HOME/.asdf/shims/python'
-  let g:python3_host_prog = '$HOME/.asdf/shims/python3'
+" python
+let g:python_host_prog = '$HOME/.asdf/shims/python'
+let g:python3_host_prog = '$HOME/.asdf/shims/python3'
 
-  "" dein
-  let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
-  let s:dein_dir = s:cache_home . '/dein'
-  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
-  endif
-  let &runtimepath = s:dein_repo_dir .",". &runtimepath
+"" dein
+let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
+let s:dein_dir = s:cache_home . '/dein'
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if !isdirectory(s:dein_repo_dir)
+  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+endif
+let &runtimepath = s:dein_repo_dir .",". &runtimepath
 
-  let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
-  if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
+let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  call dein#load_toml(s:toml_file)
+  call dein#end()
+  call dein#save_state()
+endif
 
-    if !has('nvim')
-      call dein#add('roxma/nvim-yarp')
-      call dein#add('roxma/vim-hug-neovim-rpc')
-    endif
-    let g:deoplete#enable_at_startup = 1
+filetype plugin indent on
+syntax enable
 
-    call dein#load_toml(s:toml_file)
-    call dein#end()
-    call dein#save_state()
-  endif
+if has('vim_starting') && dein#check_install()
+  call dein#install()
+endif
 
-  if has('vim_starting') && dein#check_install()
-    call dein#install()
-  endif
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif
 
-  let s:removed_plugins = dein#check_clean()
-  if len(s:removed_plugins) > 0
-    call map(s:removed_plugins, "delete(v:val, 'rf')")
-    call dein#recache_runtimepath()
-  endif
+" set options
+set termguicolors
+set number
+set helplang=ja,en
+set laststatus=3
 
-  " set options
+" color
+syntax on
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
-  set number
-  set helplang=ja,en
-  set laststatus=3
+endif
 
-  " color
-  syntax on
-  let g:tokyonight_style = "storm"
-  " let g:tokyonight_style = "night"
-  let g:tokyonight_italic_functions = 1
-  let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
 
-  " Change the "hint" color to the "orange" color, and make the "error" color bright red
-  let g:tokyonight_colors = {
-    \ 'hint': 'orange',
-    \ 'error': '#ff0000'
-  \ }
+colorscheme tokyonight
 
-  colorscheme tokyonight
+"" ddc.vim
+" Customize global settings
 
-  if exists('+termguicolors')
-    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-  endif
+" You must set the default ui.
+" Note: native ui
+" https://github.com/Shougo/ddc-ui-native
+call ddc#custom#patch_global('ui', 'native')
 
+" Use around source.
+" https://github.com/Shougo/ddc-source-around
+call ddc#custom#patch_global('sources', ['around'])
 
-  "" ddc.vim
-  call ddc#custom#patch_global('sources', ['nvim-lsp'])
-  call ddc#custom#patch_global('sourceOptions', {
-        \ '_': { 'matchers': ['matcher_head'],
-        \   'sorters': ['sorter_rank']},
-        \ 'nvim-lsp': {
-        \   'mark': 'lsp',
-        \   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
-        \ })
-
-  call ddc#custom#patch_global('sourceParams', {
-        \ 'nvim-lsp': { 'kindLabels': { 'Class': 'c' } },
-        \ })
-
-  call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
-  call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
-        \ 'clangd': {'mark': 'C'},
-        \ })
-  call ddc#custom#patch_filetype('markdown', 'sourceParams', {
-        \ 'around': {'maxSize': 100},
-        \ })
-
-  inoremap <silent><expr> <TAB>
-  \ ddc#map#pum_visible() ? '<C-n>' :
-  \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-  \ '<TAB>' : ddc#map#manual_complete()
-
-  inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
-
-  call ddc#enable()
-
-  "" ddu.vim
-  call ddu#custom#patch_global({
-      \   'ui': 'ff',
-      \   'uiParams': {
-      \     'ff': {
-      \       'split': 'floating',
-      \       'startFilter': v:true,
-      \     }
-      \   },
-      \   'sources': [{'name': 'file_rec', 'params': {}}],
-      \   'sourceOptions': {
-      \     '_': {
-      \       'matchers': ['matcher_substring'],
-      \     },
-      \   },
-      \   'kindOptions': {
-      \     'file': {
-      \       'defaultAction': 'open',
-      \     },
-      \   }
+" Use matcher_head and sorter_rank.
+" https://github.com/Shougo/ddc-matcher_head
+" https://github.com/Shougo/ddc-sorter_rank
+call ddc#custom#patch_global('sourceOptions', #{
+      \ _: #{
+      \   matchers: ['matcher_head'],
+      \   sorters: ['sorter_rank']},
       \ })
 
-  autocmd FileType ddu-ff call s:ddu_my_settings()
-  function! s:ddu_my_settings() abort
-    nnoremap <buffer><silent> <CR>
-          \ <Cmd>call ddu#ui#ff#do_action('itemAction')<CR>
-    nnoremap <buffer><silent> <Space>
-          \ <Cmd>call ddu#ui#ff#do_action('toggleSelectItem')<CR>
-    nnoremap <buffer><silent> i
-          \ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
-    nnoremap <buffer><silent> q
-          \ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
-  endfunction
+" Change source options
+call ddc#custom#patch_global('sourceOptions', #{
+      \   around: #{ mark: 'A' },
+      \ })
+call ddc#custom#patch_global('sourceParams', #{
+      \   around: #{ maxSize: 500 },
+      \ })
 
-  autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
-  function! s:ddu_filter_my_settings() abort
-    inoremap <buffer><silent> <CR>
-    \ <Esc><Cmd>close<CR>
-    nnoremap <buffer><silent> <CR>
-    \ <Cmd>close<CR>
-    nnoremap <buffer><silent> q
-    \ <Cmd>close<CR>
-  endfunction
+" Customize settings on a filetype
+call ddc#custom#patch_filetype(
+  \   ['c', 'cpp'], 'sources', ['around', 'clangd']
+  \ )
+call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', #{
+  \   clangd: #{ mark: 'C' },
+  \ })
+call ddc#custom#patch_filetype('markdown', 'sourceParams', #{
+  \   around: #{ maxSize: 100 },
+  \ })
 
-  "" fern
-  nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
-  nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
+" Mappings
 
-  "" lualine
-  lua << END
-  require('lualine').setup {
-    options = {
-      icons_enabled = true,
-      theme = 'tokyonight',
-      component_separators = { left = '', right = ''},
-      section_separators = { left = '', right = ''},
-      disabled_filetypes = {},
-      always_divide_middle = true,
-    },
-    sections = {
-      lualine_a = {'mode'},
-      lualine_b = {'branch', 'diff', 'diagnostics'},
-      lualine_c = {'filename'},
-      lualine_x = {'encoding', 'fileformat', 'filetype'},
-      lualine_y = {'progress'},
-      lualine_z = {'location'}
-    },
-    inactive_sections = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {'filename'},
-      lualine_x = {'location'},
-      lualine_y = {},
-      lualine_z = {}
-    },
-    tabline = {},
-    extensions = {}
-  }
-  END
+" <TAB>: completion.
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? '<C-n>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#map#manual_complete()
 
-  "" treesitter
-  lua <<EOF
-  require('nvim-treesitter.configs').setup {
-    ensure_installed = {
-      "typescript",
-      "tsx",
-      "lua",
-      "yaml",
-      "html",
-      "ruby",
-      "go",
-      "toml",
-    },
-    highlight = {
-      enable = true,
-    },
-  }
-  EOF
+" <S-TAB>: completion back.
+inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 
-  "" Autopairs
-  lua require'nvim-autopairs'.setup()
-endif
+" Use ddc.
+call ddc#enable()
+
+"" ddu.vim
+" You must set the default ui.
+" Note: ff ui
+" https://github.com/Shougo/ddu-ui-ff
+call ddu#custom#patch_global({
+    \ 'ui': 'ff',
+    \ })
+
+" You must set the default action.
+" Note: file kind
+" https://github.com/Shougo/ddu-kind-file
+call ddu#custom#patch_global({
+    \   'kindOptions': {
+    \     'file': {
+    \       'defaultAction': 'open',
+    \     },
+    \   }
+    \ })
+
+" Specify matcher.
+" Note: matcher_substring filter
+" https://github.com/Shougo/ddu-filter-matcher_substring
+call ddu#custom#patch_global({
+    \   'sourceOptions': {
+    \     '_': {
+    \       'matchers': ['matcher_substring'],
+    \     },
+    \   }
+    \ })
+
+" Set default sources
+" Note: file source
+" https://github.com/Shougo/ddu-source-file
+"call ddu#custom#patch_global({
+"    \ 'sources': [{'name': 'file', 'params': {}}],
+"    \ })
+
+" Call default sources
+"call ddu#start({})
+
+" Set name specific configuration
+"call ddu#custom#patch_local('files', {
+"    \ 'sources': [
+"    \   {'name': 'file', 'params': {}},
+"    \   {'name': 'file_old', 'params': {}},
+"    \ ],
+"    \ })
+
+" Specify name
+"call ddu#start({'name': 'files'})
+
+" Specify source with params
+" Note: file_rec source
+" https://github.com/Shougo/ddu-source-file_rec
+"call ddu#start({'sources': [
+"    \ {'name': 'file_rec', 'params': {'path': expand('~')}}
+"    \ ]})
+"
+"" ddu.vim
+call ddu#custom#patch_global({
+    \   'ui': 'ff',
+    \   'uiParams': {
+    \     'ff': {
+    \       'split': 'floating',
+    \       'startFilter': v:true,
+    \     }
+    \   },
+    \   'sources': [{'name': 'file_rec', 'params': {}}],
+    \   'sourceOptions': {
+    \     '_': {
+    \       'matchers': ['matcher_substring'],
+    \     },
+    \   },
+    \   'kindOptions': {
+    \     'file': {
+    \       'defaultAction': 'open',
+    \     },
+    \   }
+    \ })
+
+autocmd FileType ddu-ff call s:ddu_my_settings()
+function! s:ddu_my_settings() abort
+  nnoremap <buffer><silent> <CR>
+        \ <Cmd>call ddu#ui#ff#do_action('itemAction')<CR>
+  nnoremap <buffer><silent> <Space>
+        \ <Cmd>call ddu#ui#ff#do_action('toggleSelectItem')<CR>
+  nnoremap <buffer><silent> i
+        \ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
+  nnoremap <buffer><silent> q
+        \ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
+endfunction
+
+autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
+function! s:ddu_filter_my_settings() abort
+  inoremap <buffer><silent> <CR>
+  \ <Esc><Cmd>close<CR>
+  nnoremap <buffer><silent> <CR>
+  \ <Cmd>close<CR>
+  nnoremap <buffer><silent> q
+  \ <Cmd>close<CR>
+endfunction
+
+"" fern
+nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
+nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>

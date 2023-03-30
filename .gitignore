@@ -44,6 +44,8 @@
 !/.config/zsh/zshrc
 !/.github
 !/.github/**
+!/vim/dein.toml
+!/vim/vimrc
 
 !/README.md
 !/LICENSE
