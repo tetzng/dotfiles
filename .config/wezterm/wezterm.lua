@@ -12,7 +12,7 @@ config.window_close_confirmation = "NeverPrompt"
 config.window_background_opacity = 0.9
 
 -- bind prefix like tmux
-config.leader = { key = "j", mods = "CTRL" }
+config.leader = { key = ";", mods = "CTRL" }
 
 config.keys = {
   -- split pane
