@@ -44,6 +44,8 @@
 !/.config/zsh/zshrc
 !/.github
 !/.github/**
+!/AquaSKK
+!/AquaSKK/**
 !/vim/dein.toml
 !/vim/vimrc
 
