@@ -1,6 +1,8 @@
+tap "dart-lang/dart"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
+tap "leoafarias/fvm"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -55,8 +57,12 @@ brew "wget"
 brew "zsh"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
+# Simple cli to manage Flutter SDK versions per project
+brew "leoafarias/fvm/fvm"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# Tools for building Android applications
+cask "android-studio"
 # Video calls designed for energy, ideas and action
 cask "around"
 # Trains AIs to understand and translate texts
