@@ -326,4 +326,12 @@ return {
     --       vim.api.nvim_set_keymap('c', '<C-j>', '<Plug>(skkeleton-toggle)', {})
     --     end,
     -- },
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        event = "VimEnter",
+        config = function()
+          require("pluginconfig/toggleterm")
+        end,
+    },
 }
