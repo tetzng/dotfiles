@@ -3,22 +3,22 @@ local lspkind = require('lspkind')
 cmp.setup {
     snippet = {
         expand = function(args)
-            require 'luasnip'.lsp_expand(args.body)
+          require 'luasnip'.lsp_expand(args.body)
         end
     },
 
     enabled = true,
     mapping = cmp.mapping.preset.insert({
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-u>'] = cmp.mapping.scroll_docs( -4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         --  ['<C-m>'] = cmp.mapping.complete(),
         ["<CR>"] = cmp.mapping({
             i = function(fallback)
-                if cmp.visible() and cmp.get_active_entry() then
-                    cmp.confirm({ select = true })
-                else
-                    fallback()
-                end
+              if cmp.visible() and cmp.get_active_entry() then
+                cmp.confirm({ select = true })
+              else
+                fallback()
+              end
             end,
             s = cmp.mapping.confirm({ select = true }),
             c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
@@ -72,16 +72,4 @@ cmp.setup {
         { name = 'cmdline' },
         { name = 'git' },
     }),
-}
-
--- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local lspconfig = require('lspconfig')
-require('mason-lspconfig').setup_handlers {
-    function(server_name)
-        lspconfig[server_name].setup {
-            capabilities = capabilities,
-        }
-    end,
 }
