@@ -6,27 +6,26 @@ cmp.setup {
           require 'luasnip'.lsp_expand(args.body)
         end
     },
-
-    enabled = true,
     mapping = cmp.mapping.preset.insert({
         ['<C-u>'] = cmp.mapping.scroll_docs( -4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        --  ['<C-m>'] = cmp.mapping.complete(),
-        ["<CR>"] = cmp.mapping({
-            i = function(fallback)
-              if cmp.visible() and cmp.get_active_entry() then
-                cmp.confirm({ select = true })
-              else
-                fallback()
-              end
-            end,
-            s = cmp.mapping.confirm({ select = true }),
-            c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-        }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        -- ['<C-m>'] = cmp.mapping.complete(),
+        -- ["<CR>"] = cmp.mapping({
+        --     i = function(fallback)
+        --       if cmp.visible() and cmp.get_active_entry() then
+        --         cmp.confirm({ select = true })
+        --       else
+        --         fallback()
+        --       end
+        --     end,
+        --     s = cmp.mapping.confirm({ select = true }),
+        --     c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+        -- }),
     }),
     window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        -- completion = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
     },
     formatting = {
         fields = { 'abbr', 'kind', 'menu' },
@@ -61,7 +60,6 @@ cmp.setup {
             },
         }),
     },
-
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
