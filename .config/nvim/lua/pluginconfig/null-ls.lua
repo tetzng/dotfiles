@@ -12,7 +12,7 @@ local completion = null_ls.builtins.completion
 local sources = {
     -- markdown
     diagnostics.markdownlint,
-    formatting.markdownlin,
+    formatting.markdownlint,
 
     -- lua
     diagnostics.selene.with({
