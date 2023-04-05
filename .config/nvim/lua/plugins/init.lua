@@ -138,7 +138,6 @@ return {
           require("pluginconfig/nvim-cmp")
         end,
     },
-    -- Better `vim.notify()`
     {
         "rcarriga/nvim-notify",
         keys = {
@@ -167,8 +166,6 @@ return {
             },
         },
     },
-
-    -- better vim.ui
     {
         "stevearc/dressing.nvim",
         event = "VeryLazy",
@@ -189,8 +186,6 @@ return {
           require("pluginconfig/dressing")
         end,
     },
-
-    -- bufferline
     {
         "akinsho/nvim-bufferline.lua",
         event = "VeryLazy",
@@ -209,8 +204,6 @@ return {
             },
         },
     },
-
-    -- statusline
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
@@ -219,8 +212,6 @@ return {
           require("pluginconfig/lualine")
         end,
     },
-
-    -- indent guides for Neovim
     {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufReadPost",
@@ -232,8 +223,6 @@ return {
             show_current_context = false,
         },
     },
-
-    -- active indent guide and indent text objects
     {
         "echasnovski/mini.indentscope",
         version = false, -- wait till new 0.7.0 release to put it back on semver
@@ -253,7 +242,6 @@ return {
           require("mini.indentscope").setup(opts)
         end,
     },
-
     {
         "nvim-neo-tree/neo-tree.nvim",
         event = "VimEnter",
@@ -288,25 +276,24 @@ return {
           require("pluginconfig/neo-tree")
         end,
     },
-
-    {
-        "delphinus/cellwidths.nvim",
-        event = "BufEnter",
-        config = function()
-          require("cellwidths").setup({
-              name = "cica",
-          })
-        end,
-    },
+    -- {
+    --     "delphinus/cellwidths.nvim",
+    --     event = "BufEnter",
+    --     config = function()
+    --       require("cellwidths").setup({
+    --           name = "cica",
+    --       })
+    --     end,
+    -- },
     {
         "slim-template/vim-slim",
         event = "FileType",
         filetypes = { "slim" },
     },
-    {
-        "github/copilot.vim",
-        event = "InsertEnter",
-    },
+    --     {
+    --         "github/copilot.vim",
+    --         event = "InsertEnter",
+    --     },
     {
         'hrsh7th/nvim-insx',
         event = { 'InsertEnter', 'CmdlineEnter' },
