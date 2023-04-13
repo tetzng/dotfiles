@@ -1,7 +1,6 @@
 -- This file is automatically loaded by plugins.config
-
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- vim.g.maplocalleader = " "
 
 vim.opt.autowrite = true -- enable auto write
 vim.opt.clipboard = "unnamedplus" -- sync with system clipboard
@@ -48,11 +47,8 @@ vim.opt.whichwrap = "b,s,h,l,[,],<,>,~"
 vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
 vim.go.winminwidth = 5 -- minimum window width
 vim.opt.wrap = false -- Disable line wrap
-
-if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.opt.splitkeep = "screen"
-  vim.o.shortmess = "filnxtToOFWIcC"
-end
+vim.opt.splitkeep = "screen"
+vim.o.shortmess = "filnxtToOFWIcC"
 
 -- fix markdown indentation settings
 vim.g.markdown_recommended_style = 0

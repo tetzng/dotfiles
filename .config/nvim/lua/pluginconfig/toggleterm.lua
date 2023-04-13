@@ -1,5 +1,5 @@
-local Terminal = require('toggleterm.terminal').Terminal
-local lazygit  = Terminal:new({
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({
         cmd = "lazygit",
         dir = "git_dir",
         direction = "float",
@@ -23,4 +23,9 @@ function LazygitToggle()
   lazygit:toggle()
 end
 
-vim.keymap.set("n", "<leader>lg", "<cmd>lua LazygitToggle()<CR>", { silent = true, desc = 'Show Lazygit on float window' })
+vim.keymap.set(
+    "n",
+    "<leader>lg",
+    "<cmd>lua LazygitToggle()<CR>",
+    { silent = true, desc = "Show Lazygit on float window" }
+)

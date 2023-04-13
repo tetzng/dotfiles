@@ -1,11 +1,11 @@
 return {
     {
-        'vim-jp/vimdoc-ja',
+        "vim-jp/vimdoc-ja",
         event = "VeryLazy",
-        ft = 'help',
+        ft = "help",
     },
     {
-        'folke/tokyonight.nvim',
+        "folke/tokyonight.nvim",
         lazy = false,
         config = function()
           require("pluginconfig/tokyonight")
@@ -34,21 +34,21 @@ return {
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
-        }
+        },
     },
     {
-        'neovim/nvim-lspconfig',
+        "neovim/nvim-lspconfig",
         event = "VimEnter",
     },
     {
-        'williamboman/mason.nvim',
+        "williamboman/mason.nvim",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
           require("pluginconfig/mason")
         end,
     },
     {
-        'williamboman/mason-lspconfig',
+        "williamboman/mason-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "williamboman/mason.nvim",
@@ -59,14 +59,14 @@ return {
         end,
     },
     {
-        'jose-elias-alvarez/null-ls.nvim',
+        "jose-elias-alvarez/null-ls.nvim",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
           require("pluginconfig/null-ls")
         end,
     },
     {
-        'jayp0521/mason-null-ls.nvim',
+        "jayp0521/mason-null-ls.nvim",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "williamboman/mason.nvim",
@@ -77,44 +77,37 @@ return {
         end,
     },
     {
-        'tami5/lspsaga.nvim',
+        "nvimdev/lspsaga.nvim",
         event = "VimEnter",
         config = function()
           require("pluginconfig/lspsaga")
         end,
     },
-    -- {
-    --   'ray-x/lsp_signature.nvim',
-    --   event = "VimEnter",
-    --   config = function()
-    --     require('lsp_signature').setup({ hint_enable = false })
-    --   end,
-    -- },
     {
-        'j-hui/fidget.nvim',
+        "j-hui/fidget.nvim",
         event = "VimEnter",
         config = function()
           require("pluginconfig/fidget")
         end,
     },
     {
-        'hrsh7th/vim-vsnip',
+        "hrsh7th/vim-vsnip",
         event = "VimEnter",
     },
     {
-        'nvim-lua/telescope.nvim',
-        tag = '0.1.1',
+        "nvim-lua/telescope.nvim",
+        tag = "0.1.1",
         event = "VimEnter",
         dependencies = {
-            { 'nvim-lua/plenary.nvim' },
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         },
         config = function()
           require("pluginconfig/telescope")
         end,
     },
     {
-        'nvim-treesitter/nvim-treesitter',
+        "nvim-treesitter/nvim-treesitter",
         event = "VimEnter",
     },
     {
@@ -122,7 +115,6 @@ return {
         event = "InsertEnter",
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp" },
-            { "hrsh7th/cmp-nvim-lsp-signature-help" },
             { "hrsh7th/cmp-nvim-lsp-document-symbol" },
             { "hrsh7th/cmp-path" },
             { "hrsh7th/cmp-buffer" },
@@ -130,8 +122,25 @@ return {
             { "saadparwaiz1/cmp_luasnip" },
             { "hrsh7th/cmp-cmdline" },
             { "petertriho/cmp-git" },
+            { "onsails/lspkind-nvim" },
             {
-                'onsails/lspkind-nvim',
+                "tzachar/cmp-tabnine",
+                build = "./install.sh",
+                config = function()
+                  require("cmp_tabnine.config").setup({
+                      max_lines = 1000,
+                      max_num_results = 20,
+                      sort = true,
+                      run_on_every_keystroke = true,
+                      snippet_placeholder = "..",
+                      ignored_file_types = {
+                          -- default is not to ignore
+                          -- uncomment to ignore in lua:
+                          -- lua = true
+                      },
+                      show_prediction_strength = false,
+                  })
+                end,
             },
         },
         config = function()
@@ -205,8 +214,8 @@ return {
         },
     },
     {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
         event = "VeryLazy",
         config = function()
           require("pluginconfig/lualine")
@@ -248,26 +257,38 @@ return {
         branch = "v2.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            {
+                "nvim-tree/nvim-web-devicons",
+                config = function()
+                  require("nvim-web-devicons").setup({
+                      override = {
+                          ts = {
+                              icon = "ﯤ",
+                              color = "#3178C6",
+                          },
+                      },
+                  })
+                end,
+            },
             "MunifTanjim/nui.nvim",
             {
                 -- only needed if you want to use the commands with "_with_window_picker" suffix
-                's1n7ax/nvim-window-picker',
+                "s1n7ax/nvim-window-picker",
                 -- tag = "v1.*",
                 config = function()
-                  require 'window-picker'.setup({
+                  require("window-picker").setup({
                       autoselect_one = true,
                       include_current = false,
                       filter_rules = {
                           -- filter using buffer options
                           bo = {
                               -- if the file type is one of following, the window will be ignored
-                              filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+                              filetype = { "neo-tree", "neo-tree-popup", "notify" },
                               -- if the buffer type is one of following, the window will be ignored
-                              buftype = { 'terminal', "quickfix" },
+                              buftype = { "terminal", "quickfix" },
                           },
                       },
-                      other_win_hl_color = '#e35e4f',
+                      other_win_hl_color = "#e35e4f",
                   })
                 end,
             },
@@ -276,49 +297,288 @@ return {
           require("pluginconfig/neo-tree")
         end,
     },
-    -- {
-    --     "delphinus/cellwidths.nvim",
-    --     event = "BufEnter",
-    --     config = function()
-    --       require("cellwidths").setup({
-    --           name = "cica",
-    --       })
-    --     end,
-    -- },
+    {
+        "delphinus/cellwidths.nvim",
+        event = "BufEnter",
+        config = function()
+          require("cellwidths").setup({
+              name = "cica",
+          })
+        end,
+    },
     {
         "slim-template/vim-slim",
         event = "FileType",
-        filetypes = { "slim" },
+        ft = { "slim" },
     },
-    --     {
-    --         "github/copilot.vim",
-    --         event = "InsertEnter",
-    --     },
     {
-        'hrsh7th/nvim-insx',
-        event = { 'InsertEnter', 'CmdlineEnter' },
+        "hrsh7th/nvim-insx",
+        event = { "InsertEnter", "CmdlineEnter" },
         config = function()
-          require('insx.preset.standard').setup()
+          require("insx.preset.standard").setup()
         end,
     },
-    -- {
-    --     'vim-skk/skkeleton',
-    --     dependencies = {
-    --         'vim-denops/denops.vim',
-    --     },
-
-    --     event = 'InsertEnter',
-    --     config = function()
-    --       vim.api.nvim_set_keymap('i', '<C-j>', '<Plug>(skkeleton-toggle)', {})
-    --       vim.api.nvim_set_keymap('c', '<C-j>', '<Plug>(skkeleton-toggle)', {})
-    --     end,
-    -- },
     {
-        'akinsho/toggleterm.nvim',
+        "vim-skk/skkeleton",
+        dependencies = {
+            "vim-denops/denops.vim",
+        },
+
+        event = "InsertEnter",
+        config = function()
+          vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>(skkeleton-toggle)", {})
+          vim.api.nvim_set_keymap("c", "<C-j>", "<Plug>(skkeleton-toggle)", {})
+        end,
+    },
+    {
+        "akinsho/toggleterm.nvim",
         version = "*",
         event = "VimEnter",
         config = function()
           require("pluginconfig/toggleterm")
         end,
+    },
+    {
+        "MunifTanjim/nui.nvim",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-buffer",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-cmdline",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-nvim-lsp",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-nvim-lsp-document-symbol",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-nvim-lua",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-path",
+        event = "VimEnter",
+    },
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        event = "VimEnter",
+    },
+    {
+        "neovim/nvim-lspconfig",
+        event = "VimEnter",
+    },
+    {
+        "nvim-lua/plenary.nvim",
+        event = "VimEnter",
+    },
+    {
+        "nvim-tree/nvim-web-devicons",
+        event = "VimEnter",
+    },
+    {
+        "petertriho/cmp-git",
+        event = "VimEnter",
+    },
+    {
+        "rcarriga/nvim-notify",
+        event = "VimEnter",
+    },
+    {
+        "saadparwaiz1/cmp_luasnip",
+        event = "VimEnter",
+    },
+    {
+        "williamboman/mason.nvim",
+        event = "VimEnter",
+    },
+    {
+        "williamboman/mason.nvim",
+        event = "VimEnter",
+    },
+    {
+        "MunifTanjim/nui.nvim",
+        event = "VimEnter",
+    },
+    {
+        "f3fora/cmp-spell",
+        event = "VimEnter",
+    },
+    {
+        "folke/neodev.nvim",
+        event = "VimEnter",
+    },
+    {
+        "folke/trouble.nvim",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-buffer",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-calc",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-cmdline",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-emoji",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-nvim-lsp",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-nvim-lsp-document-symbol",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-nvim-lua",
+        event = "VimEnter",
+    },
+    {
+        "hrsh7th/cmp-path",
+        event = "VimEnter",
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        event = "VimEnter",
+    },
+    {
+        "j-hui/fidget.nvim",
+        event = "VimEnter",
+    },
+    {
+        "leoluz/nvim-dap-go",
+        event = "VimEnter",
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        event = "VimEnter",
+    },
+    {
+        "mfussenegger/nvim-dap",
+        event = "VimEnter",
+    },
+    {
+        "monaqa/dial.nvim",
+        event = "VimEnter",
+    },
+    {
+        "neovim/nvim-lspconfig",
+        event = "VimEnter",
+    },
+    {
+        "nvim-lua/plenary.nvim",
+        event = "VimEnter",
+    },
+    {
+        "nvim-lua/plenary.nvim",
+        event = "VimEnter",
+    },
+    {
+        "nvim-lua/popup.nvim",
+        event = "VimEnter",
+    },
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        event = "VimEnter",
+    },
+    {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        event = "VimEnter",
+    },
+    {
+        "nvim-tree/nvim-web-devicons",
+        event = "VimEnter",
+    },
+    {
+        "nvim-tree/nvim-web-devicons",
+        event = "VimEnter",
+    },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        event = "VimEnter",
+    },
+    {
+        "onsails/lspkind-nvim",
+        event = "VimEnter",
+    },
+    {
+        "ray-x/cmp-treesitter",
+        event = "VimEnter",
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+        event = "VimEnter",
+    },
+    {
+        "rcarriga/nvim-notify",
+        event = "VimEnter",
+    },
+    {
+        "s1n7ax/nvim-window-picker",
+        event = "VimEnter",
+    },
+    {
+        "saadparwaiz1/cmp_luasnip",
+        event = "VimEnter",
+    },
+    {
+        "stevearc/dressing.nvim",
+        event = "VimEnter",
+    },
+    {
+        "tamago324/nlsp-settings.nvim",
+        event = "VimEnter",
+    },
+    {
+        "theHamsta/nvim-dap-virtual-text",
+        event = "VimEnter",
+    },
+    {
+        "tpope/vim-repeat",
+        event = "VimEnter",
+    },
+    {
+        "tzachar/cmp-tabnine",
+    },
+    {
+        "uga-rosa/cmp-dictionary",
+        event = "VimEnter",
+    },
+    {
+        "vim-denops/denops.vim",
+        event = "VimEnter",
+    },
+    {
+        "weilbith/nvim-lsp-smag",
+        event = "VimEnter",
+    },
+    {
+        "yutkat/cmp-mocword",
+        event = "VimEnter",
+    },
+    {
+        "zbirenbaum/copilot-cmp",
+        event = "VimEnter",
+    },
+    {
+        "zbirenbaum/copilot.lua",
+        event = "VimEnter",
+    },
+    {
+        "nvim-lua/nvim-package-specification",
+        event = "VimEnter",
     },
 }

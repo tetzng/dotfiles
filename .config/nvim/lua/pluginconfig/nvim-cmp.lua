@@ -1,15 +1,15 @@
-local cmp = require('cmp')
-local lspkind = require('lspkind')
-cmp.setup {
+local cmp = require("cmp")
+local lspkind = require("lspkind")
+cmp.setup({
     snippet = {
         expand = function(args)
-          require 'luasnip'.lsp_expand(args.body)
-        end
+          require("luasnip").lsp_expand(args.body)
+        end,
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-u>'] = cmp.mapping.scroll_docs( -4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ["<C-u>"] = cmp.mapping.scroll_docs( -4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
         -- ['<C-m>'] = cmp.mapping.complete(),
         -- ["<CR>"] = cmp.mapping({
         --     i = function(fallback)
@@ -28,9 +28,9 @@ cmp.setup {
         -- documentation = cmp.config.window.bordered(),
     },
     formatting = {
-        fields = { 'abbr', 'kind', 'menu' },
+        fields = { "abbr", "kind", "menu" },
         format = lspkind.cmp_format({
-            mode = 'symbol_text',
+            mode = "symbol_text",
             symbol_map = {
                 Text = "󿞃",
                 Method = "󿚦",
@@ -56,18 +56,19 @@ cmp.setup {
                 Struct = "󿭄",
                 Event = "",
                 Operator = "󿚔",
-                TypeParameter = ""
+                TypeParameter = "",
             },
+            maxwidth = 50,
+            ellipsis_char = "...",
         }),
     },
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'nvim_lsp_signature_help' },
-        { name = 'path' },
-        { name = 'buffer' },
-        { name = 'nvim_lua' },
-        { name = 'luasnip' },
-        { name = 'cmdline' },
-        { name = 'git' },
+        { name = "nvim_lsp" },
+        { name = "path" },
+        { name = "buffer" },
+        { name = "nvim_lua" },
+        { name = "luasnip" },
+        { name = "cmdline" },
+        { name = "git" },
     }),
-}
+})

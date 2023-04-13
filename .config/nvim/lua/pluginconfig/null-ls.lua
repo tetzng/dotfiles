@@ -11,25 +11,24 @@ local completion = null_ls.builtins.completion
 
 local sources = {
     -- markdown
-    diagnostics.markdownlint,
-    formatting.markdownlint,
+    -- diagnostics.markdownlint,
+    -- formatting.markdownlint,
 
     -- lua
-    diagnostics.selene.with({
-        condition = function(utils)
-          return utils.root_has_file({ ".selene.toml" })
+    formatting.stylua.with({
+        condition = function()
+          return vim.fn.executable("stylua") > 0
         end,
     }),
-    diagnostics.luacheck.with({
-        condition = function(utils)
-          return utils.root_has_file({ ".luacheckrc" })
-        end,
-    }),
-
+    -- diagnostics.selene.with({
+    --     condition = function(utils)
+    --       return vim.fn.executable("selene") > 0 and utils.root_has_file({ "selene.toml" })
+    --     end,
+    -- }),
     -- python
-    diagnostics.flake8,
-    formatting.black,
-    formatting.isort,
+    -- diagnostics.flake8,
+    -- formatting.black,
+    -- formatting.isort,
 
     -- ruby
     diagnostics.rubocop.with({
@@ -54,16 +53,20 @@ local sources = {
           return utils.root_has_file({ ".eslintrc.js" })
         end,
         command = "eslint",
-        args = vim.list_extend({ "--stdin", "--stdin-filename", "$FILENAME" }, null_ls.builtins.diagnostics.eslint._opts
-        .args),
+        args = vim.list_extend(
+            { "--stdin", "--stdin-filename", "$FILENAME" },
+            null_ls.builtins.diagnostics.eslint._opts.args
+        ),
     }),
     formatting.eslint.with({
         condition = function(utils)
           return utils.root_has_file({ ".eslintrc.js" })
         end,
         command = "eslint",
-        args = vim.list_extend({ "--fix-to-stdout", "--stdin", "--stdin-filename", "$FILENAME" },
-            null_ls.builtins.formatting.eslint._opts.args),
+        args = vim.list_extend(
+            { "--fix-to-stdout", "--stdin", "--stdin-filename", "$FILENAME" },
+            null_ls.builtins.formatting.eslint._opts.args
+        ),
     }),
 
     -- yaml

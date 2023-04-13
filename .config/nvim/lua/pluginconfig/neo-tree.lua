@@ -1,15 +1,14 @@
 -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-vim.fn.sign_define("DiagnosticSignError",
+vim.fn.sign_define(
+    "DiagnosticSignError",
     -- { text = "󿙙 ", texthl = "DiagnosticSignError" })
-    { text = "x ", texthl = "DiagnosticSignError" })
-vim.fn.sign_define("DiagnosticSignWarn",
-    { text = "! ", texthl = "DiagnosticSignWarn" })
+    { text = "x ", texthl = "DiagnosticSignError" }
+)
+vim.fn.sign_define("DiagnosticSignWarn", { text = "! ", texthl = "DiagnosticSignWarn" })
 -- { text = "󿔩 ", texthl = "DiagnosticSignWarn" })
-vim.fn.sign_define("DiagnosticSignInfo",
-    { text = "i ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = "i ", texthl = "DiagnosticSignInfo" })
 -- { text = " ", texthl = "DiagnosticSignInfo" })
-vim.fn.sign_define("DiagnosticSignHint",
-    { text = "? ", texthl = "DiagnosticSignHint" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "? ", texthl = "DiagnosticSignHint" })
 -- { text = " ", texthl = "DiagnosticSignHint" })
 -- NOTE: this is changed from v1.x, which used the old style of highlight groups
 -- in the form "LspDiagnosticsSignWarning"
@@ -30,7 +29,7 @@ require("neo-tree").setup({
     --   end , -- this sorts files and directories descendantly
     default_component_configs = {
         container = {
-            enable_character_fade = true
+            enable_character_fade = true,
         },
         indent = {
             indent_size = 2,
@@ -53,7 +52,7 @@ require("neo-tree").setup({
             -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
             -- then these will never be used.
             default = "*",
-            highlight = "NeoTreeFileIcon"
+            highlight = "NeoTreeFileIcon",
         },
         modified = {
             symbol = "[+]",
@@ -67,18 +66,18 @@ require("neo-tree").setup({
         git_status = {
             symbols = {
                 -- Change type
-                added     = "✚", -- or "", but this is redundant info if you use git_status_colors on the name
-                modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-                deleted   = "✖", -- this can only be used in the git_status source
-                renamed   = "", -- this can only be used in the git_status source
+                added = "✚", -- or "", but this is redundant info if you use git_status_colors on the name
+                modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+                deleted = "✖", -- this can only be used in the git_status source
+                renamed = "", -- this can only be used in the git_status source
                 -- Status type
                 untracked = "",
-                ignored   = "",
+                ignored = "",
                 -- unstaged  = "",
-                unstaged  = "",
-                staged    = "",
-                conflict  = "",
-            }
+                unstaged = "",
+                staged = "",
+                conflict = "",
+            },
         },
     },
     window = {
@@ -115,8 +114,8 @@ require("neo-tree").setup({
                 -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
                 -- some commands may take optional config options, see `:h neo-tree-mappings` for details
                 config = {
-                    show_path = "none" -- "none", "relative", "absolute"
-                }
+                    show_path = "none", -- "none", "relative", "absolute"
+                },
             },
             ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
             ["d"] = "delete",
@@ -137,7 +136,7 @@ require("neo-tree").setup({
             ["?"] = "show_help",
             ["<"] = "prev_source",
             [">"] = "next_source",
-        }
+        },
     },
     nesting_rules = {},
     filesystem = {
@@ -185,8 +184,8 @@ require("neo-tree").setup({
                 ["<c-x>"] = "clear_filter",
                 ["[g"] = "prev_git_modified",
                 ["]g"] = "next_git_modified",
-            }
-        }
+            },
+        },
     },
     buffers = {
         follow_current_file = true, -- This will find and focus the file in the active buffer every
@@ -198,23 +197,23 @@ require("neo-tree").setup({
                 ["bd"] = "buffer_delete",
                 ["<bs>"] = "navigate_up",
                 ["."] = "set_root",
-            }
+            },
         },
     },
     git_status = {
         window = {
             position = "float",
             mappings = {
-                ["A"]  = "git_add_all",
+                ["A"] = "git_add_all",
                 ["gu"] = "git_unstage_file",
                 ["ga"] = "git_add_file",
                 ["gr"] = "git_revert_file",
                 ["gc"] = "git_commit",
                 ["gp"] = "git_push",
                 ["gg"] = "git_commit_and_push",
-            }
-        }
-    }
+            },
+        },
+    },
 })
 
 vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
