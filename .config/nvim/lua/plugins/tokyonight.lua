@@ -2,6 +2,6 @@ return {
   "folke/tokyonight.nvim",
   lazy = false,
   config = function()
-    require("pluginconfig/tokyonight")
+    vim.cmd([[colorscheme tokyonight-storm]])
   end,
 }

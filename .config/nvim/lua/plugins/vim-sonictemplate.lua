@@ -1,0 +1,1 @@
+return { "mattn/vim-sonictemplate" }

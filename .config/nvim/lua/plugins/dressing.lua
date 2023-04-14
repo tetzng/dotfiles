@@ -15,6 +15,6 @@ return {
     end
   end,
   config = function()
-    require("pluginconfig/dressing")
+    require("dressing").setup()
   end,
 }

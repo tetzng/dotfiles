@@ -1,0 +1,1 @@
+return { "phaazon/hop.nvim" }

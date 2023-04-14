@@ -1,0 +1,1 @@
+return { "renerocksai/telekasten.nvim" }

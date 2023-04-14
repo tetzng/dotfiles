@@ -1,0 +1,1 @@
+return { "edluffy/specs.nvim" }

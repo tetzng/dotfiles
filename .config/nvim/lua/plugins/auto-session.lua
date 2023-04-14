@@ -1,0 +1,1 @@
+return { "rmagatti/auto-session" }

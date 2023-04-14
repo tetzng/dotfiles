@@ -3,6 +3,14 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   build = ":MasonUpdate",
   config = function()
-    require("pluginconfig/mason")
+    require("mason").setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
   end,
 }
