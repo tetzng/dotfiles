@@ -20,10 +20,19 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    event = "VimEnter",
     build = ":TSUpdate",
     highlight = {
       enable = true,
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    event = "VimEnter",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "VimEnter",
   },
   {
     "folke/noice.nvim",
@@ -108,22 +117,26 @@ return {
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    event = "VimEnter",
-  },
-  {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
+      { "f3fora/cmp-spell" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-calc", },
+      { "hrsh7th/cmp-cmdline" },
+      { "hrsh7th/cmp-emoji" },
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-nvim-lsp-document-symbol" },
-      { "hrsh7th/cmp-path" },
-      { "hrsh7th/cmp-buffer" },
+      -- { "hrsh7th/cmp-nvim-lsp-signature-help" },
       { "hrsh7th/cmp-nvim-lua" },
-      { "saadparwaiz1/cmp_luasnip" },
-      { "hrsh7th/cmp-cmdline" },
-      { "petertriho/cmp-git" },
+      { "hrsh7th/cmp-path" },
       { "onsails/lspkind-nvim" },
+      { "petertriho/cmp-git" },
+      { "ray-x/cmp-treesitter" },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "uga-rosa/cmp-dictionary" },
+      { "yutkat/cmp-mocword" },
+      { "zbirenbaum/copilot-cmp" },
       {
         "tzachar/cmp-tabnine",
         build = "./install.sh",
@@ -343,30 +356,6 @@ return {
     event = "VimEnter",
   },
   {
-    "hrsh7th/cmp-buffer",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-cmdline",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp-document-symbol",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-nvim-lua",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-path",
-    event = "VimEnter",
-  },
-  {
     "jose-elias-alvarez/null-ls.nvim",
     event = "VimEnter",
   },
@@ -383,31 +372,7 @@ return {
     event = "VimEnter",
   },
   {
-    "petertriho/cmp-git",
-    event = "VimEnter",
-  },
-  {
     "rcarriga/nvim-notify",
-    event = "VimEnter",
-  },
-  {
-    "saadparwaiz1/cmp_luasnip",
-    event = "VimEnter",
-  },
-  {
-    "williamboman/mason.nvim",
-    event = "VimEnter",
-  },
-  {
-    "williamboman/mason.nvim",
-    event = "VimEnter",
-  },
-  {
-    "MunifTanjim/nui.nvim",
-    event = "VimEnter",
-  },
-  {
-    "f3fora/cmp-spell",
     event = "VimEnter",
   },
   {
@@ -416,38 +381,6 @@ return {
   },
   {
     "folke/trouble.nvim",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-buffer",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-calc",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-cmdline",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-emoji",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp-document-symbol",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-nvim-lua",
-    event = "VimEnter",
-  },
-  {
-    "hrsh7th/cmp-path",
     event = "VimEnter",
   },
   {
@@ -479,10 +412,6 @@ return {
     event = "VimEnter",
   },
   {
-    "nvim-lua/plenary.nvim",
-    event = "VimEnter",
-  },
-  {
     "nvim-lua/popup.nvim",
     event = "VimEnter",
   },
@@ -499,19 +428,7 @@ return {
     event = "VimEnter",
   },
   {
-    "nvim-tree/nvim-web-devicons",
-    event = "VimEnter",
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    event = "VimEnter",
-  },
-  {
     "onsails/lspkind-nvim",
-    event = "VimEnter",
-  },
-  {
-    "ray-x/cmp-treesitter",
     event = "VimEnter",
   },
   {
@@ -524,10 +441,6 @@ return {
   },
   {
     "s1n7ax/nvim-window-picker",
-    event = "VimEnter",
-  },
-  {
-    "saadparwaiz1/cmp_luasnip",
     event = "VimEnter",
   },
   {
@@ -547,23 +460,11 @@ return {
     event = "VimEnter",
   },
   {
-    "uga-rosa/cmp-dictionary",
-    event = "VimEnter",
-  },
-  {
     "vim-denops/denops.vim",
     event = "VimEnter",
   },
   {
     "weilbith/nvim-lsp-smag",
-    event = "VimEnter",
-  },
-  {
-    "yutkat/cmp-mocword",
-    event = "VimEnter",
-  },
-  {
-    "zbirenbaum/copilot-cmp",
     event = "VimEnter",
   },
   {
@@ -583,12 +484,78 @@ return {
     dependencies = { "kkharji/sqlite.lua" },
   },
   {
-    'iamcco/markdown-preview.nvim',
+    "iamcco/markdown-preview.nvim",
     event = "VimEnter",
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-  { 'bfredl/nvim-luadev' },
-  { 'MTDL9/vim-log-highlighting' },
-  { 'Decodetalkers/csv-tools.lua' },
-  { 'dhruvasagar/vim-table-mode' },
+  { "AndrewRadev/linediff.vim" },
+  { "David-Kunz/treesitter-unit" },
+  { "Decodetalkers/csv-tools.lua" },
+  { "JoosepAlviste/nvim-ts-context-commentstring" },
+  { "L3MON4D3/LuaSnip" },
+  { "MTDL9/vim-log-highlighting" },
+  { "Pocco81/abbrev-man.nvim" },
+  { "RRethy/vim-illuminate" },
+  { "TimUntersberger/neogit" },
+  { "ahmedkhalf/project.nvim" },
+  { "akinsho/git-conflict.nvim" },
+  { "andymass/vim-matchup" },
+  { "anishathalye/dotbot" },
+  { "bfredl/nvim-luadev" },
+  { "bkad/CamelCaseMotion" },
+  { "dhruvasagar/vim-table-mode" },
+  { "drmingdrmer/vim-toggle-quickfix" },
+  { "edluffy/specs.nvim" },
+  { "folke/todo-comments.nvim" },
+  { "gabrielpoca/replacer.nvim" },
+  { "ggandor/lightspeed.nvim" },
+  { "goolord/alpha-nvim" },
+  { "haya14busa/vim-asterisk" },
+  { "haya14busa/vim-edgemotion" },
+  { "hotwatermorning/auto-git-diff" },
+  { "justinmk/vim-ipmotion" },
+  { "kevinhwang91/nvim-bqf" },
+  { "kevinhwang91/nvim-hlslens" },
+  { "klen/nvim-config-local" },
+  { "kristijanhusak/line-notes.nvim" },
+  { "Vigemus/iron.nvim" },
+  { "lewis6991/gitsigns.nvim" },
+  { "lukas-reineke/indent-blankline.nvim" },
+  { "machakann/vim-columnmove" },
+  { "machakann/vim-sandwich" },
+  { "mattn/vim-sonictemplate" },
+  { "mopp/vim-operator-convert-case" },
+  { "mrjones2014/legendary.nvim" },
+  { "mvllow/modes.nvim" },
+  { "myusuf3/numbers.vim" },
+  { "norcalli/nvim-colorizer.lua" },
+  { "ntpeters/vim-better-whitespace" },
+  { "numToStr/Comment.nvim" },
+  { "nvim-telescope/telescope-dap.nvim" },
+  { "petertriho/nvim-scrollbar" },
+  { "phaazon/hop.nvim" },
+  { "pwntester/octo.nvim" },
+  { "renerocksai/telekasten.nvim" },
+  { "rhysd/committia.vim" },
+  { "rmagatti/auto-session" },
+  { "rmagatti/session-lens" },
+  { "segeljakt/vim-silicon" },
+  { "sentriz/vim-print-debug" },
+  { "sidebar-nvim/sidebar.nvim" },
+  { "sindrets/diffview.nvim" },
+  { "t9md/vim-quickhl" },
+  { "terryma/vim-multiple-cursors" },
+  { "tyru/capture.vim" },
+  { "tyru/open-browser-github.vim" },
+  { "tyru/open-browser.vim" },
+  { "unblevable/quick-scope" },
+  { "voldikss/vim-translator" },
+  { "windwp/nvim-autopairs" },
+  { "windwp/nvim-ts-autotag" },
+  { "yutkat/wb-only-current-line.nvim" },
+  {
+    'akinsho/bufferline.nvim',
+    version = "v3.*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+  },
 }
