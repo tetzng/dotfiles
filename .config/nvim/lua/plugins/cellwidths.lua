@@ -1,9 +1,13 @@
 return {
   "delphinus/cellwidths.nvim",
   event = "BufEnter",
-  config = function()
-    require("cellwidths").setup({
-      name = "cica",
-    })
-  end,
+  opts = {
+    name = "user/cica",
+    fallback = function(cw)
+      cw.load "cica"
+      -- cw.add { { 0x2103, 2 }, {} }
+      -- cw.delete { 0x2104 }
+    end,
+  },
+  build = ":CellWidthsRemove",
 }

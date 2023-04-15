@@ -1,4 +1,6 @@
 return {
   "nvim-lua/popup.nvim",
-  event = "VimEnter",
+  dependencies = {
+    'nvim-lua/plenary.nvim'
+  },
 }

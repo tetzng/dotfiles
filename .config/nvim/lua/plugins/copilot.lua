@@ -1,4 +1,8 @@
 return {
   "zbirenbaum/copilot.lua",
-  event = "VimEnter",
+  event = "InsertEnter",
+  opts = {
+    suggestion = { enabled = false },
+    panel = { enabled = false },
+  },
 }

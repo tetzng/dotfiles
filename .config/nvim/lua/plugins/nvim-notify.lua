@@ -1,6 +1,5 @@
 return {
   "rcarriga/nvim-notify",
-  event = "VimEnter",
   keys = {
     {
       "<leader>un",

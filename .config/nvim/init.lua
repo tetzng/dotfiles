@@ -26,21 +26,5 @@ else
       lazy = true,
       -- version = "*",
     },
-    ui = {
-      icons = {
-        cmd = "⌘",
-        config = "🛠",
-        event = "📅",
-        ft = "📂",
-        init = "⚙",
-        keys = "🗝",
-        plugin = "🔌",
-        runtime = "💻",
-        source = "📄",
-        start = "🚀",
-        task = "📌",
-        lazy = "󿦱",
-      },
-    },
   })
 end
