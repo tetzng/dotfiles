@@ -1,4 +1,6 @@
 set -gx GPG_TTY (tty)
+fish_add_path $HOME/.cargo/bin/
+fish_add_path $HOME/go/bin
 
 if status is-interactive
   # Homebrew
