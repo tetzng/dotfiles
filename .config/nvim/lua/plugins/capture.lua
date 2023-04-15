@@ -1,1 +1,4 @@
-return { "tyru/capture.vim" }
+return {
+  "tyru/capture.vim",
+  event = "VimEnter",
+}

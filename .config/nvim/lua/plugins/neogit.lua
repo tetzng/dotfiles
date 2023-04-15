@@ -1,1 +1,4 @@
-return { "TimUntersberger/neogit" }
+return {
+  "TimUntersberger/neogit",
+  event = "VimEnter",
+}

@@ -1,1 +1,4 @@
-return { "goolord/alpha-nvim" }
+return {
+  "goolord/alpha-nvim",
+  event = "VimEnter",
+}

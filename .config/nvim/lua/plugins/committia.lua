@@ -1,1 +1,4 @@
-return { "rhysd/committia.vim" }
+return {
+  "rhysd/committia.vim",
+  event = "BufEnter",
+}

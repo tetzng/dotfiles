@@ -1,1 +1,4 @@
-return { "kristijanhusak/line-notes.nvim" }
+return {
+  "kristijanhusak/line-notes.nvim",
+  event = "VimEnter",
+}

@@ -1,1 +1,4 @@
-return { "machakann/vim-columnmove" }
+return {
+  "machakann/vim-columnmove",
+  event = "VimEnter",
+}

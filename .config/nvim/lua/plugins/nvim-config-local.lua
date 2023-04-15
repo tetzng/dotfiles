@@ -1,1 +1,4 @@
-return { "klen/nvim-config-local" }
+return {
+  "klen/nvim-config-local",
+  event = "VimEnter",
+}

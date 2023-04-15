@@ -1,1 +1,4 @@
-return { "haya14busa/vim-asterisk" }
+return {
+  "haya14busa/vim-asterisk",
+  event = "VimEnter",
+}

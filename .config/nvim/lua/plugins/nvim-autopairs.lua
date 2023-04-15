@@ -1,1 +1,4 @@
-return { "windwp/nvim-autopairs" }
+return {
+  "windwp/nvim-autopairs",
+  event = "VimEnter",
+}

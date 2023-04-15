@@ -1,1 +1,4 @@
-return { "edluffy/specs.nvim" }
+return {
+  "edluffy/specs.nvim",
+  event = "VimEnter",
+}

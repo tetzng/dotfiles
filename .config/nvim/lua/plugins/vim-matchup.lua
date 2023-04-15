@@ -1,1 +1,4 @@
-return { "andymass/vim-matchup" }
+return {
+  "andymass/vim-matchup",
+  event = "VimEnter",
+}

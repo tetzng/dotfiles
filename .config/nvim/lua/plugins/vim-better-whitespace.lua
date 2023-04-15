@@ -1,1 +1,4 @@
-return { "ntpeters/vim-better-whitespace" }
+return {
+  "ntpeters/vim-better-whitespace",
+  event = "VimEnter",
+}

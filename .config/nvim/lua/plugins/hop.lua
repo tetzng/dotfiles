@@ -1,1 +1,4 @@
-return { "phaazon/hop.nvim" }
+return {
+  "phaazon/hop.nvim",
+  event = "VimEnter",
+}

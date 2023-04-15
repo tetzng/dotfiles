@@ -1,1 +1,4 @@
-return { "mvllow/modes.nvim" }
+return {
+  "mvllow/modes.nvim",
+  event = "VimEnter",
+}

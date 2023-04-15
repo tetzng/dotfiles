@@ -1,1 +1,4 @@
-return { "tyru/open-browser.vim" }
+return {
+  "tyru/open-browser.vim",
+  event = "VimEnter",
+}

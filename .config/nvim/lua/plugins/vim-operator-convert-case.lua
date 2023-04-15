@@ -1,1 +1,4 @@
-return { "mopp/vim-operator-convert-case" }
+return {
+  "mopp/vim-operator-convert-case",
+  event = "VimEnter",
+}

@@ -1,1 +1,4 @@
-return { "ggandor/lightspeed.nvim" }
+return {
+  "ggandor/lightspeed.nvim",
+  event = "VimEnter",
+}

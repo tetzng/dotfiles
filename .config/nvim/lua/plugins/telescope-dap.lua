@@ -1,1 +1,4 @@
-return { "nvim-telescope/telescope-dap.nvim" }
+return {
+  "nvim-telescope/telescope-dap.nvim",
+  event = "VimEnter",
+}

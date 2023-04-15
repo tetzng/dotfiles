@@ -1,1 +1,4 @@
-return { "drmingdrmer/vim-toggle-quickfix" }
+return {
+  "drmingdrmer/vim-toggle-quickfix",
+  event = "VimEnter",
+}

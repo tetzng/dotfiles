@@ -1,1 +1,4 @@
-return { "myusuf3/numbers.vim" }
+return {
+  "myusuf3/numbers.vim",
+  event = "VimEnter",
+}

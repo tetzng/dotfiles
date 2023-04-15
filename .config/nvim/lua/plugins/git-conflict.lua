@@ -1,1 +1,4 @@
-return { "akinsho/git-conflict.nvim" }
+return {
+  "akinsho/git-conflict.nvim",
+  event = "VimEnter",
+}

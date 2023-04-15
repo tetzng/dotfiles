@@ -1,1 +1,4 @@
-return { "ahmedkhalf/project.nvim" }
+return {
+  "ahmedkhalf/project.nvim",
+  event = "VimEnter",
+}

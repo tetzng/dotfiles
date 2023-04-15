@@ -1,1 +1,4 @@
-return { "tyru/open-browser-github.vim" }
+return {
+  "tyru/open-browser-github.vim",
+  event = "VimEnter",
+}

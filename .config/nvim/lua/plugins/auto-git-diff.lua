@@ -1,1 +1,4 @@
-return { "hotwatermorning/auto-git-diff" }
+return {
+  "hotwatermorning/auto-git-diff",
+  event = "VimEnter",
+}

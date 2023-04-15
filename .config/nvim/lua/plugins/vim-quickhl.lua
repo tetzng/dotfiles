@@ -1,1 +1,4 @@
-return { "t9md/vim-quickhl" }
+return {
+  "t9md/vim-quickhl",
+  event = "VimEnter",
+}

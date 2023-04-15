@@ -1,1 +1,4 @@
-return { "gabrielpoca/replacer.nvim" }
+return {
+  "gabrielpoca/replacer.nvim",
+  event = "VimEnter",
+}

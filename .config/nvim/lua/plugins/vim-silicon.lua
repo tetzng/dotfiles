@@ -1,1 +1,4 @@
-return { "segeljakt/vim-silicon" }
+return {
+  "segeljakt/vim-silicon",
+  event = "VimEnter",
+}

@@ -1,1 +1,4 @@
-return { "bkad/CamelCaseMotion" }
+return {
+  "bkad/CamelCaseMotion",
+  event = "VimEnter",
+}

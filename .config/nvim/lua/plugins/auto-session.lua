@@ -1,1 +1,4 @@
-return { "rmagatti/auto-session" }
+return {
+  "rmagatti/auto-session",
+  event = "VimEnter",
+}

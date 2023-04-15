@@ -1,1 +1,4 @@
-return { "petertriho/nvim-scrollbar" }
+return {
+  "petertriho/nvim-scrollbar",
+  event = "VimEnter",
+}

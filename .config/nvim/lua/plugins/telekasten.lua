@@ -1,1 +1,4 @@
-return { "renerocksai/telekasten.nvim" }
+return {
+  "renerocksai/telekasten.nvim",
+  event = "VimEnter",
+}

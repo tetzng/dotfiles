@@ -1,1 +1,4 @@
-return { "Decodetalkers/csv-tools.lua" }
+return {
+  "Decodetalkers/csv-tools.lua",
+  event = "VimEnter",
+}

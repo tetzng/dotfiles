@@ -1,1 +1,4 @@
-return { "justinmk/vim-ipmotion" }
+return {
+  "justinmk/vim-ipmotion",
+  event = "VimEnter",
+}

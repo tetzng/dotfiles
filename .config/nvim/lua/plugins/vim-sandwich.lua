@@ -1,1 +1,4 @@
-return { "machakann/vim-sandwich" }
+return {
+  "machakann/vim-sandwich",
+  event = "VimEnter",
+}

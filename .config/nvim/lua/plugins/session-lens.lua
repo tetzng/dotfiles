@@ -1,1 +1,4 @@
-return { "rmagatti/session-lens" }
+return {
+  "rmagatti/session-lens",
+  event = "VimEnter",
+}

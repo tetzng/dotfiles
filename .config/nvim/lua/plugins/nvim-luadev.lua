@@ -1,1 +1,4 @@
-return { "bfredl/nvim-luadev" }
+return {
+  "bfredl/nvim-luadev",
+  event = "VimEnter",
+}

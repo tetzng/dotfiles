@@ -1,1 +1,4 @@
-return { "Vigemus/iron.nvim" }
+return {
+  "Vigemus/iron.nvim",
+  event = "VimEnter",
+}

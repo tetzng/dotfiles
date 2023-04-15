@@ -1,1 +1,4 @@
-return { "anishathalye/dotbot" }
+return {
+  "anishathalye/dotbot",
+  event = "VimEnter",
+}

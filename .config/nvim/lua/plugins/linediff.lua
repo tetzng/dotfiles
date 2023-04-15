@@ -1,1 +1,4 @@
-return { "AndrewRadev/linediff.vim" }
+return {
+  "AndrewRadev/linediff.vim",
+  event = "VimEnter",
+}

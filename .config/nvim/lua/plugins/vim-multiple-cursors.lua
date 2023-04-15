@@ -1,1 +1,4 @@
-return { "terryma/vim-multiple-cursors" }
+return {
+  "terryma/vim-multiple-cursors",
+  event = "VimEnter",
+}

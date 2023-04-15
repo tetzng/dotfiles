@@ -1,1 +1,4 @@
-return { "David-Kunz/treesitter-unit" }
+return {
+  "David-Kunz/treesitter-unit",
+  event = "VimEnter",
+}

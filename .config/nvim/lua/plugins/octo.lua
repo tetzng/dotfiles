@@ -1,1 +1,4 @@
-return { "pwntester/octo.nvim" }
+return {
+  "pwntester/octo.nvim",
+  event = "VimEnter",
+}

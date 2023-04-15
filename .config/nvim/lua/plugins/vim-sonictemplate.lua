@@ -1,1 +1,4 @@
-return { "mattn/vim-sonictemplate" }
+return {
+  "mattn/vim-sonictemplate",
+  event = "VimEnter",
+}

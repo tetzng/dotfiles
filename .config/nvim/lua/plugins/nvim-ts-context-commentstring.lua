@@ -1,1 +1,4 @@
-return { "JoosepAlviste/nvim-ts-context-commentstring" }
+return {
+  "JoosepAlviste/nvim-ts-context-commentstring",
+  event = "VimEnter",
+}

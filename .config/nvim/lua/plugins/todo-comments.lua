@@ -1,1 +1,4 @@
-return { "folke/todo-comments.nvim" }
+return {
+  "folke/todo-comments.nvim",
+  event = "VimEnter",
+}
