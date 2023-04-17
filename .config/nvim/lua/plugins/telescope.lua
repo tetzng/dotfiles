@@ -1,5 +1,5 @@
 return {
-  "nvim-lua/telescope.nvim",
+  "nvim-telescope/telescope.nvim",
   tag = "0.1.1",
   event = "VimEnter",
   dependencies = {

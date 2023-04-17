@@ -3,7 +3,7 @@ return {
   event = "VimEnter",
   dependencies = {
     "rmagatti/auto-session",
-    "nvim-lua/telescope.nvim",
+    "nvim-telescope/telescope.nvim",
   },
   config = true,
 }
