@@ -34,7 +34,7 @@ return {
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        -- ['<C-m>'] = cmp.mapping.complete(),
+        -- ["<C-m>"] = cmp.mapping.complete(),
         -- ["<CR>"] = cmp.mapping({
         --     i = function(fallback)
         --       if cmp.visible() and cmp.get_active_entry() then
@@ -95,7 +95,7 @@ return {
         { name = "luasnip" },
         { name = "cmdline" },
         { name = "git" },
-        { name = 'cmp_tabnine' },
+        { name = "cmp_tabnine" },
       }),
     })
   end,

@@ -10,7 +10,7 @@ return {
     "s1n7ax/nvim-window-picker",
   },
   keys = {
-    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree toggle" },
   },
   config = function()
     -- If you want icons for diagnostic errors, you'll need to define them somewhere:

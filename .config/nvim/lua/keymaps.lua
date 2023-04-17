@@ -8,7 +8,7 @@ vim.keymap.set("n", "gr", "gT", { silent = true })
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>")
-vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
+vim.keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 vim.keymap.set("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>")
 vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
