@@ -4,4 +4,5 @@ return {
   dependencies = {
     "tpope/vim-repeat",
   },
+  config = true,
 }

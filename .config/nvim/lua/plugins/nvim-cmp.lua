@@ -20,6 +20,7 @@ return {
     "yutkat/cmp-mocword",
     "zbirenbaum/copilot-cmp",
     "tzachar/cmp-tabnine",
+    "onsails/lspkind-nvim",
   },
   config = function()
     local cmp = require("cmp")
