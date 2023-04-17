@@ -17,7 +17,7 @@ gui:
       - green
       - bold
     inactiveBorderColor:
-      - blue # sht to `default` to hait no backgeound colour
+      - blue
     optionsTextColor:
       - blue
     selectedLineBgColor:
@@ -54,12 +54,8 @@ git:
   skipHookPrefix: WIP
   autoFetch: true
   autoRefresh: true
-  branchLogCmd:
-    git log --graph --color=always --abbrev-commit --decorate --date=relative
-    --pretty=medium {{branchName}} --
-  allBranchesLogCmd:
-    git log --graph --all --color=always --abbrev-commit --decorate
-    --date=relative  --pretty=medium
+  branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
+  allBranchesLogCmd: git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium
   overrideGpg: false
   disableForcePushing: false
   commitPrefixes: {}
