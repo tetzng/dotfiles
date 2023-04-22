@@ -11,7 +11,7 @@ return {
       component_separators = { left = "󾂱", right = "󾂳" },
       section_separators = { left = "󾂰", right = "󾂲" },
       disabled_filetypes = {
-        statusline = {},
+        statusline = { "dashboard", "alpha" },
         winbar = {},
       },
       ignore_focus = {},
@@ -42,6 +42,6 @@ return {
     tabline = {},
     winbar = {},
     inactive_winbar = {},
-    extensions = {},
+    extensions = { "neo-tree", "lazy", "toggleterm" }
   },
 }

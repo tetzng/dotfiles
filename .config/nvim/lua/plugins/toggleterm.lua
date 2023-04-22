@@ -34,5 +34,6 @@ return {
       "<cmd>lua LazygitToggle()<CR>",
       { silent = true, desc = "Show Lazygit on float window" }
     )
+    require("toggleterm").setup()
   end,
 }
