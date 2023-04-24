@@ -20,6 +20,11 @@ return {
           -- the default case_mode is "smart_case"
         },
       },
+      pickers = {
+        colorscheme = {
+          enable_preview = true
+        }
+      }
     })
     -- To get fzf loaded and working with telescope, you need to call
     -- load_extension, somewhere after setup function:
@@ -31,7 +36,7 @@ return {
     vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files by Telescope" })
     vim.keymap.set("n", "<leader>ff", builtin.live_grep, { desc = "Grep files by Telescope" })
     vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Grep git files by Telescope" })
-    vim.keymap.set("n", "<leader>fc", "<cmd>Telescope cica_icons<cr>", desc = "Find cica icons")
+    vim.keymap.set("n", "<leader>fc", "<cmd>Telescope cica_icons<cr>", { desc = "Find cica icons" })
 
     vim.keymap.set("c", "<C-o><C-f>", builtin.search_history, { desc = "Find command history by Telescope" })
     vim.keymap.set("c", "<C-o><C-p>", builtin.commands, { desc = "Find commands by Telescope" })

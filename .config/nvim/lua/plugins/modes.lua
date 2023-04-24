@@ -1,5 +1,7 @@
 return {
   "mvllow/modes.nvim",
   event = "VimEnter",
-  config = true,
+  opts = {
+    line_opacity = 0.3,
+  },
 }

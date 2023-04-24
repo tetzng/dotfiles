@@ -1,5 +1,5 @@
 return {
-  "williamboman/mason-lspconfig",
+  "williamboman/mason-lspconfig.nvim",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "williamboman/mason.nvim",
@@ -15,6 +15,7 @@ return {
         "ruby_ls",
         "graphql",
         "tailwindcss",
+        "rust_analyzer",
       },
       automatic_installation = true,
     })
