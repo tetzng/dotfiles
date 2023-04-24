@@ -88,8 +88,12 @@ cask "keycastr"
 cask "microsoft-edge"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# App to write, plan, collaborate, and get organized
+cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Collaboration platform for API development
 cask "postman"
 # Control your tools with a few keystrokes
@@ -102,6 +106,8 @@ cask "spotify"
 cask "tableplus"
 # Open-source code editor
 cask "visual-studio-code"
+# Web browser with built-in email client focusing on customization and control
+cask "vivaldi"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
 # Video communication and virtual meeting platform
