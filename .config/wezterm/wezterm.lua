@@ -10,6 +10,15 @@ config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
 config.color_scheme = "tokyonight_storm"
 config.window_close_confirmation = "NeverPrompt"
 config.window_background_opacity = 0.9
+
+config.window_padding = {
+  left = '1cell',
+  right = '1cell',
+  top = 0,
+  bottom = 0,
+}
+config.window_decorations = "RESIZE"
+
 config.macos_forward_to_ime_modifier_mask = "SHIFT|CTRL"
 
 -- bind prefix like tmux
