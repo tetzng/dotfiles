@@ -3,6 +3,8 @@ fish_add_path $HOME/.cargo/bin/
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/dev/bin
 
+souce $HOME/.config/fish/secrets.fish
+
 if status is-interactive
   # Homebrew
   eval (/opt/homebrew/bin/brew shellenv)
@@ -15,6 +17,9 @@ if status is-interactive
 
   # starship
   starship init fish | source
+
+  # atuin
+  atuin init fish | source
 
   # abbr
   abbr -a .. "cd .."
