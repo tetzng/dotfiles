@@ -9,4 +9,4 @@ pager: delta
 # Aliases allow you to create nicknames for gh commands
 # aliases:
 #   co: pr checkout
-browser: open -a 'Google Chrome'
+# browser: open -a ''
