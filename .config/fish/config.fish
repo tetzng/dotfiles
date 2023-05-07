@@ -3,7 +3,7 @@ fish_add_path $HOME/.cargo/bin/
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/dev/bin
 
-souce $HOME/.config/fish/secrets.fish
+source $HOME/.config/fish/secrets.fish
 
 if status is-interactive
   # Homebrew
