@@ -1,6 +1,11 @@
 local wezterm = require("wezterm")
 local config = {}
 
+wezterm.on('gui-startup', function(cmd)
+  local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+  window:gui_window():set_position(850, 150)
+end)
+
 config.font = wezterm.font_with_fallback({
   { family = "Cica" },
   { family = "Cica", assume_emoji_presentation = true },

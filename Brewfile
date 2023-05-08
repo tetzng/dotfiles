@@ -2,6 +2,7 @@ tap "dart-lang/dart"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
+tap "homebrew/services"
 tap "leoafarias/fvm"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
@@ -33,6 +34,8 @@ brew "go"
 brew "lazygit"
 # Mac App Store command-line interface
 brew "mas"
+# Open source relational database management system
+brew "mysql", restart_service: true
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Search tool like grep and The Silver Searcher
@@ -53,6 +56,8 @@ brew "tmux"
 brew "vim"
 # Internet file retriever
 brew "wget"
+# JavaScript package manager
+brew "yarn"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Everything you need to get started with Heroku

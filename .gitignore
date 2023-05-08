@@ -14,6 +14,7 @@
 !/.config/fish
 !/.config/fish/**
 /.config/fish/fish_variables
+/.config/fish/secrets.fish
 !/.config/gh
 !/.config/gh/config.yml
 !/.config/gh-dash
