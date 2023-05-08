@@ -26,5 +26,6 @@ else
       lazy = true,
       -- version = "*",
     },
+    concurrency = 100,
   })
 end

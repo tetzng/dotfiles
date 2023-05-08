@@ -1,5 +1,6 @@
 return {
-  "JoosepAlviste/nvim-ts-context-commentstring",
+  "mrjones2014/nvim-ts-rainbow",
+  event = "BufRead",
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },

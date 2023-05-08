@@ -5,7 +5,6 @@ return {
   dependencies = {
     { "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    { "tetzng/telescope-cica-icons.nvim" }
   },
   config = function()
     -- You dont need to set any of these options. These are the default ones. Only

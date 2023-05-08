@@ -12,7 +12,7 @@ return {
         "eslint",
         "lua_ls",
         "gopls",
-        "ruby_ls",
+        -- "ruby_ls",
         "graphql",
         "tailwindcss",
         "rust_analyzer",

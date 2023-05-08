@@ -1,4 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter-textobjects",
-  event = "VimEnter",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+  },
 }

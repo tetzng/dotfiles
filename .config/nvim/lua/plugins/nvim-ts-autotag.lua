@@ -1,4 +1,6 @@
 return {
   "windwp/nvim-ts-autotag",
-  event = "VimEnter",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+  },
 }
