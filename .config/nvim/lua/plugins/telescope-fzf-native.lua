@@ -1,4 +1,6 @@
 return {
   "nvim-telescope/telescope-fzf-native.nvim",
-  event = "VimEnter",
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+  },
 }
