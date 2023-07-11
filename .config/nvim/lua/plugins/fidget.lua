@@ -1,5 +1,6 @@
 return {
   "j-hui/fidget.nvim",
+  tag = "legacy",
   event = "VimEnter",
   opts = {
     text = {
