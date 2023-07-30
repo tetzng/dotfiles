@@ -4,7 +4,7 @@ gui:
   scrollHeight: 2
   scrollPastBottom: true
   mouseEvents: true
-  skipUnstageLineWarning: false
+  skipDiscardChangeWarning: false
   skipStashWarning: false
   sidePanelWidth: 0.3333
   expandFocusedSidePanel: false
