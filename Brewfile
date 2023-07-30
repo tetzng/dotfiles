@@ -6,6 +6,8 @@ tap "homebrew/services"
 tap "leoafarias/fvm"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
+# Improved shell history for zsh and bash
+brew "atuin"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Secure runtime for JavaScript and TypeScript
@@ -30,6 +32,8 @@ brew "git-secrets"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Post-modern modal text editor
+brew "helix"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Mac App Store command-line interface
@@ -38,10 +42,14 @@ brew "mas"
 brew "mysql", restart_service: true
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Python package management tool
+brew "poetry"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Wrapper around ripgrep that adds multiple rich file types
 brew "ripgrep-all"
+# Polyglot runtime manager (asdf rust clone)
+brew "rtx"
 # Fast, configurable, shell plugin manager
 brew "sheldon"
 # Create beautiful image of your source code
