@@ -5,3 +5,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$ZDOTDIR/.zhistory"
+
+if [[ -f $ZDOTDIR/.secrets.zsh ]]; then
+    source $ZDOTDIR/.secrets.zsh
+fi
