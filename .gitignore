@@ -37,6 +37,8 @@
 !/.config/skhd
 !/.config/skhd/**
 !/.config/starship.toml
+!/.config/surfingkeys
+!/.config/surfingkeys/**
 !/.config/tmux
 !/.config/tmux/**
 !/.config/wezterm
