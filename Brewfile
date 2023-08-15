@@ -72,12 +72,20 @@ brew "zsh"
 brew "heroku/brew/heroku"
 # Simple cli to manage Flutter SDK versions per project
 brew "leoafarias/fvm/fvm"
+# View, print, and comment on PDF documents
+cask "adobe-acrobat-reader"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Tools for building Android applications
 cask "android-studio"
+# User-friendly GUI app for Homebrew
+cask "applite"
+# Chromium based browser
+cask "arc"
 # Video calls designed for energy, ideas and action
 cask "around"
+# Desktop password and login vault
+cask "bitwarden"
 # Trains AIs to understand and translate texts
 cask "deepl"
 # Voice and text chat software
@@ -87,6 +95,8 @@ cask "docker"
 # Reimagine your terminal
 cask "fig"
 cask "font-cica"
+# Virtual video-calling space
+cask "gather"
 # Web browser
 cask "google-chrome"
 # Tools to protect your emails and files
