@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+  local _tab, _pane, window = wezterm.mux.spawn_window(cmd or {})
   window:gui_window():set_position(850, 150)
 end)
 
