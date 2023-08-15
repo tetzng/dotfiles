@@ -13,7 +13,7 @@ return {
         "lua_ls",
         "gopls",
         -- "ruby_ls",
-        "graphql",
+        -- "graphql",
         "tailwindcss",
         "rust_analyzer",
       },
@@ -35,8 +35,22 @@ return {
           capabilities = capabilities,
           settings = {
             Lua = {
+              runtime = {
+                version = "LuaJIT",
+              },
+              format = {
+                enable = true,
+                defaultConfig = {
+                  indent_style = "space",
+                  indent_size = "2",
+                  quote_style = "double",
+                  continuation_indent = "2",
+                  max_line_length = "120",
+                },
+              },
               diagnostics = {
                 globals = { "vim" },
+                unusedLocalExclude = { "_*" },
               },
             },
           },

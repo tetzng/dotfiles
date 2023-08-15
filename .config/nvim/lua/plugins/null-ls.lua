@@ -18,9 +18,6 @@ return {
       b.formatting.cbfmt.with({
         condition = with_root_file(".cbfmt.toml"),
       }),
-      b.formatting.stylua.with({
-        condition = with_root_file(".stylua.toml"),
-      }),
       b.formatting.black,
       b.formatting.isort,
       b.formatting.rubocop.with({
@@ -55,9 +52,6 @@ return {
 
       -- diagnostics
       b.diagnostics.markdownlint,
-      b.diagnostics.selene.with({
-        condition = with_root_file("selene.toml"),
-      }),
       b.diagnostics.flake8,
       b.diagnostics.rubocop.with({
         condition = function(utils)
