@@ -42,6 +42,8 @@ brew "mas"
 brew "mysql", restart_service: true
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Tiny, lightning fast, feature-packed file manager
+brew "nnn"
 # Python package management tool
 brew "poetry"
 # Search tool like grep and The Silver Searcher
@@ -109,6 +111,8 @@ cask "karabiner-elements"
 cask "keycastr"
 # Web browser
 cask "microsoft-edge"
+# Neovim Client
+cask "neovide"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organized
