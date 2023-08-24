@@ -14,8 +14,6 @@ return {
         "eslint",
         "lua_ls",
         "gopls",
-        -- "ruby_ls",
-        -- "graphql",
         "tailwindcss",
         "rust_analyzer",
       },
@@ -54,6 +52,9 @@ return {
                 globals = { "vim" },
                 unusedLocalExclude = { "_*" },
               },
+              completion = {
+                callSnippet = "Replace",
+              }
             },
           },
         })

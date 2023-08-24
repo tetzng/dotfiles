@@ -1,4 +1,5 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "folke/flash.nvim",
   event = "VeryLazy",
   ---@type Flash.Config
@@ -291,3 +292,5 @@ return {
     },
   },
 }
+
+return M
