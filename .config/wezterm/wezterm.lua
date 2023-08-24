@@ -1,9 +1,23 @@
 local wezterm = require("wezterm")
-local config = {}
 
-wezterm.on('gui-startup', function(cmd)
+local config = {}
+if wezterm.config_builder then
+  config = wezterm.config_builder()
+end
+
+wezterm.on("gui-startup", function(cmd)
   local _tab, _pane, window = wezterm.mux.spawn_window(cmd or {})
-  window:gui_window():set_position(850, 150)
+  local active_screen = wezterm.gui.screens().active
+
+  if active_screen.width > 3024 and active_screen.height > 1964 then
+    window:gui_window():set_position(1920, 1093) -- bottom right quarter
+    local menu_bar_height = 24
+    local half_width = active_screen.width / 2
+    local half_height = (active_screen.height - menu_bar_height) / 2
+    window:gui_window():set_inner_size(half_width, half_height)
+  else
+    window:gui_window():maximize()
+  end
 end)
 
 config.font = wezterm.font_with_fallback({
@@ -12,13 +26,13 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 16.0
 config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
-config.color_scheme = "tokyonight_storm"
+config.color_scheme = "tokyonight_moon"
 config.window_close_confirmation = "NeverPrompt"
 config.window_background_opacity = 0.9
 
 config.window_padding = {
-  left = '1cell',
-  right = '1cell',
+  left = "1cell",
+  right = "1cell",
   top = 0,
   bottom = 0,
 }
