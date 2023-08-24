@@ -241,8 +241,8 @@ const keys = [
   "B", // Go one tab history back
   "F", // Go one tab history forward
   "<Ctrl-6>", // Go to last used tab
-  "S", // Go back in history
-  "D", // Go forward in history
+  // "S", // Go back in history
+  // "D", // Go forward in history
   "r", // Reload the page
 
   // Sessions
@@ -428,6 +428,8 @@ reMap("gr", "gT"); // Go to first activated tab
 reMap("<Ctrl-i>", "<Ctrl-Alt-i>"); // Go to edit box with neovim editor
 reMap("<Ctrl-u>", "u"); // Scroll half page up
 reMap("<Ctrl-d>", "d"); // Scroll half page down
+reMap("<Ctrl-h", "S"); // Go back in history
+reMap("<Ctrl-l>", "D"); // Go forward in history
 ireMap("<Ctrl-w>", "<Alt-w>"); // Delete a word backwards
 ireMap("<Ctrl-i>", "<Ctrl-Alt-i>"); // Open neovim for current input
 
