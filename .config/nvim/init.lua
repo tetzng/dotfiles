@@ -19,14 +19,19 @@ else
   end
   vim.opt.rtp:prepend(lazypath)
 
-  require("lazy").setup({
-    spec = {
-      { import = "plugins" },
-    },
+  ---@type LazySpec
+  local plugins = {
+    { import = "plugins" },
+  }
+
+  ---@type LazyConfig
+  local lazyconfig = {
     defaults = {
       lazy = true,
       -- version = "*",
     },
     concurrency = 100,
-  })
+  }
+
+  require("lazy").setup(plugins, lazyconfig)
 end
