@@ -4,8 +4,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "leoafarias/fvm"
-# Extendable version manager with support for Ruby, Node.js, Erlang & more
-brew "asdf"
 # Improved shell history for zsh and bash
 brew "atuin"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -109,6 +107,8 @@ cask "gyazo"
 cask "karabiner-elements"
 # Open-source keystroke visualizer
 cask "keycastr"
+# Open source code editor written in Rust
+cask "lapce"
 # Web browser
 cask "microsoft-edge"
 # Neovim Client
