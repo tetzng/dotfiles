@@ -18,19 +18,20 @@ local M = {
     ft("go")
       :fmt("gofmt")
     ft("typescript", "javascript", "typescriptreact")
-      :fmt("prettier")
+      :fmt("lsp")
+      :append("prettier")
     ft("ruby")
       :fmt("rubocop")
       :lint("rubocop")
     ft("python")
       :fmt({
         cmd = "poetry",
-        args = { "isort" },
+        args = { "run", "isort" },
         stdin = true,
       })
       :lint({
         cmd = "poetry",
-        args = { "run", "--format", "default", "-", "--stdin-display-name" },
+        args = { "run", "flake8", "--format", "default", "-", "--stdin-display-name" },
         stdin = true,
         fname = true,
         parse = lint.from_regex({

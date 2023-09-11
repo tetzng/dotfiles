@@ -1,4 +1,5 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "nvim-treesitter/nvim-treesitter",
   event = "VimEnter",
   build = ":TSUpdate",
@@ -7,20 +8,44 @@ return {
     "nvim-treesitter/nvim-treesitter-context",
     "windwp/nvim-ts-autotag",
     "JoosepAlviste/nvim-ts-context-commentstring",
-    "mrjones2014/nvim-ts-rainbow",
+    -- "HiPhish/nvim-ts-rainbow2",
   },
   config = function()
-    require("nvim-treesitter.configs").setup({
+    ---@type TSConfig
+    local tsconfig = {
+      ensure_installed = {
+        "fish",
+        "gitignore",
+        "go",
+        "graphql",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "lua",
+        "make",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "ruby",
+        "rust",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "yaml",
+      },
+      sync_install = false,
+      auto_install = true,
+      ignore_install = {},
+      modules = {},
+
+      -- nvim-treesitter.highlight
       highlight = {
         enable = true,
       },
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
-      autotag = {
-        enable = true,
-      },
+
+      -- nvim-treesitter.incremental_selection
       incremental_selection = {
         enable = true,
         keymaps = {
@@ -30,6 +55,19 @@ return {
           node_decremental = "grm",
         },
       },
+
+      -- nvim-ts-context-commentstring
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+      },
+
+      -- nvim-ts-autotag
+      autotag = {
+        enable = true,
+      },
+
+      -- nvim-treesitter-textobjects
       textobjects = {
         select = {
           enable = true,
@@ -86,14 +124,9 @@ return {
           },
         },
       },
-      rainbow = {
-        enable = true,
-        -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-        extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-        max_file_lines = nil, -- Do not enable for files with more than n lines, int
-        -- colors = {}, -- table of hex strings
-        -- termcolors = {} -- table of colour name strings
-      },
-    })
+    }
+    require("nvim-treesitter.configs").setup(tsconfig)
   end,
 }
+
+return M

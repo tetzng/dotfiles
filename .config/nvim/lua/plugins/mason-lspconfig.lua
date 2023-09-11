@@ -1,4 +1,5 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "williamboman/mason-lspconfig.nvim",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
@@ -7,18 +8,21 @@ return {
     "folke/neodev.nvim",
     "folke/neoconf.nvim",
   },
-  config = function()
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "tsserver",
-        "eslint",
-        "lua_ls",
-        "gopls",
-        "tailwindcss",
-        "rust_analyzer",
-      },
-      automatic_installation = true,
-    })
+  ---@type MasonLspconfigSettings
+  opts = {
+    ensure_installed = {
+      "eslint",
+      "gopls",
+      "lua_ls",
+      "rust_analyzer",
+      "stylelint_lsp",
+      "tailwindcss",
+      "tsserver",
+    },
+    automatic_installation = true,
+  },
+  config = function(_, opts)
+    require("mason-lspconfig").setup(opts)
 
     -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -62,3 +66,5 @@ return {
     })
   end,
 }
+
+return M
