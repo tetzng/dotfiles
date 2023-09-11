@@ -29,7 +29,6 @@ if status is-interactive
   abbr -a .. "cd .."
   abbr -a ... "cd ../.."
   abbr -a .... "cd ../../.."
-  abbr -a a asdf
   abbr -a b brew
   abbr -a bb "brew bundle dump -f"
   abbr -a bd "brew doctor"
@@ -62,16 +61,17 @@ if status is-interactive
   abbr -a gsh "git push"
   abbr -a gsho "git push origin HEAD"
   abbr -a gsw "git switch"
-  abbr -a k "exa --icons -l -F -T"
-  abbr -a l "exa --icons -l -F"
-  abbr -a la "exa --icons -l -F -a"
+  abbr -a k "lsd --classify --long --tree"
+  abbr -a l "lsd --classify"
+  abbr -a la "lsd --almost-all --classify --long"
+  abbr -a ll "lsd --classify --long"
   abbr -a m man
   abbr -a nb "git switch -c"
   abbr -a pr "gh pr view --web"
+  abbr -a r rtx
   abbr -a repo "gh repo view --web"
   abbr -a si "silicon --output $HOME/Downloads/silicon_(date +%Y-%m-%d_%H%M%S).png"
   abbr -a sic "silicon --output $HOME/Downloads/silicon_(date +%Y-%m-%d_%H%M%S).png --from-clipboard -l"
   abbr -a t tldr
   abbr -a v nvim
-  abbr -a v. "nvim ."
 end

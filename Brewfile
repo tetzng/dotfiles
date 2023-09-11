@@ -4,14 +4,15 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "leoafarias/fvm"
+tap "oven-sh/bun"
 # Improved shell history for zsh and bash
 brew "atuin"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
-# Modern replacement for 'ls'
-brew "exa"
+# Modern, maintained replacement for ls
+brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -32,8 +33,12 @@ brew "gnupg"
 brew "go"
 # Post-modern modal text editor
 brew "helix"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
@@ -72,6 +77,8 @@ brew "zsh"
 brew "heroku/brew/heroku"
 # Simple cli to manage Flutter SDK versions per project
 brew "leoafarias/fvm/fvm"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # View, print, and comment on PDF documents
 cask "adobe-acrobat-reader"
 # GPU-accelerated terminal emulator
@@ -140,7 +147,6 @@ cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "GarageBand", id: 682658836
-mas "Hidden Bar", id: 1452453066
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Logic Pro", id: 634148309
