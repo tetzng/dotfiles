@@ -9,8 +9,8 @@ eval "$(sheldon source)"
 # starship
 eval "$(starship init zsh)"
 
-# asdf
-# . /usr/local/opt/asdf/libexec/asdf.sh
+# rtx
+eval "$(rtx activate zsh)"
 
 if type brew &>/dev/null
 then

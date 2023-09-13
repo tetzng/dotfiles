@@ -5,9 +5,6 @@ fish_add_path $HOME/dev/bin
 
 source $HOME/.config/fish/secrets.fish
 
-# rtx
-source $HOME/.config/fish/rtx.fish
-
 if status is-interactive
   # Homebrew
   eval (/opt/homebrew/bin/brew shellenv)
@@ -15,9 +12,8 @@ if status is-interactive
   # color scheme
   scheme set tokyonight
 
-  # asdf
-  # source (brew --prefix asdf)/libexec/asdf.fish
-
+  # rtx
+  rtx activate fish | source
 
   # starship
   starship init fish | source
