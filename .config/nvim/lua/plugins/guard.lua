@@ -1,9 +1,9 @@
 ---@class LazyPluginSpec
 local M = {
   "nvimdev/guard.nvim",
-  event = { "BufReadPost", "BufNewFile" },
+  event = { "BufReadPre", "BufNewFile" },
   ft = {
-    "go", "python", "rust", "ruby", "javascript", "typescript", "typescriptreact", "lua",
+    "go", "python", "rust", "javascript", "typescript", "typescriptreact", "lua",
   },
   opts = {
     fmt_on_save = false,
@@ -20,9 +20,6 @@ local M = {
     ft("typescript", "javascript", "typescriptreact")
       :fmt("lsp")
       :append("prettier")
-    ft("ruby")
-      :fmt("rubocop")
-      :lint("rubocop")
     ft("python")
       :fmt({
         cmd = "poetry",
