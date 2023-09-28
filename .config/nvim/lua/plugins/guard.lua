@@ -1,6 +1,9 @@
 ---@class LazyPluginSpec
 local M = {
   "nvimdev/guard.nvim",
+  dependencies = {
+    "nvimdev/guard-collection",
+  },
   event = { "BufReadPre", "BufNewFile" },
   ft = {
     "go", "python", "rust", "javascript", "typescript", "typescriptreact", "lua",
@@ -11,8 +14,9 @@ local M = {
   },
   config = function(_, opts)
     local ft = require("guard.filetype")
-    local lint = require("guard.lint")
 
+    ft("lua"):fmt("lsp")
+      -- :append("stylua")
     ft("rust")
       :fmt("rustfmt")
     ft("go")
@@ -21,27 +25,8 @@ local M = {
       :fmt("lsp")
       :append("prettier")
     ft("python")
-      :fmt({
-        cmd = "poetry",
-        args = { "run", "isort" },
-        stdin = true,
-      })
-      :lint({
-        cmd = "poetry",
-        args = { "run", "flake8", "--format", "default", "-", "--stdin-display-name" },
-        stdin = true,
-        fname = true,
-        parse = lint.from_regex({
-          source = "flake8",
-          regex = ":(%d+):(%d+):%s(%a)(%w+) (.+)",
-          severities = {
-            E = lint.severities.error,
-            W = lint.severities.warning,
-            C = lint.severities.warning,
-            F = lint.severities.info,
-          },
-        }),
-      })
+      :fmt("isort")
+      :lint("flake8")
 
     require("guard").setup(opts)
   end,
