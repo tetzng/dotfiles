@@ -11,6 +11,7 @@ local M = {
   ---@type MasonLspconfigSettings
   opts = {
     ensure_installed = {
+      "efm",
       "eslint",
       "gopls",
       "lua_ls",
@@ -19,7 +20,7 @@ local M = {
       "tailwindcss",
       "tsserver",
     },
-    automatic_installation = true,
+    automatic_installation = false,
   },
   config = function(_, opts)
     require("mason-lspconfig").setup(opts)
@@ -63,6 +64,26 @@ local M = {
           },
         })
       end,
+      ["stylelint_lsp"] = function()
+        lspconfig.stylelint_lsp.setup({
+          capabilities = capabilities,
+          filetypes = {
+            "css",
+            -- 'less',
+            -- 'scss',
+            -- 'sugarss',
+            -- 'vue',
+            -- 'wxss',
+            -- 'javascript',
+            -- 'javascriptreact',
+            -- 'typescript',
+            -- 'typescriptreact',
+          },
+        })
+      end,
+    })
+    lspconfig.rubocop.setup({
+      capabilities = capabilities,
     })
   end,
 }
