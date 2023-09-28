@@ -433,9 +433,6 @@ reMap("<Ctrl-l>", "D"); // Go forward in history
 ireMap("<Ctrl-w>", "<Alt-w>"); // Delete a word backwards
 ireMap("<Ctrl-i>", "<Ctrl-Alt-i>"); // Open neovim for current input
 
-// Notionではsurfingkeysを無効化
-unmapAllExcept([], /notion.so/);
-
 settings.showModeStatus = false; // Whether always to show mode status.
 settings.showProxyInStatusBar = false; // Whether to show proxy info in status bar.
 settings.richHintsForKeystroke = 500; // Timeout(ms) to show rich hints for keystroke, 0 will disable rich hints.
@@ -461,7 +458,7 @@ settings.hintAlign = "center"; // Alignment of hints on their target elements. [
 settings.hintExplicit = false; // Whether to wait for explicit input when there is only a single hint available
 settings.hintShiftNonActive = false; // Whether new tab is active after entering hint while holding shift
 settings.defaultSearchEngine = "g"; // The default search engine used in Omnibar.
-settings.blocklistPattern = undefined; // A regex to match the sites that will have Surfingkeys disabled.
+settings.blocklistPattern = /notion.so|feedly.com|mail.google.com/; // A regex to match the sites that will have Surfingkeys disabled.
 settings.focusAfterClosed = "right"; // Which tab will be focused after the current tab is closed. ["left", "right", "last"]
 settings.repeatThreshold = 99; // The maximum of actions to be repeated.
 settings.tabsMRUOrder = true; // Whether to list opened tabs in order of most recently used beneath Omnibar.
