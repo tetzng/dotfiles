@@ -22,3 +22,5 @@ vim.keymap.set("c", "<C-a>", "<Home>")
 vim.keymap.set("c", "<C-e>", "<End>")
 vim.keymap.set("c", "<C-b>", "<Left>")
 vim.keymap.set("c", "<C-f>", "<Right>")
+
+vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])

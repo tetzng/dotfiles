@@ -1,8 +1,12 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "akinsho/toggleterm.nvim",
   version = "*",
   event = "VimEnter",
-  config = function()
+  opts = {
+    shell = "fish",
+  },
+  config = function(_, opts)
     local Terminal = require("toggleterm.terminal").Terminal
     local lazygit = Terminal:new({
       cmd = "lazygit",
@@ -34,6 +38,14 @@ return {
       "<cmd>lua LazygitToggle()<CR>",
       { silent = true, desc = "Show Lazygit on float window" }
     )
-    require("toggleterm").setup()
+    vim.keymap.set(
+      "n",
+      "<leader>tt",
+      "<cmd>ToggleTerm<CR>",
+      { silent = true, desc = "Exec ToggleTerm" }
+    )
+    require("toggleterm").setup(opts)
   end,
 }
+
+return M
