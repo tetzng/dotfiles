@@ -1,11 +1,12 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "echasnovski/mini.indentscope",
   version = false, -- wait till new 0.7.0 release to put it back on semver
   event = "BufReadPre",
   opts = {
     symbol = "▏",
     options = {
-      border = 'both',
+      border = "both",
       indent_at_cursor = false,
       try_as_border = true
     },
@@ -20,3 +21,5 @@ return {
     require("mini.indentscope").setup(opts)
   end,
 }
+
+return M
