@@ -18,7 +18,7 @@ local M = {
       "tokyonight-moon",
       "tokyonight-storm",
       "catppuccin-mocha",
-      "catppuccin-frappe",
+      -- "catppuccin-frappe",
       "catppuccin-macchiato",
       "kanagawa-wave",
       "kanagawa-dragon",
