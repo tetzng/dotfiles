@@ -71,6 +71,8 @@ brew "vim"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Everything you need to get started with Heroku

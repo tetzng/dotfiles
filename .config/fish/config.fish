@@ -21,6 +21,10 @@ if status is-interactive
   # atuin
   atuin init fish | source
 
+  # zoxide
+  zoxide init fish | source
+  set -x _ZO_DATA_DIR $XDG_DATA_HOME/zoxide
+
   # abbr
   abbr -a .. "cd .."
   abbr -a ... "cd ../.."
