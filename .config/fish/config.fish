@@ -1,29 +1,50 @@
 set -gx GPG_TTY (tty)
-fish_add_path $HOME/.cargo/bin/
-fish_add_path $HOME/go/bin
-fish_add_path $HOME/dev/bin
 
 source $HOME/.config/fish/secrets.fish
 
+if test -d /opt/homebrew
+  fish_add_path $HOME/.cargo/bin/
+end
+
+if type -q go
+  fish_add_path $HOME/go/bin
+end
+
+if test -d $HOME/dev/bin
+  fish_add_path $HOME/dev/bin
+end
+
 if status is-interactive
   # Homebrew
-  eval (/opt/homebrew/bin/brew shellenv)
+  if test -d /opt/homebrew
+    eval (/opt/homebrew/bin/brew shellenv)
+  end
 
   # color scheme
-  scheme set tokyonight
+  if type -q scheme
+    scheme set tokyonight
+  end
 
   # rtx
-  rtx activate fish | source
+  if type -q rtx
+    rtx activate fish | source
+  end
 
   # starship
-  starship init fish | source
+  if type -q starship
+    starship init fish | source
+  end
 
   # atuin
-  atuin init fish | source
+  if type -q atuin
+    atuin init fish | source
+  end
 
   # zoxide
-  zoxide init fish | source
-  set -x _ZO_DATA_DIR $XDG_DATA_HOME/zoxide
+  if type -q zoxide
+    zoxide init fish | source
+    set -x _ZO_DATA_DIR $XDG_DATA_HOME/zoxide
+  end
 
   # abbr
   abbr -a .. "cd .."
