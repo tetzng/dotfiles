@@ -4,6 +4,8 @@ local M = {
   version = "*",
   event = "VimEnter",
   opts = {
+    open_mapping = [[<leader>tt]],
+    insert_mappings = false,
     shell = "fish",
   },
   config = function(_, opts)
@@ -38,12 +40,7 @@ local M = {
       "<cmd>lua LazygitToggle()<CR>",
       { silent = true, desc = "Show Lazygit on float window" }
     )
-    vim.keymap.set(
-      "n",
-      "<leader>tt",
-      "<cmd>ToggleTerm<CR>",
-      { silent = true, desc = "Exec ToggleTerm" }
-    )
+
     require("toggleterm").setup(opts)
   end,
 }
