@@ -5,10 +5,12 @@ tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "leoafarias/fvm"
 tap "oven-sh/bun"
-# Improved shell history for zsh and bash
+# Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # Modern, maintained replacement for ls
@@ -39,6 +41,8 @@ brew "jq"
 brew "lazygit"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Package manager for the Lua programming language
+brew "luarocks"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
@@ -47,6 +51,8 @@ brew "mysql", restart_service: true
 brew "neovim"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Python package management tool
 brew "poetry"
 # Search tool like grep and The Silver Searcher
@@ -71,6 +77,8 @@ brew "vim"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
@@ -83,6 +91,8 @@ brew "leoafarias/fvm/fvm"
 brew "oven-sh/bun/bun"
 # View, print, and comment on PDF documents
 cask "adobe-acrobat-reader"
+# Note editor and whiteboard
+cask "affine"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Tools for building Android applications
@@ -136,10 +146,14 @@ cask "postman"
 cask "raycast"
 # Team communication and collaboration software
 cask "slack"
+# Open source cross-platform file explorer
+cask "spacedrive"
 # Music streaming service
 cask "spotify"
 # Native GUI tool for relational databases
 cask "tableplus"
+# Mesh VPN based on Wireguard
+cask "tailscale"
 # Open-source code editor
 cask "visual-studio-code"
 # Web browser with built-in email client focusing on customization and control
@@ -148,9 +162,12 @@ cask "vivaldi"
 cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"
+# Desktop client for the Zulip team chat platform
+cask "zulip"
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
 mas "Logic Pro", id: 634148309
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
