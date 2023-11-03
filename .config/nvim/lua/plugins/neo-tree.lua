@@ -1,12 +1,30 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  event = "VimEnter",
-  branch = "v2.x",
+  -- event = "VimEnter",
+  branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-    "s1n7ax/nvim-window-picker",
+    {
+      "s1n7ax/nvim-window-picker",
+      name = "window-picker",
+      version = "2.*",
+      opts = {
+        filter_rules = {
+          include_current_win = false,
+          autoselect_one = true,
+          -- filter using buffer options
+          bo = {
+            -- if the file type is one of following, the window will be ignored
+            filetype = { "neo-tree", "neo-tree-popup", "notify" },
+            -- if the buffer type is one of following, the window will be ignored
+            buftype = { "terminal", "quickfix" },
+          },
+        },
+
+      },
+    },
   },
   keys = {
     { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree toggle" },
@@ -126,7 +144,9 @@ return {
           --".null-ls_*",
         },
       },
-      follow_current_file = true,
+      follow_current_file = {
+        enabled = true,
+      },
       group_empty_dirs = false,
       hijack_netrw_behavior = "open_default",
       use_libuv_file_watcher = false,
@@ -145,7 +165,9 @@ return {
       },
     },
     buffers = {
-      follow_current_file = true,
+      follow_current_file = {
+        enabled = true,
+      },
       group_empty_dirs = true,
       show_unloaded = true,
       window = {
