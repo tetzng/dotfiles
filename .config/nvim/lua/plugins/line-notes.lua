@@ -1,5 +1,5 @@
 return {
   "kristijanhusak/line-notes.nvim",
-  event = "VimEnter",
+  -- event = "VimEnter",
   config = true,
 }

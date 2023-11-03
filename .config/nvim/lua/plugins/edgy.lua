@@ -12,20 +12,12 @@ return {
         ft = "toggleterm",
         size = { height = 0.4 },
         -- exclude floating windows
-        filter = function(buf, win)
+        filter = function(_buf, win)
           return vim.api.nvim_win_get_config(win).relative == ""
         end,
       },
-      {
-        ft = "lazyterm",
-        title = "LazyTerm",
-        size = { height = 0.4 },
-        filter = function(buf)
-          return not vim.b[buf].lazyterm_cmd
-        end,
-      },
       "Trouble",
-      { ft = "qf",            title = "QuickFix" },
+      { ft = "qf", title = "QuickFix" },
       {
         ft = "help",
         size = { height = 20 },
@@ -34,7 +26,6 @@ return {
           return vim.bo[buf].buftype == "help"
         end,
       },
-      { ft = "spectre_panel", size = { height = 0.4 } },
     },
     -- left = {
     --   -- Neo-tree filesystem always takes half the screen height
@@ -63,11 +54,6 @@ return {
     --     end,
     --     pinned = true,
     --     open = "Neotree position=top buffers",
-    --   },
-    --   {
-    --     ft = "Outline",
-    --     pinned = true,
-    --     open = "SymbolsOutline",
     --   },
     --   -- any other neo-tree windows
     --   "neo-tree",
