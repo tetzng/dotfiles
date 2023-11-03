@@ -20,6 +20,11 @@ if status is-interactive
     eval (/opt/homebrew/bin/brew shellenv)
   end
 
+  # Homebrew
+  if test -d /opt/homebrew/opt/curl
+    fish_add_path /opt/homebrew/opt/curl/bin
+  end
+
   # color scheme
   if type -q scheme
     scheme set tokyonight
