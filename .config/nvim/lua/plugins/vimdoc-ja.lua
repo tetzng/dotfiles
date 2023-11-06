@@ -1,5 +1,8 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "vim-jp/vimdoc-ja",
-  event = "VeryLazy",
+  event = "CmdlineEnter",
   ft = "help",
 }
+
+return M

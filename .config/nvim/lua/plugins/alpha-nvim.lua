@@ -1,9 +1,11 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "goolord/alpha-nvim",
-  event = "VimEnter",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
+  lazy = false,
+  priority = 1200,
   opts = function()
     local dashboard = require("alpha.themes.dashboard")
     local logo = [[
@@ -50,3 +52,5 @@ return {
     require("alpha").setup(dashboard.opts)
   end,
 }
+
+return M

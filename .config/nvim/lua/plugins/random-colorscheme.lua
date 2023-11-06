@@ -2,12 +2,20 @@
 local M = {
   "tetzng/random-colorscheme.nvim",
   lazy = false,
+  priority = 1000,
   dependencies = {
-    "folke/tokyonight.nvim",
-    "rebelot/kanagawa.nvim",
+    {
+      "folke/tokyonight.nvim",
+      config = true,
+    },
+    {
+      "rebelot/kanagawa.nvim",
+      config = true,
+    },
     {
       "catppuccin/nvim",
       name = "catppuccin",
+      config = true,
     },
 
   },
@@ -18,7 +26,6 @@ local M = {
       "tokyonight-moon",
       "tokyonight-storm",
       "catppuccin-mocha",
-      -- "catppuccin-frappe",
       "catppuccin-macchiato",
       "kanagawa-wave",
       "kanagawa-dragon",

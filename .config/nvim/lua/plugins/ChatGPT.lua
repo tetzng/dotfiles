@@ -1,5 +1,11 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "jackMort/ChatGPT.nvim",
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim"
+  },
   event = "VeryLazy",
   opts = {
     yank_register = "+",
@@ -109,12 +115,6 @@ return {
     actions_paths = {},
     predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv",
   },
-  -- config = function(_, opts)
-  --   require("chatgpt").setup(opts)
-  -- end,
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-    "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim"
-  },
 }
+
+return M

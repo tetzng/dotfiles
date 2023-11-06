@@ -1,4 +1,5 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
   event = "VimEnter",
@@ -87,3 +88,5 @@ return {
     vim.keymap.set("c", "<C-o><C-r>", builtin.command_history, { desc = "Find command history by Telescope" })
   end,
 }
+
+return M

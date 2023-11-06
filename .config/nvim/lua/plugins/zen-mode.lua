@@ -1,5 +1,8 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "folke/zen-mode.nvim",
-  event = "VimEnter",
+  event = "BufReadPost",
   config = true,
 }
+
+return M

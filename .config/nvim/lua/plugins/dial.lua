@@ -1,6 +1,7 @@
-return {
+---@class LazyPluginSpec
+local M = {
   "monaqa/dial.nvim",
-  event = "VimEnter",
+  event = "BufReadPost",
   keys = {
     { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
     { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
@@ -18,3 +19,5 @@ return {
     })
   end,
 }
+
+return M

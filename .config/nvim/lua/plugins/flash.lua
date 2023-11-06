@@ -1,7 +1,7 @@
 ---@class LazyPluginSpec
 local M = {
   "folke/flash.nvim",
-  event = "VeryLazy",
+  event = "BufReadPost",
 
   ---@type Flash.Config
   opts = {

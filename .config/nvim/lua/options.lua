@@ -46,6 +46,7 @@ vim.opt.splitbelow = true    -- Put new windows below current
 vim.opt.splitright = true    -- Put new windows right of current
 vim.opt.tabstop = 2          -- Number of spaces tabs count for
 vim.opt.termguicolors = true -- True color support
+vim.opt.timeout = true
 vim.opt.timeoutlen = 300
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
