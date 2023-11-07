@@ -15,7 +15,6 @@ local M = {
     local ft = require("guard.filetype")
 
     ft("lua"):fmt("lsp")
-      :append("stylua")
     ft("rust")
       :fmt("rustfmt")
     ft("go")
