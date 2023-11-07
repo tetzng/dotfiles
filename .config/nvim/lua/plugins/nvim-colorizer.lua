@@ -1,5 +1,7 @@
 return {
   "norcalli/nvim-colorizer.lua",
-  event = "VimEnter",
-  config = true,
+  ft = { "css", "html", "typescriptreact" },
+  config = function()
+    require("colorizer").setup()
+  end,
 }
