@@ -4,19 +4,18 @@ local M = {
   dependencies = {
     "nvimdev/guard-collection",
   },
-  event = { "BufReadPre", "BufNewFile" },
   ft = {
-    "go", "python", "rust", "javascript", "typescript", "typescriptreact", "lua",
+    "go", "python", "rust", "javascript", "typescript", "typescriptreact", "lua", "fish",
   },
   opts = {
-    fmt_on_save = false,
+    fmt_on_save = true,
     lsp_as_default_formatter = true,
   },
   config = function(_, opts)
     local ft = require("guard.filetype")
 
     ft("lua"):fmt("lsp")
-      -- :append("stylua")
+      :append("stylua")
     ft("rust")
       :fmt("rustfmt")
     ft("go")
@@ -27,6 +26,8 @@ local M = {
     ft("python")
       :fmt("isort")
       :lint("flake8")
+    ft("fish")
+      :fmt("fish_indent")
 
     require("guard").setup(opts)
   end,
