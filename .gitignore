@@ -31,6 +31,8 @@
 !/.config/ngrok/ngrok.yml
 !/.config/nvim
 !/.config/nvim/**
+!/.config/rtx
+!/.config/rtx/**
 !/.config/sheldon
 !/.config/sheldon/plugins.toml
 !/.config/silicon
