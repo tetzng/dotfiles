@@ -82,9 +82,9 @@ local M = {
         })
       end,
     })
-    lspconfig.rubocop.setup({
-      capabilities = capabilities,
-    })
+    -- lspconfig.rubocop.setup({
+    --   capabilities = capabilities,
+    -- })
   end,
 }
 
