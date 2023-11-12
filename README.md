@@ -9,3 +9,7 @@
 - Font: [Cica](https://github.com/miiton/Cica)
 - Runtime Version Manager: [rtx](https://github.com/jdx/rtx)
 - Package Manager: [Homebrew](https://github.com/Homebrew/brew)
+
+## Config
+
+- My Neovim config is [here](./.config/nvim)
