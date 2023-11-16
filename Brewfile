@@ -48,7 +48,7 @@ brew "mas"
 # Open source relational database management system
 brew "mysql", restart_service: true
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
 # Fast, disk space efficient package manager
@@ -105,6 +105,8 @@ cask "arc"
 cask "around"
 # Desktop password and login vault
 cask "bitwarden"
+# Write, edit, and chat about your code with AI
+cask "cursor"
 # Trains AIs to understand and translate texts
 cask "deepl"
 # Voice and text chat software
@@ -114,6 +116,8 @@ cask "docker"
 # Reimagine your terminal
 cask "fig"
 cask "font-cica"
+# Superfamily of fonts for code
+cask "font-monaspace"
 # Virtual video-calling space
 cask "gather"
 # Web browser
