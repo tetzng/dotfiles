@@ -7,8 +7,6 @@ local M = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "nvim-treesitter/nvim-treesitter-context",
     "windwp/nvim-ts-autotag",
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    -- "HiPhish/nvim-ts-rainbow2",
   },
   config = function()
     ---@type TSConfig
@@ -54,12 +52,6 @@ local M = {
           scope_incremental = "grc",
           node_decremental = "grm",
         },
-      },
-
-      -- nvim-ts-context-commentstring
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
       },
 
       -- nvim-ts-autotag

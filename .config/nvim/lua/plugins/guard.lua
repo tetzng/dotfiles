@@ -8,7 +8,7 @@ local M = {
     "go", "python", "rust", "javascript", "typescript", "typescriptreact", "lua", "fish",
   },
   opts = {
-    -- fmt_on_save = true,
+    fmt_on_save = true,
     lsp_as_default_formatter = true,
   },
   config = function(_, opts)

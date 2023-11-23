@@ -7,6 +7,7 @@ local M = {
     "neovim/nvim-lspconfig",
     "folke/neodev.nvim",
     "folke/neoconf.nvim",
+    "b0o/schemastore.nvim",
   },
   ---@type MasonLspconfigSettings
   opts = {
@@ -35,6 +36,7 @@ local M = {
           capabilities = capabilities,
         })
       end,
+
       ["lua_ls"] = function()
         lspconfig.lua_ls.setup({
           capabilities = capabilities,
@@ -64,6 +66,13 @@ local M = {
           },
         })
       end,
+
+      ["rubocop"] = function()
+        lspconfig.rubocop.setup({
+          capabilities = capabilities,
+        })
+      end,
+
       ["stylelint_lsp"] = function()
         lspconfig.stylelint_lsp.setup({
           capabilities = capabilities,
@@ -81,10 +90,42 @@ local M = {
           },
         })
       end,
+
+      ["jsonls"] = function()
+        lspconfig.jsonls.setup {
+          capabilities = capabilities,
+          filetypes = { "json", "jsonc", "json5" },
+          settings = {
+            json = {
+              schemas = require("schemastore").json.schemas(),
+            },
+          },
+        }
+      end,
+
+      ["yamlls"] = function()
+        lspconfig.yamlls.setup {
+          capabilities = capabilities,
+          settings = {
+            yaml = {
+              hover = true,
+              completion = true,
+              validate = true,
+              schemas = require("schemastore").yaml.schemas {
+                extra = {
+                  {
+                    fileMatch = { "**/packages/*/package.yaml" },
+                    name = "Mason Registry",
+                    description = "Mason Registry",
+                    url = "https://raw.githubusercontent.com/mason-org/json-schema/main/bundled-schema.json",
+                  },
+                },
+              },
+            },
+          },
+        }
+      end,
     })
-    -- lspconfig.rubocop.setup({
-    --   capabilities = capabilities,
-    -- })
   end,
 }
 
