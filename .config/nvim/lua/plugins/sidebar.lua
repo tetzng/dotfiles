@@ -19,7 +19,7 @@ local M = {
       interval = 5000,
     },
     datetime = {
-      icon = "󿙏",
+      icon = "󰃰",
       format = "%a %b %d, %H:%M",
       clocks = {
         { name = "local" }
