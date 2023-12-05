@@ -25,7 +25,8 @@ local M = {
       dashboard.button("g", " " .. " Find text", "<cmd> Telescope live_grep <cr>"),
       dashboard.button("c", " " .. " Config", "<cmd> e $HOME/dev/dotfiles/.config/nvim/init.lua <cr>"),
       dashboard.button("s", " " .. " Restore Session", [[<cmd> lua require("persistence").load() <cr>]]),
-      dashboard.button("l", "󿦱 " .. " Lazy", "<cmd> Lazy <cr>"),
+      dashboard.button("m", " " .. " Mason", "<cmd> Mason <cr>"),
+      dashboard.button("l", "󰒲 " .. " Lazy", "<cmd> Lazy <cr>"),
       dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
     }
     for _, button in ipairs(dashboard.section.buttons.val) do
@@ -34,6 +35,7 @@ local M = {
     end
     dashboard.section.header.opts.hl = "AlphaHeader"
     dashboard.section.buttons.opts.hl = "AlphaButtons"
+    dashboard.section.buttons.opts.spacing = 1
     dashboard.section.footer.opts.hl = "AlphaFooter"
     dashboard.opts.layout[1].val = 8
     return dashboard

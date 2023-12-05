@@ -34,7 +34,6 @@ local M = {
           text_align = "left",
         },
       },
-      buffer_close_icon = "",
     },
   },
 }
