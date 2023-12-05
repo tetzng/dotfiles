@@ -118,7 +118,7 @@ shell:
   args:
     - --login
     - -c
-    - "/opt/homebrew/bin/tmux a -t 0 || /opt/homebrew/bin/tmux -u"
+    - "/opt/homebrew/bin/zellij attach -c dev"
 
 env:
   TERM: alacritty
