@@ -1,4 +1,4 @@
 return {
   "andymass/vim-matchup",
-  event = "VimEnter",
+  event = "BufReadPre",
 }

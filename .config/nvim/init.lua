@@ -1,6 +1,6 @@
 if vim.g.vscode then
   require("vscode/keymaps")
-  vim.opt.clipboard = "unnamedplus" -- sync with system clipboard
+  vim.o.clipboard = "unnamedplus" -- sync with system clipboard
 else
   require("keymaps")
   require("options")
@@ -17,7 +17,7 @@ else
       lazypath,
     })
   end
-  vim.opt.rtp:prepend(lazypath)
+  vim.opt.runtimepath:prepend(lazypath)
 
   ---@type LazySpec
   local plugins = {
