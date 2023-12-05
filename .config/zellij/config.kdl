@@ -6,6 +6,7 @@ keybinds clear-defaults=true {
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
+        bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     resize {
         bind "Ctrl n" { SwitchToMode "Normal"; }
@@ -147,6 +148,7 @@ keybinds clear-defaults=true {
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
+        bind "Enter" "Esc" { SwitchToMode "locked"; }
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
@@ -158,7 +160,7 @@ keybinds clear-defaults=true {
         bind "Alt ]" { NextSwapLayout; }
     }
     shared_except "normal" "locked" {
-        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+        // bind "Enter" "Esc" { SwitchToMode "locked"; }
     }
     shared_except "pane" "locked" {
         bind "Ctrl p" { SwitchToMode "Pane"; }
