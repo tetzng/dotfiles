@@ -13,11 +13,11 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 14
 config.hide_tab_bar_if_only_one_tab = true
-config.tab_bar_at_bottom = false
 config.line_height = 1.2
 config.macos_forward_to_ime_modifier_mask = "SHIFT|CTRL"
 config.macos_window_background_blur = 9
 config.quit_when_all_windows_are_closed = true
+config.tab_bar_at_bottom = false
 config.window_background_opacity = 0.9
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW"
