@@ -1,0 +1,9 @@
+dialect = "us"
+search_mode = "fuzzy"
+filter_mode = "global"
+filter_mode_shell_up_key_binding = "directory"
+ctrl_n_shortcuts = true
+style = "auto"
+invert = false
+show_preview = true
+enter_accept = false

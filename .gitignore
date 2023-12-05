@@ -9,6 +9,8 @@
 !/.config/
 !/.config/alacritty
 !/.config/alacritty/**
+!/.config/atuin
+!/.config/atuin/config.toml
 !/.config/bat
 !/.config/bat/**
 !/.config/fish
