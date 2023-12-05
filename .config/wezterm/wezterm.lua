@@ -7,10 +7,7 @@ require("on")
 config.cell_width = 0.9
 config.color_scheme = "tokyonight_moon"
 config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
-config.font = wezterm.font_with_fallback({
-  { family = "Cica" },
-  { family = "Cica", assume_emoji_presentation = true },
-})
+config.font = wezterm.font("UDEV Gothic 35NFLG")
 config.font_size = 14
 config.hide_tab_bar_if_only_one_tab = true
 config.line_height = 1.2
