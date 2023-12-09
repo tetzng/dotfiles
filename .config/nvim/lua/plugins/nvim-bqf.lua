@@ -1,9 +1,11 @@
 return {
   "kevinhwang91/nvim-bqf",
-  event = "VimEnter",
   ft = 'qf',
   dependencies = {
-    'junegunn/fzf',
+    {
+      'junegunn/fzf',
+      build = "./install --all"
+    },
     'nvim-treesitter/nvim-treesitter',
   },
 }

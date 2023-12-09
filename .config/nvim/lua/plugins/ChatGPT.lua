@@ -6,7 +6,6 @@ local M = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim"
   },
-  event = "VeryLazy",
   opts = {
     yank_register = "+",
     edit_with_instructions = {
@@ -114,6 +113,9 @@ local M = {
     },
     actions_paths = {},
     predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv",
+  },
+  keys = {
+    { "<leader>cg", "<cmd> ChatGPT<cr>", desc = "Open ChatGPT" },
   },
 }
 

@@ -1,7 +1,9 @@
 ---@type string
 local content = [[
 ---@class LazyPluginSpec
-local M = {}
+local M = {
+  "",
+}
 
 return M
 ]]

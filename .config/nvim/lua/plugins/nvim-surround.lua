@@ -2,7 +2,7 @@
 local M = {
   "kylechui/nvim-surround",
   version = "*",
-  event = "VeryLazy",
+  event = "BufReadPre",
   config = true,
 }
 

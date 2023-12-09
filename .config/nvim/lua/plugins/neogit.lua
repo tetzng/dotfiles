@@ -1,7 +1,8 @@
 ---@class LazyPluginSpec
 local M = {
   "NeogitOrg/neogit",
-  event = "VimEnter",
+  event = "BufReadPre",
+  ft = "neo-tree",
   dependencies = {
     "nvim-lua/plenary.nvim",         -- required
     "nvim-telescope/telescope.nvim", -- optional

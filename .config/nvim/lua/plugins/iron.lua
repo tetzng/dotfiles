@@ -1,6 +1,6 @@
 return {
   "Vigemus/iron.nvim",
-  event = "VimEnter",
+  event = "BufReadPost",
   config = function()
     require("iron.core").setup {
       config = {

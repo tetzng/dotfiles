@@ -2,13 +2,14 @@
 local M = {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
-  event = "VimEnter",
+  ft = { "alpha" },
+  event = "BufReadPost",
   dependencies = {
     { "nvim-lua/plenary.nvim" },
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    { "nvim-telescope/telescope-frecency.nvim" },
-    { "nvim-telescope/telescope-dap.nvim" },
-    { "nvim-telescope/telescope.nvim" },
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+    },
   },
   config = function()
     local actions = require("telescope.actions")
@@ -68,8 +69,6 @@ local M = {
     })
 
     require("telescope").load_extension("fzf")
-    require("telescope").load_extension("frecency")
-    require("telescope").load_extension("cica_icons")
 
     local builtin = require("telescope.builtin")
 
@@ -77,11 +76,7 @@ local M = {
     vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files by Telescope" })
     vim.keymap.set("n", "<leader>ff", builtin.live_grep, { desc = "Grep files by Telescope" })
     vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Grep git files by Telescope" })
-    vim.keymap.set("n", "<leader>fc", "<cmd>Telescope cica_icons<cr>", { desc = "Find cica icons" })
     vim.keymap.set("n", "<leader>f?", "<cmd>Telescope keymaps<cr>", { desc = "Find keymaps" })
-    vim.keymap.set("n", "<leader>fr",
-      "<cmd>lua require('telescope').extensions.frecency.frecency({ workspace = 'CWD' })<cr>",
-      { silent = true, desc = "Find file from history" })
 
     vim.keymap.set("c", "<C-o><C-f>", builtin.search_history, { desc = "Find command history by Telescope" })
     vim.keymap.set("c", "<C-o><C-p>", builtin.commands, { desc = "Find commands by Telescope" })

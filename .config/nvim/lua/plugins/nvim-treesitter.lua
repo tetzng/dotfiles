@@ -1,7 +1,7 @@
 ---@class LazyPluginSpec
 local M = {
   "nvim-treesitter/nvim-treesitter",
-  event = "VimEnter",
+  event = "BufReadPre",
   build = ":TSUpdate",
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",

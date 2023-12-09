@@ -1,8 +1,12 @@
 return {
   "mrjones2014/legendary.nvim",
-  event = "VimEnter",
+  lazy = false,
   dependencies = {
     "kkharji/sqlite.lua",
   },
-  config = true,
+  opts = {
+    extensions = {
+      lazy_nvim = { auto_register = true },
+    },
+  }
 }

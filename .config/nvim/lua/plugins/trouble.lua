@@ -1,6 +1,6 @@
 return {
   "folke/trouble.nvim",
-  event = "VimEnter",
+  event = "BufReadPre",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
