@@ -7,6 +7,8 @@ set -gx GPG_TTY (tty)
 # remove greeting message
 set -U fish_greeting
 
+set -g fish_default_key_bindings fish_hybrid_key_bindings
+
 source $HOME/.config/fish/secrets.fish
 
 if test -d /opt/homebrew
