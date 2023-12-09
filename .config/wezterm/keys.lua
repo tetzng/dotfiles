@@ -70,5 +70,6 @@ M.keys = {
     }),
   },
 }
+M.macos_forward_to_ime_modifier_mask = "SHIFT|CTRL"
 
 return M

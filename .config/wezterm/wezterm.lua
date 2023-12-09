@@ -1,31 +1,23 @@
 local wezterm = require("wezterm")
-local keybinds = require("keybinds")
+local appearance = require("appearance")
+local fonts = require("fonts")
+local keys = require("keys")
+local utils = require("utils")
 local config = wezterm.config_builder()
 
 require("on")
 
-config.cell_width = 0.9
 config.color_scheme = "tokyonight_moon"
 config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
-config.font = wezterm.font("UDEV Gothic 35NFLG")
-config.font_size = 14
-config.hide_tab_bar_if_only_one_tab = true
-config.line_height = 1.2
-config.macos_forward_to_ime_modifier_mask = "SHIFT|CTRL"
-config.macos_window_background_blur = 9
-config.quit_when_all_windows_are_closed = true
-config.tab_bar_at_bottom = false
-config.window_background_opacity = 0.9
+config.quit_when_all_windows_are_closed = false
 config.window_close_confirmation = "NeverPrompt"
-config.window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW"
-config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
-}
 
-config.leader = keybinds.leader
-config.keys = keybinds.keys
+for _, settings in ipairs({
+  appearance,
+  fonts,
+  keys,
+}) do
+  utils.merge_tables(config, settings)
+end
 
 return config
