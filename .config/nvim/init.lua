@@ -4,6 +4,10 @@ if vim.g.vscode then
 else
   require("keymaps")
   require("options")
+  if vim.g.neovide then
+    vim.o.guifont = "UDEV Gothic 35LGNF" -- text below applies for VimScript
+    vim.g.neovide_input_ime = true
+  end
 
   -- lazy.nvim
   local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
