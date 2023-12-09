@@ -122,8 +122,14 @@ cask "docker"
 # Reimagine your terminal
 cask "fig"
 cask "font-cica"
+# Developer targeted fonts with a high number of glyphs
+cask "font-fira-code-nerd-font"
 # Superfamily of fonts for code
 cask "font-monaspace"
+# Integrate fonts from BIZ UD Gothic and JetBrains Mono
+cask "font-udev-gothic-nf"
+# Developer targeted fonts with a high number of glyphs
+cask "font-victor-mono-nerd-font"
 # Virtual video-calling space
 cask "gather"
 # Web browser
