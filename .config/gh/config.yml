@@ -10,3 +10,5 @@ pager: delta
 # aliases:
 #   co: pr checkout
 # browser: open -a ''
+
+version: "1"
