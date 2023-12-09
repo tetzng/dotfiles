@@ -1,5 +1,5 @@
 return {
   "windwp/nvim-autopairs",
-  event = "VimEnter",
+  event = "BufReadPost",
   config = true,
 }

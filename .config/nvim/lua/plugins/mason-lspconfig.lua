@@ -8,6 +8,7 @@ local M = {
     "folke/neodev.nvim",
     "folke/neoconf.nvim",
     "b0o/schemastore.nvim",
+    "hrsh7th/nvim-cmp",
   },
   ---@type MasonLspconfigSettings
   opts = {
@@ -95,6 +96,21 @@ local M = {
               schemas = require("schemastore").json.schemas(),
             },
           },
+        }
+      end,
+
+      ["efm"] = function()
+        lspconfig.efm.setup {
+          capabilities = capabilities,
+          filetypes = { 'yaml' },
+          settings = {
+            yaml = {
+              diagnostics = {
+                enable = true,
+              },
+            },
+          },
+
         }
       end,
 
