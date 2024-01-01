@@ -15,21 +15,11 @@ return {
       },
     },
     presets = {
-      bottom_search = true,
+      bottom_search = false,
       command_palette = true,
       long_message_to_split = true,
       inc_rename = false,
       lsp_doc_border = false,
-    },
-    cmdline = {
-      format = {
-        cmdline = { pattern = "^:", icon = "", lang = "vim" },
-        search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
-        search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
-        filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
-        lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
-        help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
-      },
     },
   },
 }
