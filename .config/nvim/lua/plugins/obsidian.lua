@@ -23,8 +23,36 @@ local M = {
         path = "~/dev/notes",
       },
     },
+    templates = {
+      subdir = "templates",
+      date_format = "%Y-%m-%d-%a",
+      time_format = "%H:%M",
+    },
+    daily_notes = {
+      -- Optional, if you keep daily notes in a separate directory.
+      folder = "daily",
+      -- Optional, if you want to change the date format for the ID of daily notes.
+      date_format = "%Y-%m-%d",
+      -- Optional, if you want to change the date format of the default alias of daily notes.
+      alias_format = "%B %-d, %Y",
+      -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+      template = "Daily notes.md"
+    },
+    -- FIXME: this doesn't work
+    note_frontmatter_func = function(note)
+      -- This is equivalent to the default frontmatter function.
+      local out = { created = os.date("%Y-%m-%dT%H:%M") }
+      -- `note.metadata` contains any manually added fields in the frontmatter.
+      -- So here we just make sure those fields are kept in the frontmatter.
+      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+        for k, v in pairs(note.metadata) do
+          out[k] = v
+        end
+      end
 
-    -- see below for full list of options 👇
+      out[updadted] = os.date("%Y-%m-%dT%H:%M")
+      return out
+    end,
   },
 }
 
