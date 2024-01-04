@@ -17,6 +17,18 @@ local M = {
 
     require("telescope").setup({
       defaults = {
+        sorting_strategy = "ascending",
+        layout_config = {
+          horizontal = {
+            height = 0.9,
+            preview_cutoff = 120,
+            prompt_position = "top",
+            width = 0.8
+          },
+        },
+        dynamic_preview_title = true,
+        results_title = "",
+        prompt_title = "",
         mappings = {
           i = {
             ["<esc>"] = actions.close,
@@ -52,6 +64,15 @@ local M = {
           },
         },
       },
+      pickers = {
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          hidden = true,
+        },
+        colorscheme = {
+          enable_preview = true,
+        }
+      },
       extensions = {
         fzf = {
           fuzzy = true,                   -- false will only do exact matching
@@ -61,11 +82,6 @@ local M = {
           -- the default case_mode is "smart_case"
         },
       },
-      pickers = {
-        colorscheme = {
-          enable_preview = true
-        }
-      }
     })
 
     require("telescope").load_extension("fzf")
