@@ -38,9 +38,9 @@ if type -q scheme
     scheme set tokyonight
 end
 
-# rtx
-if type -q rtx
-    rtx activate fish | source
+# mise
+if type -q mise
+    mise activate fish | source
 end
 
 # starship
@@ -99,10 +99,9 @@ abbr -a k "lsd --classify --long --tree"
 abbr -a l "lsd --classify"
 abbr -a la "lsd --almost-all --classify --long"
 abbr -a ll "lsd --classify --long"
-abbr -a m man
+abbr -a m mise
 abbr -a nb "git switch -c"
 abbr -a pr "gh pr view --web"
-abbr -a r rtx
 abbr -a repo "gh repo view --web"
 abbr -a si "silicon --output $HOME/Downloads/silicon_(date +%Y-%m-%d_%H%M%S).png"
 abbr -a sic "silicon --output $HOME/Downloads/silicon_(date +%Y-%m-%d_%H%M%S).png --from-clipboard -l"

@@ -7,7 +7,7 @@
 - Editor: [Neovim](https://github.com/neovim/neovim)
 - Terminal: [WezTerm](https://github.com/wez/wezterm)
 - Font: [UDEV Gothic](https://github.com/yuru7/udev-gothic)
-- Runtime Version Manager: [rtx](https://github.com/jdx/rtx)
+- Runtime Version Manager: [mise](https://github.com/jdx/mise)
 - Package Manager: [Homebrew](https://github.com/Homebrew/brew)
 
 ## Config

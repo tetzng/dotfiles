@@ -9,8 +9,8 @@ eval "$(sheldon source)"
 # starship
 eval "$(starship init zsh)"
 
-# rtx
-eval "$(rtx activate zsh)"
+# mise
+eval "$(mise activate zsh)"
 
 if type brew &>/dev/null
 then

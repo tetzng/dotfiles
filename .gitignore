@@ -29,10 +29,10 @@
 !/.config/kitty/**
 !/.config/lazygit
 !/.config/lazygit/config.yml
+!/.config/mise
+!/.config/mise/**
 !/.config/nvim
 !/.config/nvim/**
-!/.config/rtx
-!/.config/rtx/**
 !/.config/sheldon
 !/.config/sheldon/plugins.toml
 !/.config/silicon
