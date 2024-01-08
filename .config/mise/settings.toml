@@ -1,0 +1,2 @@
+#:schema https://mise.jdx.dev/schema/settings.json
+legacy_version_file = true
