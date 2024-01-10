@@ -9,6 +9,8 @@ tap "oven-sh/bun"
 brew "atuin"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Secure runtime for JavaScript and TypeScript
@@ -47,12 +49,16 @@ brew "lsd"
 brew "luarocks"
 # Mac App Store command-line interface
 brew "mas"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Open source relational database management system
 brew "mysql", restart_service: true
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim", args: ["HEAD"]
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
 # Fast, disk space efficient package manager
 brew "pnpm"
 # Python package management tool
@@ -63,8 +69,6 @@ brew "postgresql@16", restart_service: true
 brew "ripgrep"
 # Wrapper around ripgrep that adds multiple rich file types
 brew "ripgrep-all"
-# Polyglot runtime manager (asdf rust clone)
-brew "rtx"
 # Fast, configurable, shell plugin manager
 brew "sheldon"
 # Create beautiful image of your source code
@@ -174,6 +178,8 @@ cask "tailscale"
 cask "visual-studio-code"
 # Web browser with built-in email client focusing on customization and control
 cask "vivaldi"
+# Terminal emulator
+cask "wave"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
 # Video communication and virtual meeting platform
@@ -184,6 +190,7 @@ mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
+mas "LINE", id: 539883307
 mas "Logic Pro", id: 634148309
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
