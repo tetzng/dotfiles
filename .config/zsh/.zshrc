@@ -19,3 +19,5 @@ then
   autoload -Uz compinit
   compinit
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,0 +1,1 @@
+/Users/tetzng/.local/share/nvim/lazy/fzf/shell/key-bindings.fish
