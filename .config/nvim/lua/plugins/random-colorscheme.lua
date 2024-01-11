@@ -6,21 +6,31 @@ local M = {
   dependencies = {
     {
       "folke/tokyonight.nvim",
-      config = true,
+      opts = {
+        transparent = true,
+      },
     },
     {
       "rebelot/kanagawa.nvim",
-      config = true,
+      opts = {
+        transparent = true,
+      },
     },
     {
       "catppuccin/nvim",
       name = "catppuccin",
-      config = true,
+      opts = {
+        transparent_background = true,
+      },
     },
     {
       "projekt0n/github-nvim-theme",
       main = "github-theme",
-      config = true,
+      opts = {
+        options = {
+          transparent = true,
+        },
+      },
     },
   },
   ---@class RandomColorscheme.UserConfig

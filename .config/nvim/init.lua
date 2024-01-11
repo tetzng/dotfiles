@@ -5,8 +5,9 @@ else
   require("keymaps")
   require("options")
   if vim.g.neovide then
-    vim.o.guifont = "UDEV Gothic 35LGNF" -- text below applies for VimScript
+    -- vim.o.guifont = "UDEV Gothic 35LGNF:h14" -- text below applies for VimScript
     vim.g.neovide_input_ime = true
+    vim.g.neovide_transparency = 0.9
   end
 
   -- lazy.nvim
