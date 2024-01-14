@@ -20,10 +20,11 @@ local M = {
         sorting_strategy = "ascending",
         layout_config = {
           horizontal = {
-            height = 0.9,
+            anchor = "N",
+            height = 20,
             preview_cutoff = 120,
             prompt_position = "top",
-            width = 0.8
+            width = 140,
           },
         },
         dynamic_preview_title = true,
@@ -71,7 +72,7 @@ local M = {
         },
         colorscheme = {
           enable_preview = true,
-        }
+        },
       },
       extensions = {
         fzf = {
