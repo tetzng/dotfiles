@@ -19,6 +19,10 @@ if type -q go
     fish_add_path $HOME/go/bin
 end
 
+if type -q cargo
+    fish_add_path $HOME/.cargo/bin
+end
+
 if test -d $HOME/dev/bin
     fish_add_path $HOME/dev/bin
 end
