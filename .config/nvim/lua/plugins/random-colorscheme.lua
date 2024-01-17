@@ -7,20 +7,20 @@ local M = {
     {
       "folke/tokyonight.nvim",
       opts = {
-        transparent = true,
+        -- transparent = true,
       },
     },
     {
       "rebelot/kanagawa.nvim",
       opts = {
-        transparent = true,
+        -- transparent = true,
       },
     },
     {
       "catppuccin/nvim",
       name = "catppuccin",
       opts = {
-        transparent_background = true,
+        -- transparent_background = true,
       },
     },
     {
@@ -28,7 +28,7 @@ local M = {
       main = "github-theme",
       opts = {
         options = {
-          transparent = true,
+          -- transparent = true,
         },
       },
     },
