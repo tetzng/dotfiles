@@ -47,6 +47,8 @@
 !/.config/wezterm/**
 !/.config/yabai
 !/.config/yabai/**
+!/.config/yazi
+!/.config/yazi/**
 !/.config/zellij
 !/.config/zellij/**
 !/.config/zsh
