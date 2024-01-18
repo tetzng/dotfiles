@@ -1,0 +1,20 @@
+version: 2
+log: /tmp/efm-langserver/output.log
+loglevel: 1
+
+root-markers:
+  - .git/
+commands:
+  - command: nvim
+    arguments:
+      - ${INPUT}
+    title: EDITOR
+
+tools:
+  yaml-yamllint: &yaml-yamllint
+    lint-command: 'yamllint -f parsable -'
+    lint-stdin: true
+
+languages:
+  yaml:
+    - <<: *yaml-yamllint

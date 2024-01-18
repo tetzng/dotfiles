@@ -13,6 +13,8 @@
 !/.config/atuin/config.toml
 !/.config/bat
 !/.config/bat/**
+!/.config/efm-langserver
+!/.config/efm-langserver/**
 !/.config/fish
 !/.config/fish/**
 /.config/fish/fish_variables
