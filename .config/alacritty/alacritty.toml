@@ -540,101 +540,15 @@ key = "B"
 mode = "~Search"
 mods = "Command"
 
-[[schemes.tokyo-night.indexed_colors]]
-color = "0xff9e64"
-index = 16
+[[keyboard.bindings]]
+action = "SelectNextTab"
+key = "Tab"
+mods = "Control"
 
-[[schemes.tokyo-night.indexed_colors]]
-color = "0xdb4b4b"
-index = 17
-
-[schemes.tokyo-night.bright]
-black = "0x414868"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xc0caf5"
-yellow = "0xe0af68"
-
-[schemes.tokyo-night.normal]
-black = "0x15161e"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xa9b1d6"
-yellow = "0xe0af68"
-
-[schemes.tokyo-night.primary]
-background = "0x1a1b26"
-foreground = "0xc0caf5"
-
-[[schemes.tokyo-night-moon.indexed_colors]]
-color = "0xff966c"
-index = 16
-
-[[schemes.tokyo-night-moon.indexed_colors]]
-color = "0xc53b53"
-index = 17
-
-[schemes.tokyo-night-moon.bright]
-black = "0x444a73"
-blue = "0x82aaff"
-cyan = "0x86e1fc"
-green = "0xc3e88d"
-magenta = "0xc099ff"
-red = "0xff757f"
-white = "0xc8d3f5"
-yellow = "0xffc777"
-
-[schemes.tokyo-night-moon.normal]
-black = "0x1b1d2b"
-blue = "0x82aaff"
-cyan = "0x86e1fc"
-green = "0xc3e88d"
-magenta = "0xc099ff"
-red = "0xff757f"
-white = "0x828bb8"
-yellow = "0xffc777"
-
-[schemes.tokyo-night-moon.primary]
-background = "0x222436"
-foreground = "0xc8d3f5"
-
-[[schemes.tokyo-night-storm.indexed_colors]]
-color = "0xff9e64"
-index = 16
-
-[[schemes.tokyo-night-storm.indexed_colors]]
-color = "0xdb4b4b"
-index = 17
-
-[schemes.tokyo-night-storm.bright]
-black = "0x414868"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xc0caf5"
-yellow = "0xe0af68"
-
-[schemes.tokyo-night-storm.normal]
-black = "0x1d202f"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xa9b1d6"
-yellow = "0xe0af68"
-
-[schemes.tokyo-night-storm.primary]
-background = "0x24283b"
-foreground = "0xc0caf5"
+[[keyboard.bindings]]
+action = "SelectPreviousTab"
+key = "Tab"
+mods = "Control"
 
 [scrolling]
 history = 10000
@@ -646,6 +560,8 @@ program = "/opt/homebrew/bin/fish"
 
 [window]
 opacity = 0.9
+# decorations = "None"
+dynamic_padding = true
 
 [window.dimensions]
 columns = 200
