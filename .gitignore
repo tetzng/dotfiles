@@ -51,6 +51,8 @@
 !/.config/yabai/**
 !/.config/yazi
 !/.config/yazi/**
+!/.config/zed
+!/.config/zed/*.json
 !/.config/zellij
 !/.config/zellij/**
 !/.config/zsh
