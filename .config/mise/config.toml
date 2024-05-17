@@ -1,4 +1,5 @@
 [tools]
-node = "20"
-ruby = "latest"
+node = "22"
+pnpm = "latest"
 python = "latest"
+ruby = "latest"
