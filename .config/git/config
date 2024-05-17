@@ -1,56 +1,62 @@
 [user]
-  name = Teppei Taguchi
-  email = tetzng.tt@gmail.com
+	name = Teppei Taguchi
+	email = tetzng.tt@gmail.com
 	signingkey = E1682121ED271AAE
 
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
 
 [pull]
-  ff = only
-  rebase = true
+	ff = only
+	rebase = true
 
 [init]
-  defaultBranch = main
+	defaultBranch = main
 
 [pager]
-  diff = delta
-  log = delta
-  reflog = delta
-  show = delta
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
 
 [delta]
-  navigate = true
+	navigate = true
 	side-by-side = true
 
 [github]
-  user = tetzng
+	user = tetzng
 
 [interactive]
-  diffFilter = delta --color-only
+	diffFilter = delta --color-only
 
 [ghq]
-  root = ~/ghq
+	root = ~/ghq
 
 [core]
-  editor = nvim
-  pager = delta
+	editor = nvim
+	pager = delta
 
 [fetch]
 	prune = true
 
-[merge]
-	ff = false
-
 [commit]
 	gpgsign = true
 
+[rerere]
+	enabled = true
+
+[rebase]
+	autostash = true
+
+[push]
+	default = current
+	autoSetupRemote = true
