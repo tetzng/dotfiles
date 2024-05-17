@@ -4,9 +4,9 @@ local M = {
   dependencies = {
     "nvimdev/guard-collection",
   },
-  ft = {
-    "go", "python", "rust", "javascript", "typescript", "typescriptreact", "lua", "fish",
-  },
+  -- ft = {
+  --   "go", "python", "rust", "javascript", "typescript", "typescriptreact", "lua", "fish",
+  -- },
   opts = {
     fmt_on_save = true,
     lsp_as_default_formatter = true,
@@ -16,17 +16,19 @@ local M = {
 
     ft("lua"):fmt("lsp")
     ft("rust")
-      :fmt("rustfmt")
+        :fmt("rustfmt")
     ft("go")
-      :fmt("gofmt")
-    ft("typescript", "javascript", "typescriptreact")
-      :fmt("lsp")
-      :append("prettier")
+        :fmt("gofmt")
+    ft("javascript")
+        :fmt("prettier")
+    ft("typescript", "typescriptreact")
+        :fmt("lsp")
+        :append("prettier")
     ft("python")
-      :fmt("isort")
-      :lint("flake8")
+        :fmt("isort")
+        :lint("flake8")
     ft("fish")
-      :fmt("fish_indent")
+        :fmt("fish_indent")
 
     require("guard").setup(opts)
   end,

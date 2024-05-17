@@ -17,16 +17,16 @@ local M = {
 
     require("telescope").setup({
       defaults = {
-        sorting_strategy = "ascending",
-        layout_config = {
-          horizontal = {
-            anchor = "N",
-            height = 20,
-            preview_cutoff = 120,
-            prompt_position = "top",
-            width = 140,
-          },
-        },
+        -- sorting_strategy = "ascending",
+        -- layout_config = {
+        --   horizontal = {
+        --     anchor = "N",
+        --     height = 20,
+        --     preview_cutoff = 120,
+        --     prompt_position = "top",
+        --     width = 140,
+        --   },
+        -- },
         dynamic_preview_title = true,
         results_title = "",
         prompt_title = "",

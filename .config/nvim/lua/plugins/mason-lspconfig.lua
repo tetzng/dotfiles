@@ -17,8 +17,6 @@ local M = {
       "eslint",
       "gopls",
       "lua_ls",
-      "rubocop",
-      "rust_analyzer",
       "stylelint_lsp",
       "tailwindcss",
     },
@@ -59,13 +57,6 @@ local M = {
               }
             },
           },
-        })
-      end,
-
-      ["rubocop"] = function()
-        lspconfig.rubocop.setup({
-          capabilities = capabilities,
-          cmd = { "rubocop", "--lsp" },
         })
       end,
 

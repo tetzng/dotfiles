@@ -1,7 +1,6 @@
 ---@class LazyPluginSpec
 local M = {
   "akinsho/bufferline.nvim",
-  version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
   event = "BufReadPre",
   keys = {
