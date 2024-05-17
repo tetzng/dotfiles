@@ -1,7 +1,6 @@
 tap "dart-lang/dart"
 tap "heroku/brew"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "leoafarias/fvm"
 tap "oven-sh/bun"
@@ -37,6 +36,8 @@ brew "gnupg"
 brew "go"
 # Post-modern modal text editor
 brew "helix"
+# Git-compatible distributed version control system
+brew "jj"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Simple terminal UI for git commands
@@ -54,13 +55,11 @@ brew "mise"
 # Open source relational database management system
 brew "mysql", restart_service: true
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
 # Create, run, and share large language models (LLMs)
-brew "ollama"
-# Fast, disk space efficient package manager
-brew "pnpm"
+brew "ollama", restart_service: true
 # Python package management tool
 brew "poetry"
 # Object-relational database system
@@ -115,14 +114,16 @@ cask "arc"
 cask "around"
 # Desktop password and login vault
 cask "bitwarden"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Write, edit, and chat about your code with AI
 cask "cursor"
-# Trains AIs to understand and translate texts
-cask "deepl"
 # Voice and text chat software
 cask "discord"
-# App to build and share containerized applications and microservices
+# App to build and share containerised applications and microservices
 cask "docker"
+# Text editor
+cask "emacs"
 # Reimagine your terminal
 cask "fig"
 cask "font-cica"
@@ -142,19 +143,23 @@ cask "google-chrome"
 cask "gpg-suite"
 # Screenshot and screen recording tool
 cask "gyazo"
-# Keyboard customizer
+# Customize keymap, shortcuts, and gesture pad behavior on HHKB Studio
+cask "hhkb-studio"
+# Keyboard customiser
 cask "karabiner-elements"
-# Open-source keystroke visualizer
+# Open-source keystroke visualiser
 cask "keycastr"
 # Open source code editor written in Rust
 cask "lapce"
 # Web browser
 cask "microsoft-edge"
+# Remote desktop client
+cask "microsoft-remote-desktop"
 # Neovim Client
 cask "neovide"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# App to write, plan, collaborate, and get organized
+# App to write, plan, collaborate, and get organised
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
@@ -182,6 +187,8 @@ cask "vivaldi"
 cask "wave"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+# Multiplayer code editor
+cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 # Desktop client for the Zulip team chat platform
@@ -193,7 +200,9 @@ mas "Kindle", id: 302584613
 mas "LINE", id: 539883307
 mas "Logic Pro", id: 634148309
 mas "Numbers", id: 409203825
+mas "Omnivore", id: 1564031042
 mas "Pages", id: 409201541
+mas "Reeder", id: 1529448980
 mas "RunCat", id: 1429033973
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
