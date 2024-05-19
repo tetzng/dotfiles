@@ -17,6 +17,7 @@ local M = {
       fish = { "fish_indent" },
       markdown = { "markdown-toc" },
       ruby = { "rubocop" },
+      toml = { "taplo" },
     },
     format_on_save = {
       timeout_ms = 3000,
