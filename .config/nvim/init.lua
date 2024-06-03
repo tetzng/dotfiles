@@ -1,5 +1,5 @@
 if vim.g.vscode then
-  require("vscode/keymaps")
+  require("vscode-neovim/keymaps")
   vim.o.clipboard = "unnamedplus" -- sync with system clipboard
 else
   require("keymaps")
