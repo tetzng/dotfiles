@@ -115,6 +115,7 @@ local M = {
           maxwidth = 50,
           ellipsis_char = "...",
         }),
+        expandable_indicator = true,
       },
       sources = cmp.config.sources({
         { name = "copilot" },

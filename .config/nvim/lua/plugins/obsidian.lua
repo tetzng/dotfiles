@@ -38,10 +38,11 @@ local M = {
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
       template = "Daily notes.md"
     },
-    -- FIXME: this doesn't work
+
     note_frontmatter_func = function(note)
       -- This is equivalent to the default frontmatter function.
-      local out = { created = os.date("%Y-%m-%dT%H:%M") }
+      local current_date = os.date("%Y-%m-%dT%H:%M")
+      local out = { created = current_date, updated = current_date }
       -- `note.metadata` contains any manually added fields in the frontmatter.
       -- So here we just make sure those fields are kept in the frontmatter.
       if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
@@ -49,8 +50,8 @@ local M = {
           out[k] = v
         end
       end
+      out.updated = current_date
 
-      out[updadted] = os.date("%Y-%m-%dT%H:%M")
       return out
     end,
   },
