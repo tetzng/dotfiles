@@ -100,14 +100,10 @@ brew "leoafarias/fvm/fvm"
 brew "oven-sh/bun/bun"
 # View, print, and comment on PDF documents
 cask "adobe-acrobat-reader"
-# Note editor and whiteboard
-cask "affine"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Tools for building Android applications
 cask "android-studio"
-# User-friendly GUI app for Homebrew
-cask "applite"
 # Chromium based browser
 cask "arc"
 # Video calls designed for energy, ideas and action
@@ -116,16 +112,12 @@ cask "around"
 cask "bitwarden"
 # Web browser focusing on privacy
 cask "brave-browser"
-# Write, edit, and chat about your code with AI
-cask "cursor"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker"
 # Text editor
 cask "emacs"
-# Reimagine your terminal
-cask "fig"
 cask "font-cica"
 # Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
@@ -149,8 +141,6 @@ cask "hhkb-studio"
 cask "karabiner-elements"
 # Open-source keystroke visualiser
 cask "keycastr"
-# Open source code editor written in Rust
-cask "lapce"
 # Web browser
 cask "microsoft-edge"
 # Remote desktop client
@@ -171,8 +161,6 @@ cask "postman"
 cask "raycast"
 # Team communication and collaboration software
 cask "slack"
-# Open source cross-platform file explorer
-cask "spacedrive"
 # Music streaming service
 cask "spotify"
 # Native GUI tool for relational databases
@@ -181,14 +169,8 @@ cask "tableplus"
 cask "tailscale"
 # Open-source code editor
 cask "visual-studio-code"
-# Web browser with built-in email client focusing on customization and control
-cask "vivaldi"
-# Terminal emulator
-cask "wave"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
-# Multiplayer code editor
-cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 # Desktop client for the Zulip team chat platform
