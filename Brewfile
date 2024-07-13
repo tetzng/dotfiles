@@ -6,10 +6,14 @@ tap "leoafarias/fvm"
 tap "oven-sh/bun"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Secure runtime for JavaScript and TypeScript
@@ -54,8 +58,6 @@ brew "mas"
 brew "mise"
 # Open source relational database management system
 brew "mysql", restart_service: true
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
 # Create, run, and share large language models (LLMs)
@@ -63,7 +65,7 @@ brew "ollama", restart_service: true
 # Python package management tool
 brew "poetry"
 # Object-relational database system
-brew "postgresql@16", restart_service: true
+brew "postgresql@16"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Wrapper around ripgrep that adds multiple rich file types
@@ -119,13 +121,9 @@ cask "docker"
 # Text editor
 cask "emacs"
 cask "font-cica"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
-# Superfamily of fonts for code
 cask "font-monaspace"
-# Integrate fonts from BIZ UD Gothic and JetBrains Mono
 cask "font-udev-gothic-nf"
-# Developer targeted fonts with a high number of glyphs
 cask "font-victor-mono-nerd-font"
 # Virtual video-calling space
 cask "gather"
@@ -145,8 +143,6 @@ cask "keycastr"
 cask "microsoft-edge"
 # Remote desktop client
 cask "microsoft-remote-desktop"
-# Neovim Client
-cask "neovide"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
@@ -167,6 +163,8 @@ cask "spotify"
 cask "tableplus"
 # Mesh VPN based on Wireguard
 cask "tailscale"
+# To-do & task list manager
+cask "ticktick"
 # Open-source code editor
 cask "visual-studio-code"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
