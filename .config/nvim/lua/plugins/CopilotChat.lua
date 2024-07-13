@@ -8,7 +8,7 @@ local M = {
     { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
   },
   opts = {
-    debug = true, -- Enable debugging
+    -- debug = true, -- Enable debugging
     -- See Configuration section for rest
     prompts = {
       Explain = {
