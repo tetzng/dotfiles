@@ -1,5 +1,7 @@
 [tools]
-node = "22"
+node = "20"
 pnpm = "latest"
 python = "latest"
 ruby = "latest"
+neovim = "nightly"
+flutter = "latest"
