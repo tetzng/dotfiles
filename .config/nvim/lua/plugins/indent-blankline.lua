@@ -6,9 +6,6 @@ local M = {
   ---@class ibl.config
   opts = {
     debounce = 100,
-    indent = {
-      char = "▏",
-    },
     whitespace = {
       remove_blankline_trail = true,
     },

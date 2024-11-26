@@ -5,7 +5,7 @@ local M = {
   dependencies = {
     "williamboman/mason.nvim",
     "neovim/nvim-lspconfig",
-    "folke/neodev.nvim",
+    "folke/lazydev.nvim",
     "folke/neoconf.nvim",
     "b0o/schemastore.nvim",
     "hrsh7th/nvim-cmp",
