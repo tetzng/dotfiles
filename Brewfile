@@ -10,16 +10,18 @@ brew "atuin"
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Zstandard is a real-time compression algorithm
-brew "zstd"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # Modern, maintained replacement for ls
 brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -57,15 +59,17 @@ brew "mas"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
 # Open source relational database management system
-brew "mysql", restart_service: true
+brew "mysql"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
 # Create, run, and share large language models (LLMs)
-brew "ollama", restart_service: true
+brew "ollama"
 # Python package management tool
 brew "poetry"
 # Object-relational database system
 brew "postgresql@16"
+# Generic machine emulator and virtualizer
+brew "qemu"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Wrapper around ripgrep that adds multiple rich file types
@@ -120,6 +124,8 @@ cask "discord"
 cask "docker"
 # Text editor
 cask "emacs"
+# Web browser
+cask "firefox"
 cask "font-cica"
 cask "font-fira-code-nerd-font"
 cask "font-monaspace"
@@ -139,10 +145,12 @@ cask "hhkb-studio"
 cask "karabiner-elements"
 # Open-source keystroke visualiser
 cask "keycastr"
-# Web browser
+# App to manage software development and track bugs
+cask "linear-linear"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Multi-platform web browser
 cask "microsoft-edge"
-# Remote desktop client
-cask "microsoft-remote-desktop"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
@@ -153,22 +161,32 @@ cask "obsidian"
 cask "orbstack"
 # Collaboration platform for API development
 cask "postman"
+# IDE for professional Python development
+cask "pycharm"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Rust IDE
+cask "rustrover"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
 cask "spotify"
 # Native GUI tool for relational databases
 cask "tableplus"
-# Mesh VPN based on Wireguard
+# Mesh VPN based on WireGuard
 cask "tailscale"
 # To-do & task list manager
 cask "ticktick"
 # Open-source code editor
 cask "visual-studio-code"
+# JavaScript IDE
+cask "webstorm"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+# Multiplayer code editor
+cask "zed"
+# Gecko based web browser
+cask "zen-browser"
 # Video communication and virtual meeting platform
 cask "zoom"
 # Desktop client for the Zulip team chat platform
@@ -183,6 +201,7 @@ mas "Numbers", id: 409203825
 mas "Omnivore", id: 1564031042
 mas "Pages", id: 409201541
 mas "Reeder", id: 1529448980
+mas "Reeder", id: 6475002485
 mas "RunCat", id: 1429033973
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
