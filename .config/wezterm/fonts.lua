@@ -55,7 +55,7 @@ M.font_rules = {
   },
 }
 M.cell_width = 0.9
-M.font_size = 14
+M.font_size = 16
 M.line_height = 1.2
 
 return M
