@@ -1,7 +1,7 @@
 [tools]
-node = "20"
+flutter = "latest"
+neovim = "nightly"
+node = "22"
 pnpm = "latest"
 python = "latest"
 ruby = "latest"
-neovim = "nightly"
-flutter = "latest"
