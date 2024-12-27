@@ -27,6 +27,8 @@
 !/.config/git/ignore
 !/.config/helix
 !/.config/helix/**
+!/.config/jj
+!/.config/jj/**
 !/.config/kitty
 !/.config/kitty/**
 !/.config/lazygit

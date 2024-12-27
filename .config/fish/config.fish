@@ -63,6 +63,12 @@ if type -q zoxide
     set -x _ZO_DATA_DIR $XDG_DATA_HOME/zoxide
 end
 
+# jj
+if type -q jj
+    set -x JJ_CONFIG $XDG_CONFIG_HOME/jj/config.toml
+    COMPLETE=fish jj | source
+end
+
 # abbr
 abbr -a .. "cd .."
 abbr -a ... "cd ../.."

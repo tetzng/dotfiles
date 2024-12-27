@@ -1,0 +1,11 @@
+[user]
+name = "Teppei Taguchi"
+email = "tetzng.tt@gmail.com"
+
+[ui]
+editor = "nvim"
+
+[signing]
+sign-all = true
+backend = "gpg"
+key = "E1682121ED271AAE"
