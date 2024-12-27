@@ -1,15 +1,20 @@
 tap "dart-lang/dart"
+tap "hashicorp/tap"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "leoafarias/fvm"
 tap "oven-sh/bun"
+# Run your GitHub Actions locally
+brew "act"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
 # Zstandard is a real-time compression algorithm
@@ -98,6 +103,8 @@ brew "zellij"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Terraform
+brew "hashicorp/tap/terraform"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # Simple cli to manage Flutter SDK versions per project
@@ -114,8 +121,6 @@ cask "android-studio"
 cask "arc"
 # Video calls designed for energy, ideas and action
 cask "around"
-# Desktop password and login vault
-cask "bitwarden"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Voice and text chat software
@@ -151,6 +156,8 @@ cask "linear-linear"
 cask "microsoft-auto-update"
 # Multi-platform web browser
 cask "microsoft-edge"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
@@ -191,6 +198,7 @@ cask "zen-browser"
 cask "zoom"
 # Desktop client for the Zulip team chat platform
 cask "zulip"
+mas "Bitwarden", id: 1352778147
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
