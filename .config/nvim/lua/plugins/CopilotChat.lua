@@ -1,7 +1,7 @@
 ---@class LazyPluginSpec
 local M = {
   "CopilotC-Nvim/CopilotChat.nvim",
-  branch = "canary",
+  branch = "main",
   event = "BufReadPre",
   dependencies = {
     { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
