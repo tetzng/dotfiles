@@ -1,0 +1,13 @@
+font-size = 16
+background-opacity = 0.9
+background-blur-radius = 9
+command = /opt/homebrew/bin/fish
+shell-integration = fish
+font-family = UDEV Gothic NFLG
+theme = tokyonight
+copy-on-select = true
+macos-titlebar-style = hidden
+window-padding-x = 8
+window-padding-y = 8
+adjust-cell-height = 20%
+

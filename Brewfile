@@ -138,6 +138,8 @@ cask "font-udev-gothic-nf"
 cask "font-victor-mono-nerd-font"
 # Virtual video-calling space
 cask "gather"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Web browser
 cask "google-chrome"
 # Tools to protect your emails and files

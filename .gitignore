@@ -22,6 +22,8 @@
 !/.config/gh
 !/.config/gh/**
 !/.config/gh-dash
+!/.config/ghostty
+!/.config/ghostty/**
 !/.config/git
 !/.config/git/config
 !/.config/git/ignore
