@@ -554,7 +554,7 @@ mods = "Control"
 history = 10000
 multiplier = 3
 
-[shell]
+[terminal.shell]
 args = ["--login", "-c", "/opt/homebrew/bin/zellij attach -c dev"]
 program = "/opt/homebrew/bin/fish"
 
@@ -570,3 +570,5 @@ lines = 60
 [window.padding]
 x = 8
 y = 4
+
+[terminal]
