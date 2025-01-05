@@ -1,1 +1,5 @@
-plugins = []
+[[plugins]]
+repo = "h-matsuo/fish-color-scheme-switcher"
+
+[[plugins]]
+repo = "jorgebucaran/autopair.fish"
