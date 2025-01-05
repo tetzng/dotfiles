@@ -37,7 +37,7 @@ local M = {
     dashboard.section.buttons.opts.hl = "AlphaButtons"
     dashboard.section.buttons.opts.spacing = 1
     dashboard.section.footer.opts.hl = "AlphaFooter"
-    dashboard.opts.layout[1].val = 8
+    dashboard.opts.layout[1].val = 5
     return dashboard
   end,
   config = function(_, dashboard)
