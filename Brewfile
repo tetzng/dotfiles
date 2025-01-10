@@ -9,6 +9,12 @@ tap "oven-sh/bun"
 brew "act"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
+# Automatic configure script builder
+brew "autoconf"
+# Collection of over 500 reusable autoconf macros
+brew "autoconf-archive"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -19,6 +25,10 @@ brew "btop"
 brew "colima"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
+# Object-file caching compiler wrapper
+brew "ccache"
+# Cross-platform make
+brew "cmake"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Secure runtime for JavaScript and TypeScript
@@ -55,6 +65,8 @@ brew "jq"
 brew "lazygit"
 # Postgres C API library
 brew "libpq"
+# Next-gen compiler infrastructure
+brew "llvm"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Package manager for the Lua programming language
@@ -65,16 +77,24 @@ brew "mas"
 brew "mise"
 # Open source relational database management system
 brew "mysql"
+# Netwide Assembler (NASM) is an 80x86 assembler
+brew "nasm"
+# Small build system for use with gyp or CMake
+brew "ninja"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
 # Create, run, and share large language models (LLMs)
 brew "ollama"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Python package management tool
 brew "poetry"
 # Object-relational database system
 brew "postgresql@16"
 # Generic machine emulator and virtualizer
 brew "qemu"
+# Cross-platform application and UI framework
+brew "qt"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Wrapper around ripgrep that adds multiple rich file types
