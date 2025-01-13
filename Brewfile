@@ -7,6 +7,8 @@ tap "leoafarias/fvm"
 tap "oven-sh/bun"
 # Run your GitHub Actions locally
 brew "act"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Automatic configure script builder
@@ -21,14 +23,16 @@ brew "awscli"
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
-# Container runtimes on MacOS (and Linux) with minimal setup
-brew "colima"
+# Binary installation for rust projects
+brew "cargo-binstall"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
 # Object-file caching compiler wrapper
 brew "ccache"
 # Cross-platform make
 brew "cmake"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Secure runtime for JavaScript and TypeScript
@@ -84,7 +88,9 @@ brew "ninja"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
 # Create, run, and share large language models (LLMs)
-brew "ollama"
+brew "ollama", restart_service: :changed
+# Drop-in replacement for Terraform. Infrastructure as Code Tool
+brew "opentofu"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Python package management tool
@@ -162,6 +168,8 @@ cask "gather"
 cask "ghostty"
 # Web browser
 cask "google-chrome"
+# Japanese input software
+cask "google-japanese-ime"
 # Tools to protect your emails and files
 cask "gpg-suite"
 # Screenshot and screen recording tool
