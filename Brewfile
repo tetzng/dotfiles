@@ -123,6 +123,8 @@ brew "wget"
 brew "yarn"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
 # Shell extension to navigate your filesystem faster
@@ -182,12 +184,16 @@ cask "karabiner-elements"
 cask "keycastr"
 # App to manage software development and track bugs
 cask "linear-linear"
+# Mouse utility to add gesture functions and smooth scrolling to 3rd party mice
+cask "mac-mouse-fix"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Multi-platform web browser
 cask "microsoft-edge"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
+# Neovim Client
+cask "neovide"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
@@ -220,6 +226,8 @@ cask "visual-studio-code"
 cask "webstorm"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+# Network protocol analyzer
+cask "wireshark"
 # Multiplayer code editor
 cask "zed"
 # Gecko based web browser
