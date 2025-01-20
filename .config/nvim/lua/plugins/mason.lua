@@ -15,6 +15,9 @@ local M = {
         toggle_help = "?",
       },
     },
+    registries = {
+      "file:~/dev/sandbox/mason-registry",
+    },
   },
 }
 

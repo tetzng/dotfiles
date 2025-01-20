@@ -38,6 +38,9 @@ local M = {
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
       template = "Daily notes.md"
     },
+    ui = {
+      enable = false,
+    },
 
     note_frontmatter_func = function(note)
       -- This is equivalent to the default frontmatter function.
