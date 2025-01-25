@@ -1,6 +1,8 @@
 font-family = UDEV Gothic NFLG35
 font-size = 16
+font-feature = -dlig
 adjust-cell-height = 20%
+adjust-cell-width = -10%
 
 theme = tokyonight
 
