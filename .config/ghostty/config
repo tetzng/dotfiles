@@ -4,9 +4,9 @@ font-feature = -dlig
 adjust-cell-height = 20%
 adjust-cell-width = -10%
 
-theme = tokyonight
+theme = dark:tokyonight,light:tokyonight-day
 
-background-opacity = 0.9
+background-opacity = 0.85
 background-blur-radius = 9
 
 command = /opt/homebrew/bin/fish
