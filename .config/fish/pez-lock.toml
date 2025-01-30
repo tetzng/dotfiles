@@ -60,3 +60,25 @@ name = "_autopair_backspace.fish"
 [[plugins.files]]
 dir = "conf.d"
 name = "autopair.fish"
+
+[[plugins]]
+name = "fish"
+repo = "catppuccin/fish"
+source = "https://github.com/catppuccin/fish"
+commit_sha = "cc8e4d8fffbdaab07b3979131030b234596f18da"
+
+[[plugins.files]]
+dir = "themes"
+name = "Catppuccin Latte.theme"
+
+[[plugins.files]]
+dir = "themes"
+name = "Catppuccin Frappe.theme"
+
+[[plugins.files]]
+dir = "themes"
+name = "Catppuccin Macchiato.theme"
+
+[[plugins.files]]
+dir = "themes"
+name = "Catppuccin Mocha.theme"
