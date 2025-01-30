@@ -4,7 +4,8 @@ font-feature = -dlig
 adjust-cell-height = 20%
 adjust-cell-width = -10%
 
-theme = dark:tokyonight,light:tokyonight-day
+# theme = dark:tokyonight,light:tokyonight-day
+theme = dark:catppuccin-frappe,light:catppuccin-latte
 
 background-opacity = 0.85
 background-blur-radius = 9

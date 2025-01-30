@@ -38,9 +38,9 @@ if test -d /opt/homebrew/opt/curl
 end
 
 # color scheme
-if type -q scheme
-    scheme set tokyonight
-end
+# if type -q scheme
+#     scheme set tokyonight
+# end
 
 # mise
 if type -q mise

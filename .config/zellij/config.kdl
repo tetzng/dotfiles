@@ -260,7 +260,10 @@ default_shell "fish"
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "tokyo-night"
+// theme "tokyo-night"
+// theme "tokyo-night-light"
+theme "catppuccin-frappe"
+// theme "catppuccin-latte"
 
 // The name of the default layout to load on startup
 // Default: "default"
