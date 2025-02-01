@@ -4,10 +4,10 @@ local M = {
   lazy = false,
   opts = {
     set_dark_mode = function()
-      vim.cmd("colorscheme tokyonight")
+      vim.cmd("colorscheme catppuccin-frappe")
     end,
     set_light_mode = function()
-      vim.cmd("colorscheme tokyonight-day")
+      vim.cmd("colorscheme catppuccin-latte")
     end,
   }
 }
