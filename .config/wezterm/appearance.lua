@@ -1,3 +1,4 @@
+local wezterm = require("wezterm")
 local M = {}
 
 M.window_padding = {
@@ -16,5 +17,22 @@ M.tab_bar_at_bottom = true
 M.use_fancy_tab_bar = false
 M.show_new_tab_button_in_tab_bar = false
 M.tab_max_width = 32
+
+local function get_appearance()
+  if wezterm.gui then
+    return wezterm.gui.get_appearance()
+  end
+  return 'Dark'
+end
+
+local function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then
+    return 'Catppuccin Frappe'
+  else
+    return 'Catppuccin Latte'
+  end
+end
+
+M.color_scheme = scheme_for_appearance(get_appearance())
 
 return M
