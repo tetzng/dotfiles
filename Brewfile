@@ -151,6 +151,8 @@ cask "arc"
 cask "around"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Write, edit, and chat about your code with AI
+cask "cursor"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerised applications and microservices
@@ -167,7 +169,7 @@ cask "font-victor-mono-nerd-font"
 # Virtual video-calling space
 cask "gather"
 # Terminal emulator that uses platform-native UI and GPU acceleration
-cask "ghostty"
+cask "ghostty@tip"
 # Web browser
 cask "google-chrome"
 # Japanese input software
@@ -208,6 +210,8 @@ cask "postman"
 cask "pycharm"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Software for Realforce keyboards and mice
+cask "realforce"
 # Rust IDE
 cask "rustrover"
 # Team communication and collaboration software
