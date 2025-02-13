@@ -6,6 +6,7 @@ local M = {
   --@class MasonSettings
   opts = {
     ui = {
+      border = "rounded",
       icons = {
         package_installed = "✓",
         package_pending = "➜",
@@ -14,9 +15,6 @@ local M = {
       keymaps = {
         toggle_help = "?",
       },
-    },
-    registries = {
-      "file:~/dev/sandbox/mason-registry",
     },
   },
 }
