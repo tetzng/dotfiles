@@ -41,6 +41,9 @@ else
       lazy = true,
     },
     concurrency = 100,
+    ui = {
+      border = "rounded",
+    }
   }
 
   require("lazy").setup(plugins, lazyconfig)
