@@ -1,7 +1,7 @@
 function update_fish_theme_by_system_appearance
     set -l os (uname)
 
-    if test $os != "Darwin"
+    if test $os != Darwin
         return
     end
 
