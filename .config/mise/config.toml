@@ -1,6 +1,6 @@
 [tools]
 flutter = "latest"
-neovim = "nightly"
+neovim = "stable"
 node = "22"
 pnpm = "latest"
 python = "latest"
