@@ -25,6 +25,7 @@ local M = {
     automatic_installation = false,
   },
   config = function(_, opts)
+    require("mason").setup()
     require("mason-lspconfig").setup(opts)
 
     -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
