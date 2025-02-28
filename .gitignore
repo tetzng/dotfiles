@@ -13,6 +13,10 @@
 !/.config/atuin/config.toml
 !/.config/bat
 !/.config/bat/**
+!/.config/btop
+!/.config/btop/btop.conf
+!/.config/btop/themes
+!/.config/btop/themes/**
 !/.config/efm-langserver
 !/.config/efm-langserver/**
 !/.config/fish
