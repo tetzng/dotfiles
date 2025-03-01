@@ -7,7 +7,6 @@ local config = wezterm.config_builder()
 
 require("on")
 
-config.color_scheme = "tokyonight_moon"
 config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
 config.quit_when_all_windows_are_closed = false
 config.window_close_confirmation = "NeverPrompt"
