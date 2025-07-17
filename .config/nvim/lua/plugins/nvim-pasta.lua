@@ -1,8 +1,8 @@
 ---@class LazyPluginSpec
 local M = {
   "hrsh7th/nvim-pasta",
-  cond = vim.fn.has("nvim-0.10.0") == 1,
-  event = "VimEnter",
+  -- cond = vim.fn.has("nvim-0.10.0") == 1,
+  -- event = "VimEnter",
   config = function()
     vim.keymap.set({ "n", "x" }, "p", require("pasta.mapping").p)
     vim.keymap.set({ "n", "x" }, "P", require("pasta.mapping").P)
