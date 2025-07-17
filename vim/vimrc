@@ -119,7 +119,7 @@ if 1
   augroup vimHints
     au!
     autocmd CmdwinEnter *
-	  \ echohl Todo | 
+	  \ echohl Todo |
 	  \ echo 'You discovered the command-line window! You can close it with ":q".' |
 	  \ echohl None
   augroup END
@@ -405,3 +405,5 @@ endfunction
 "" fern
 nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
 nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
+
+set clipboard+=unnamed
