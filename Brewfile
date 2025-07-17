@@ -1,5 +1,6 @@
 tap "dart-lang/dart"
 tap "hashicorp/tap"
+tap "homebrew/core"
 tap "leoafarias/fvm"
 tap "oven-sh/bun"
 # Run your GitHub Actions locally
@@ -68,6 +69,8 @@ brew "gnupg"
 brew "go"
 # Post-modern modal text editor
 brew "helix"
+# CLI for Heroku
+brew "heroku"
 # Git-compatible distributed version control system
 brew "jj"
 # Lightweight and flexible command-line JSON processor
@@ -163,7 +166,7 @@ cask "cursor"
 # Voice and text chat software
 cask "discord"
 # Text editor
-cask "emacs"
+cask "emacs-app"
 # Web browser
 cask "firefox"
 cask "font-cica"
@@ -173,12 +176,12 @@ cask "font-udev-gothic-nf"
 cask "font-victor-mono-nerd-font"
 # Virtual video-calling space
 cask "gather"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
-cask "ghostty@tip"
+cask "ghostty"
 # Web browser
 cask "google-chrome"
-# Set of tools to manage resources and applications hosted on Google Cloud
-cask "google-cloud-sdk"
 # Japanese input software
 cask "google-japanese-ime"
 # Tools to protect your emails and files
@@ -204,15 +207,13 @@ cask "microsoft-excel"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # Neovim Client
-cask "neovide"
+cask "neovide-app"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Replacement for Docker Desktop
-cask "orbstack"
 # Collaboration platform for API development
 cask "postman"
 # IDE for professional Python development
@@ -230,7 +231,7 @@ cask "spotify"
 # Native GUI tool for relational databases
 cask "tableplus"
 # Mesh VPN based on WireGuard
-cask "tailscale"
+cask "tailscale-app"
 # To-do & task list manager
 cask "ticktick"
 # Virtual machines UI using QEMU
@@ -242,7 +243,7 @@ cask "webstorm"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
 # Network protocol analyzer
-cask "wireshark"
+cask "wireshark-app"
 # Multiplayer code editor
 cask "zed"
 # Gecko based web browser
