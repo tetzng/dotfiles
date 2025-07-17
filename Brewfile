@@ -1,8 +1,5 @@
 tap "dart-lang/dart"
 tap "hashicorp/tap"
-tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "leoafarias/fvm"
 tap "oven-sh/bun"
 # Run your GitHub Actions locally
@@ -31,12 +28,22 @@ brew "zstd"
 brew "ccache"
 # Cross-platform make
 brew "cmake"
+# OpenAI's coding agent that runs in your terminal
+brew "codex"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Platform keystore credential helper for Docker
+brew "docker-credential-helper"
 # Modern, maintained replacement for ls
 brew "eza"
 # Like neofetch, but much faster because written mostly in C
@@ -75,8 +82,6 @@ brew "llvm"
 brew "lsd"
 # Package manager for the Lua programming language
 brew "luarocks"
-# Mac App Store command-line interface
-brew "mas"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
 # Open source relational database management system
@@ -88,11 +93,13 @@ brew "ninja"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
 # Create, run, and share large language models (LLMs)
-brew "ollama", restart_service: :changed
+brew "ollama"
 # Drop-in replacement for Terraform. Infrastructure as Code Tool
 brew "opentofu"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Paste PNG into files
+brew "pngpaste"
 # Python package management tool
 brew "poetry"
 # Object-relational database system
@@ -133,8 +140,6 @@ brew "zoxide"
 brew "zsh"
 # Terraform
 brew "hashicorp/tap/terraform"
-# Everything you need to get started with Heroku
-brew "heroku/brew/heroku"
 # Simple cli to manage Flutter SDK versions per project
 brew "leoafarias/fvm/fvm"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
@@ -147,16 +152,16 @@ cask "alacritty"
 cask "android-studio"
 # Chromium based browser
 cask "arc"
-# Video calls designed for energy, ideas and action
-cask "around"
 # Web browser focusing on privacy
 cask "brave-browser"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Voice and text chat software
 cask "discord"
-# App to build and share containerised applications and microservices
-cask "docker"
 # Text editor
 cask "emacs"
 # Web browser
@@ -172,12 +177,12 @@ cask "gather"
 cask "ghostty@tip"
 # Web browser
 cask "google-chrome"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "google-cloud-sdk"
 # Japanese input software
 cask "google-japanese-ime"
 # Tools to protect your emails and files
 cask "gpg-suite"
-# Screenshot and screen recording tool
-cask "gyazo"
 # Customize keymap, shortcuts, and gesture pad behavior on HHKB Studio
 cask "hhkb-studio"
 # Keyboard customiser
@@ -188,10 +193,14 @@ cask "keycastr"
 cask "linear-linear"
 # Mouse utility to add gesture functions and smooth scrolling to 3rd party mice
 cask "mac-mouse-fix"
+# SKK Input Method
+cask "macskk"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Multi-platform web browser
 cask "microsoft-edge"
+# Spreadsheet software
+cask "microsoft-excel"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # Neovim Client
@@ -224,6 +233,8 @@ cask "tableplus"
 cask "tailscale"
 # To-do & task list manager
 cask "ticktick"
+# Virtual machines UI using QEMU
+cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # JavaScript IDE
@@ -235,23 +246,8 @@ cask "wireshark"
 # Multiplayer code editor
 cask "zed"
 # Gecko based web browser
-cask "zen-browser"
+cask "zen"
 # Video communication and virtual meeting platform
 cask "zoom"
 # Desktop client for the Zulip team chat platform
 cask "zulip"
-mas "Bitwarden", id: 1352778147
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Kindle", id: 302584613
-mas "LINE", id: 539883307
-mas "Logic Pro", id: 634148309
-mas "Numbers", id: 409203825
-mas "Omnivore", id: 1564031042
-mas "Pages", id: 409201541
-mas "Reeder", id: 1529448980
-mas "Reeder", id: 6475002485
-mas "RunCat", id: 1429033973
-mas "Transporter", id: 1450874784
-mas "Xcode", id: 497799835
