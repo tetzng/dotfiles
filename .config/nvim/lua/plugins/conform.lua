@@ -11,13 +11,13 @@ local M = {
     },
     formatters_by_ft = {
       -- lua = { "stylua" },
-      python = { "isort", "black" },
-      javascript = { "prettierd", "prettier" },
+      -- python = { "isort", "black" },
+      -- javascript = { "prettierd", "prettier" },
       -- rust = { "rustfmt" },
       fish = { "fish_indent" },
       markdown = { "markdown-toc" },
       ruby = { "rubocop" },
-      toml = { "taplo" },
+      -- toml = { "taplo" },
     },
     format_on_save = {
       timeout_ms = 3000,
