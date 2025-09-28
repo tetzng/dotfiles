@@ -29,6 +29,8 @@ brew "zstd"
 brew "ccache"
 # Cross-platform make
 brew "cmake"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # OpenAI's coding agent that runs in your terminal
 brew "codex"
 # Container runtimes on MacOS (and Linux) with minimal setup
@@ -39,8 +41,6 @@ brew "curl"
 brew "deno"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
-# Docker CLI plugin for extended build capabilities with BuildKit
-brew "docker-buildx"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Platform keystore credential helper for Docker
@@ -67,6 +67,8 @@ brew "git-secrets"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Task is a task runner/build tool that aims to be simpler and easier to use
+brew "go-task"
 # Post-modern modal text editor
 brew "helix"
 # CLI for Heroku
@@ -95,8 +97,6 @@ brew "nasm"
 brew "ninja"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
-# Create, run, and share large language models (LLMs)
-brew "ollama"
 # Drop-in replacement for Terraform. Infrastructure as Code Tool
 brew "opentofu"
 # Package compiler and linker metadata toolkit
@@ -111,18 +111,20 @@ brew "postgresql@16"
 brew "qemu"
 # Cross-platform application and UI framework
 brew "qt"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # Wrapper around ripgrep that adds multiple rich file types
 brew "ripgrep-all"
 # Fast, configurable, shell plugin manager
 brew "sheldon"
 # Create beautiful image of your source code
 brew "silicon"
+# SQL linter and auto-formatter for Humans
+brew "sqlfluff"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
+# Linter for Terraform files
+brew "tflint"
 # Terminal multiplexer
 brew "tmux"
 # Vi 'workalike' with many additional features
@@ -167,6 +169,8 @@ cask "cursor"
 cask "discord"
 # Text editor
 cask "emacs-app"
+# Desktop client for Ente Auth
+cask "ente-auth"
 # Web browser
 cask "firefox"
 cask "font-cica"
@@ -194,6 +198,8 @@ cask "karabiner-elements"
 cask "keycastr"
 # App to manage software development and track bugs
 cask "linear-linear"
+# Discover, download, and run local LLMs
+cask "lm-studio"
 # Mouse utility to add gesture functions and smooth scrolling to 3rd party mice
 cask "mac-mouse-fix"
 # SKK Input Method
@@ -214,6 +220,8 @@ cask "ngrok"
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Get up and running with large language models locally
+cask "ollama-app"
 # Collaboration platform for API development
 cask "postman"
 # IDE for professional Python development
