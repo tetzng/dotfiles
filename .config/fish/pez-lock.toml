@@ -65,7 +65,7 @@ name = "autopair.fish"
 name = "fish"
 repo = "catppuccin/fish"
 source = "https://github.com/catppuccin/fish"
-commit_sha = "6a85af2ff722ad0f9fbc8424ea0a5c454661dfed"
+commit_sha = "2c7edbb1ef5640cb4ef387647a53327149e51e80"
 
 [[plugins.files]]
 dir = "themes"

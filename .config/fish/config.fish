@@ -44,7 +44,7 @@ end
 
 # mise
 if type -q mise
-    mise activate fish | source
+    mise activate fish --shims | source
 end
 
 # starship
@@ -57,6 +57,11 @@ if type -q atuin
     atuin init fish | source
 end
 
+# pez
+if type -q pez
+    pez activate fish | source
+end
+
 # zoxide
 if type -q zoxide
     zoxide init fish | source
@@ -67,6 +72,11 @@ end
 if type -q jj
     set -x JJ_CONFIG $XDG_CONFIG_HOME/jj/config.toml
     COMPLETE=fish jj | source
+end
+
+if type -q pnpm
+    set -x PNPM_HOME $XDG_DATA_HOME/pnpm
+    fish_add_path $PNPM_HOME
 end
 
 # abbr
