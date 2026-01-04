@@ -55,8 +55,29 @@
 	enabled = true
 
 [rebase]
-	autostash = true
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
 
 [push]
 	default = current
 	autoSetupRemote = true
+
+[merge]
+	conflictStyle = zdiff3
+
+[commit]
+	verbose = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = true
+
+[grep]
+	patternType = perl
+
+[branch]
+	sort = committerdate
+
+# [feature]
+# 	experimental = true
