@@ -1,10 +1,9 @@
 [tools]
-docker-buildx = "latest"
 flutter = "latest"
 golangci-lint = "latest"
 neovim = "stable"
 node = "lts"
-pnpm = "latest"
+pnpm = "10"
 python = "latest"
 ruby = "latest"
 
