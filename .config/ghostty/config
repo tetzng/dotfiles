@@ -1,13 +1,13 @@
 font-family = UDEV Gothic NFLG35
 font-size = 16
 font-feature = -dlig
-adjust-cell-height = 20%
-adjust-cell-width = -10%
+# adjust-cell-height = 20%
+# adjust-cell-width = -10%
 
 theme = dark:Catppuccin Frappe,light:Catppuccin Latte
 
-background-opacity = 0.85
-background-blur-radius = 9
+background-opacity = 0.7
+background-blur = macos-glass-clear
 
 command = /opt/homebrew/bin/fish
 
@@ -24,3 +24,5 @@ keybind = alt+\=new_split:right
 keybind = alt+-=new_split:down
 keybind = cmd+r=reload_config
 keybind = ctrl+j=ignore
+
+auto-update-channel = tip
