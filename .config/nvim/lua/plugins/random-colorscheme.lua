@@ -46,7 +46,7 @@ local M = {
       "github_dark_dimmed",
       "github_dark_tritanopia",
     },
-    set_on_load = true,
+    set_on_load = false,
   },
   keys = {
     { "<leader>cc", function() require("random-colorscheme").set() end, desc = "Set Random Colorscheme" },

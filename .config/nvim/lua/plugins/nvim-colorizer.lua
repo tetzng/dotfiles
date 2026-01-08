@@ -1,7 +1,5 @@
 return {
-  "norcalli/nvim-colorizer.lua",
+  "catgoose/nvim-colorizer.lua",
   ft = { "css", "html", "typescriptreact" },
-  config = function()
-    require("colorizer").setup()
-  end,
+  opts = {},
 }

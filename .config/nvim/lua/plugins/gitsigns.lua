@@ -3,5 +3,8 @@ return {
   event = "VimEnter",
   opts = {
     current_line_blame = true,
+    current_line_blame_opts = {
+      delay = 300,
+    },
   },
 }

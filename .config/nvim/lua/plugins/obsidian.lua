@@ -42,21 +42,24 @@ local M = {
       enable = false,
     },
 
-    note_frontmatter_func = function(note)
-      -- This is equivalent to the default frontmatter function.
-      local current_date = os.date("%Y-%m-%dT%H:%M")
-      local out = { created = current_date, updated = current_date }
-      -- `note.metadata` contains any manually added fields in the frontmatter.
-      -- So here we just make sure those fields are kept in the frontmatter.
-      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-        for k, v in pairs(note.metadata) do
-          out[k] = v
+    legacy_commands = false,
+    frontmatter = {
+      func = function(note)
+        -- This is equivalent to the default frontmatter function.
+        local current_date = os.date("%Y-%m-%dT%H:%M")
+        local out = { created = current_date, updated = current_date }
+        -- `note.metadata` contains any manually added fields in the frontmatter.
+        -- So here we just make sure those fields are kept in the frontmatter.
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
         end
-      end
-      out.updated = current_date
+        out.updated = current_date
 
-      return out
-    end,
+        return out
+      end,
+    },
   },
 }
 
