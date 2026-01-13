@@ -7,25 +7,36 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "buffer_font_family": "UDEV Gothic 35NFLG",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Frappé",
+    "dark": "Catppuccin Latte",
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Frappé",
+  },
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
         "checkOnSave": {
-          "command": "clippy"
+          "command": "clippy",
         },
         "inlayHints": {
           "maxLength": null,
           "lifetimeElisionHints": {
             "useParameterNames": true,
-            "enable": "skip_trivial"
+            "enable": "skip_trivial",
           },
           "closureReturnTypeHints": {
-            "enable": "always"
-          }
-        }
-      }
+            "enable": "always",
+          },
+        },
+      },
     },
     "typescript-language-server": {
       "initialization_options": {
@@ -37,9 +48,9 @@
           "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
           "includeInlayPropertyDeclarationTypeHints": true,
           "includeInlayFunctionLikeReturnTypeHints": true,
-          "includeInlayEnumMemberValueHints": true
-        }
-      }
+          "includeInlayEnumMemberValueHints": true,
+        },
+      },
     },
     "gopls": {
       "initialization_options": {
@@ -50,20 +61,20 @@
           "constantValues": true,
           "functionTypeParameters": true,
           "parameterNames": true,
-          "rangeVariableTypes": true
-        }
-      }
-    }
+          "rangeVariableTypes": true,
+        },
+      },
+    },
   },
   "inlay_hints": {
-    "enabled": true
+    "enabled": true,
   },
   "hour_format": "hour24",
   "terminal": {
-    "copy_on_select": false,
+    "copy_on_select": true,
     "shell": {
-      "program": "/opt/homebrew/bin/fish"
-    }
+      "program": "/opt/homebrew/bin/fish",
+    },
   },
-  "vim_mode": true
+  "vim_mode": true,
 }
