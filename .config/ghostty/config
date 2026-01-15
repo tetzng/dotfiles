@@ -1,28 +1,28 @@
 font-family = UDEV Gothic NFLG35
-font-size = 16
 font-feature = -dlig
-# adjust-cell-height = 20%
-# adjust-cell-width = -10%
-
+font-size = 16
 theme = dark:Catppuccin Frappe,light:Catppuccin Latte
 
-background-opacity = 0.7
-background-blur = macos-glass-clear
-
+# background-opacity = 0.9
+# background-blur = macos-glass-clear
+background-opacity = 0.15
+background-blur = macos-glass-regular
 command = /opt/homebrew/bin/fish
-
-window-padding-x = 8
-window-padding-y = 8
-window-padding-balance = true
-window-padding-color = extend
-
-copy-on-select = clipboard
-shell-integration = fish
-macos-titlebar-style = hidden
 
 keybind = alt+\=new_split:right
 keybind = alt+-=new_split:down
 keybind = cmd+r=reload_config
 keybind = ctrl+j=ignore
+keybind = cmd+shift+o=toggle_background_opacity
+keybind = shift+enter=text:\x1b\r
 
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+window-padding-color = extend
+copy-on-select = clipboard
+shell-integration = fish
+macos-titlebar-style = hidden
+# macos-titlebar-style = tabs
+# macos-window-buttons = hidden
 auto-update-channel = tip
