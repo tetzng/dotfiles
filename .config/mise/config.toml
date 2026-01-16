@@ -1,11 +1,15 @@
 [tools]
 flutter = "latest"
 golangci-lint = "latest"
-neovim = "stable"
+neovim = "0.11.5"
 node = "lts"
+"npm:tree-sitter-cli" = "latest"
 pnpm = "10"
 python = "latest"
 ruby = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = ["python"]
+idiomatic_version_file_enable_tools = ["python", "node"]
+
+[settings.npm]
+package_manager = "pnpm"
