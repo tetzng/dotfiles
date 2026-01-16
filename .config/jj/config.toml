@@ -1,3 +1,5 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
 [user]
 name = "Teppei Taguchi"
 email = "tetzng.tt@gmail.com"
@@ -6,6 +8,8 @@ email = "tetzng.tt@gmail.com"
 editor = "nvim"
 
 [signing]
-sign-all = true
+behavior = "own"
 backend = "gpg"
-key = "E1682121ED271AAE"
+
+[aliases]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
