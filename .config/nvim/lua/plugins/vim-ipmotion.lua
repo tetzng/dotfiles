@@ -1,4 +1,4 @@
 return {
   "justinmk/vim-ipmotion",
-  event = "VimEnter",
+  event = "VeryLazy",
 }

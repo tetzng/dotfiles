@@ -1,4 +1,4 @@
 return {
   "bfredl/nvim-luadev",
-  event = "VimEnter",
+  event = "VeryLazy",
 }

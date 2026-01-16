@@ -15,6 +15,9 @@ local M = {
       keymaps = {
         toggle_help = "?",
       },
+      ensure_installed = {
+        "golangci-lint",
+      },
     },
   },
 }

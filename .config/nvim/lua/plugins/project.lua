@@ -1,4 +1,4 @@
 return {
   "ahmedkhalf/project.nvim",
-  event = "VimEnter",
+  event = "VeryLazy",
 }

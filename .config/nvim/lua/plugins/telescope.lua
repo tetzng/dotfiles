@@ -2,14 +2,23 @@
 local M = {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
-  ft = { "snacks_dashboard" },
-  event = "VimEnter",
+  cmd = "Telescope",
   dependencies = {
     { "nvim-lua/plenary.nvim" },
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
     },
+  },
+  keys = {
+    { "<leader>cp", function() require("telescope.builtin").colorscheme() end, desc = "Find colorschemes" },
+    { "<C-p>", function() require("telescope.builtin").find_files() end, desc = "Find files by Telescope" },
+    { "<leader>ff", function() require("telescope.builtin").live_grep() end, desc = "Grep files by Telescope" },
+    { "<leader>fg", function() require("telescope.builtin").git_files() end, desc = "Grep git files by Telescope" },
+    { "<leader>f?", function() require("telescope.builtin").keymaps() end, desc = "Find keymaps" },
+    { "<C-o><C-f>", function() require("telescope.builtin").search_history() end, mode = "c", desc = "Find command history" },
+    { "<C-o><C-p>", function() require("telescope.builtin").commands() end, mode = "c", desc = "Find commands" },
+    { "<C-o><C-r>", function() require("telescope.builtin").command_history() end, mode = "c", desc = "Find command history" },
   },
   config = function()
     local actions = require("telescope.actions")
@@ -86,18 +95,6 @@ local M = {
     })
 
     require("telescope").load_extension("fzf")
-
-    local builtin = require("telescope.builtin")
-
-    vim.keymap.set("n", "<leader>cp", builtin.colorscheme, { desc = "Find available colorschemes Telescope" })
-    vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files by Telescope" })
-    vim.keymap.set("n", "<leader>ff", builtin.live_grep, { desc = "Grep files by Telescope" })
-    vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Grep git files by Telescope" })
-    vim.keymap.set("n", "<leader>f?", "<cmd>Telescope keymaps<cr>", { desc = "Find keymaps" })
-
-    vim.keymap.set("c", "<C-o><C-f>", builtin.search_history, { desc = "Find command history by Telescope" })
-    vim.keymap.set("c", "<C-o><C-p>", builtin.commands, { desc = "Find commands by Telescope" })
-    vim.keymap.set("c", "<C-o><C-r>", builtin.command_history, { desc = "Find command history by Telescope" })
   end,
 }
 

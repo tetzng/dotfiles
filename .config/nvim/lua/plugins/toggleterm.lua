@@ -2,7 +2,10 @@
 local M = {
   "akinsho/toggleterm.nvim",
   version = "*",
-  event = "VimEnter",
+  keys = {
+    { "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+    { "<leader>lg", "<cmd>lua LazygitToggle()<CR>", desc = "Show Lazygit on float window" },
+  },
   opts = {
     open_mapping = [[<leader>tt]],
     insert_mappings = false,
@@ -33,13 +36,6 @@ local M = {
     function LazygitToggle()
       lazygit:toggle()
     end
-
-    vim.keymap.set(
-      "n",
-      "<leader>lg",
-      "<cmd>lua LazygitToggle()<CR>",
-      { silent = true, desc = "Show Lazygit on float window" }
-    )
 
     require("toggleterm").setup(opts)
   end,

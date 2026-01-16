@@ -1,4 +1,4 @@
 return {
   "anishathalye/dotbot",
-  event = "VimEnter",
+  event = "VeryLazy",
 }

@@ -1,18 +1,19 @@
 ---@class LazyPluginSpec
 local M = {
-  "williamboman/mason-lspconfig.nvim",
+  "mason-org/mason-lspconfig.nvim",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "williamboman/mason.nvim",
     "neovim/nvim-lspconfig",
     "folke/lazydev.nvim",
-    "folke/neoconf.nvim",
+    -- "folke/neoconf.nvim",
     "b0o/schemastore.nvim",
-    "hrsh7th/nvim-cmp",
+    "saghen/blink.cmp",
   },
   ---@type MasonLspconfigSettings
   opts = {
     ensure_installed = {
+      "copilot",
       "efm",
       "eslint",
       "gopls",
@@ -22,13 +23,14 @@ local M = {
       "stylelint_lsp",
       "tailwindcss",
     },
+    automatic_enable = true,
     automatic_installation = false,
   },
   config = function(_, opts)
     require("mason").setup()
     require("mason-lspconfig").setup(opts)
 
-    vim.lsp.config('*', { capabilities = require('cmp_nvim_lsp').default_capabilities(), })
+    vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities() })
   end,
 }
 

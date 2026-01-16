@@ -1,7 +1,9 @@
 ---@class LazyPluginSpec
 local M = {
-  "tyru/capture.vim",
+  "nicolasgb/jj.nvim",
+  version = "*",
   event = "VeryLazy",
+  opts = {},
 }
 
 return M

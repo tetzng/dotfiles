@@ -1,4 +1,4 @@
 return {
   "drmingdrmer/vim-toggle-quickfix",
-  event = "VimEnter",
+  event = "VeryLazy",
 }

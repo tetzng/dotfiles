@@ -1,9 +1,11 @@
 return {
   "petertriho/nvim-scrollbar",
-  event = "VimEnter",
+  event = "VeryLazy",
   opts = {
+    excluded_filetypes = { "snacks_dashboard" },
     handlers = {
       gitsigns = true,
+      search = true,
     }
   }
 }

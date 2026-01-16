@@ -1,6 +1,6 @@
 return {
   "mopp/vim-operator-convert-case",
-  event = "VimEnter",
+  event = "VeryLazy",
   dependencies = {
     "kana/vim-operator-user",
     "tpope/vim-repeat",

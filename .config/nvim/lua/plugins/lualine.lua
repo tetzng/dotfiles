@@ -3,7 +3,7 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  event = "VimEnter",
+  event = "VeryLazy",
   opts = {
     options = {
       icons_enabled = true,
@@ -11,7 +11,7 @@ return {
       component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
       disabled_filetypes = {
-        statusline = { "dashboard", "alpha" },
+        statusline = { "dashboard", "alpha", "snacks_dashboard" },
         winbar = {},
       },
       ignore_focus = {},

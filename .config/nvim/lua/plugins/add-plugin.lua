@@ -11,7 +11,7 @@ return M
 ---@class LazyPluginSpec
 local M = {
   "tetzng/add-plugin.nvim",
-  event = "VimEnter",
+  cmd = "AddPlugin",
   ---@type AddPlugin.UserConfig
   opts = {
     content = content,

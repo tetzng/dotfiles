@@ -4,7 +4,7 @@ local M = {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  event = "VimEnter",
+  event = "VeryLazy",
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300

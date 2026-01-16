@@ -1,4 +1,4 @@
 return {
   "mattn/vim-sonictemplate",
-  event = "VimEnter",
+  event = "VeryLazy",
 }

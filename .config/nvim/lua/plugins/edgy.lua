@@ -1,8 +1,7 @@
 return {
   "folke/edgy.nvim",
-  event = "VimEnter",
+  event = "VeryLazy",
   init = function()
-    vim.o.laststatus = 3
     vim.o.splitkeep = "screen"
   end,
   opts = {

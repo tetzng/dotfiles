@@ -1,4 +1,4 @@
 return {
   "edluffy/specs.nvim",
-  event = "VimEnter",
+  event = "VeryLazy",
 }

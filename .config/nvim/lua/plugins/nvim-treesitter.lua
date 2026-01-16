@@ -13,9 +13,13 @@ local M = {
     ---@type TSConfig
     local tsconfig = {
       ensure_installed = {
+        "dockerfile",
         "fish",
         "gitignore",
         "go",
+        "gomod",
+        "gowork",
+        "gosum",
         "graphql",
         "html",
         "javascript",
@@ -33,6 +37,11 @@ local M = {
         "vim",
         "vimdoc",
         "yaml",
+        "git_config",
+        "gitcommit",
+        "git_rebase",
+        "gitignore",
+        "gitattributes",
       },
       sync_install = false,
       auto_install = true,
@@ -79,13 +88,7 @@ local M = {
           include_surrounding_whitespace = true,
         },
         swap = {
-          enable = true,
-          swap_next = {
-            ["<leader>a"] = "@parameter.inner",
-          },
-          swap_previous = {
-            ["<leader>A"] = "@parameter.inner",
-          },
+          enable = false,
         },
         move = {
           enable = true,

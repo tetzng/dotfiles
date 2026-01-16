@@ -1,8 +1,6 @@
 ---@class LazyPluginSpec
 local M = {
   "tetzng/random-colorscheme.nvim",
-  lazy = false,
-  priority = 1000,
   dependencies = {
     {
       "folke/tokyonight.nvim",

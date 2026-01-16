@@ -1,7 +1,5 @@
 ---@class LazyPluginSpec
-local M = {
-  "tyru/capture.vim",
+return {
+  "rafamadriz/friendly-snippets",
   event = "VeryLazy",
 }
-
-return M

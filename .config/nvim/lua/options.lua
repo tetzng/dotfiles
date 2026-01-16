@@ -18,6 +18,16 @@ vim.o.autoread = true
 vim.o.autowrite = true --
 vim.o.autowriteall = false
 vim.o.background = "dark"
+-- Keep background transparent to avoid a dark flash before colorscheme loads.
+local function set_transparent_bg()
+  vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+  vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
+end
+
+set_transparent_bg()
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = set_transparent_bg,
+})
 vim.o.backspace = "indent,eol,start"
 vim.o.backup = false
 vim.o.backupcopy = "auto"
@@ -47,7 +57,7 @@ vim.o.cinscopedecls = "public,protected,private"
 vim.o.cinwords = "if,else,while,do,for,switch"
 -- vim.o.clipboard = ""
 vim.o.clipboard = "unnamedplus" -- sync with system clipboard
-vim.o.cmdheight = 1
+vim.o.cmdheight = 0
 vim.o.cmdwinheight = 7
 vim.o.colorcolumn = ""
 vim.o.columns = 80
@@ -169,7 +179,7 @@ vim.o.langmap = ""
 -- vim.o.langmenu = ""
 vim.o.langmenu = vim.env.LANG --
 vim.o.langremap = false
-vim.o.laststatus = 0          --
+vim.o.laststatus = 2          --
 -- vim.o.laststatus = 2
 vim.o.lazyredraw = false
 vim.o.linebreak = false

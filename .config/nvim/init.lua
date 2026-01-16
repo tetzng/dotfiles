@@ -7,7 +7,7 @@ else
   if vim.g.neovide then
     -- vim.o.guifont = "UDEV Gothic 35LGNF:h16"
     vim.g.neovide_input_ime = true
-    vim.g.neovide_transparency = 0.85
+    vim.g.neovide_opacity = 0.85
     vim.g.neovide_floating_corner_radius = 0.3
 
     vim.g.neovide_padding_top = 4
@@ -28,6 +28,7 @@ else
       lazyrepo,
       lazypath,
     })
+
     if vim.v.shell_error ~= 0 then
       vim.api.nvim_echo({
         { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
@@ -38,23 +39,20 @@ else
       os.exit(1)
     end
   end
-  vim.opt.runtimepath:prepend(lazypath)
 
-  ---@type LazySpec
-  local plugins = {
-    { import = "plugins" },
-  }
+  vim.opt.rtp:prepend(lazypath)
 
-  ---@type LazyConfig
-  local lazyconfig = {
+  require("lazy").setup({
+    spec = { import = "plugins" },
     defaults = {
       lazy = true,
     },
     concurrency = 100,
     ui = {
       border = "rounded",
-    }
-  }
-
-  require("lazy").setup(plugins, lazyconfig)
+    },
+    checker = {
+      enabled = true
+    },
+  })
 end
