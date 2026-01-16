@@ -1,11 +1,15 @@
+tap "bufbuild/buf"
 tap "dart-lang/dart"
 tap "hashicorp/tap"
 tap "homebrew/core"
 tap "leoafarias/fvm"
 tap "oven-sh/bun"
+tap "sqldef/sqldef"
 tap "tetzng/pez", "git@github.com:tetzng/homebrew-pez.git"
 # Run your GitHub Actions locally
 brew "act"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Improved shell history for zsh, bash, fish and nushell
@@ -16,6 +20,8 @@ brew "autoconf"
 brew "autoconf-archive"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Securely store and access AWS credentials in development environments
+brew "aws-vault"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -24,24 +30,22 @@ brew "bat"
 brew "btop"
 # Binary installation for rust projects
 brew "cargo-binstall"
-# Zstandard is a real-time compression algorithm
-brew "zstd"
 # Object-file caching compiler wrapper
 brew "ccache"
 # Cross-platform make
 brew "cmake"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
-# OpenAI's coding agent that runs in your terminal
-brew "codex"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
+# Load/unload environment variables based on $PWD
+brew "direnv"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Platform keystore credential helper for Docker
@@ -64,7 +68,7 @@ brew "git"
 brew "git-delta"
 # Prevents you from committing sensitive information to a git repo
 brew "git-secrets"
-# GNU Pretty Good Privacy (PGP) package
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
@@ -98,6 +102,10 @@ brew "nasm"
 brew "ninja"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Drop-in replacement for Terraform. Infrastructure as Code Tool
 brew "opentofu"
 # Package compiler and linker metadata toolkit
@@ -106,8 +114,6 @@ brew "pkgconf"
 brew "pngpaste"
 # Python package management tool
 brew "poetry"
-# Object-relational database system
-brew "postgresql@16"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Cross-platform application and UI framework
@@ -118,6 +124,8 @@ brew "ripgrep-all"
 brew "sheldon"
 # Create beautiful image of your source code
 brew "silicon"
+# Editor of encrypted files
+brew "sops"
 # SQL linter and auto-formatter for Humans
 brew "sqlfluff"
 # Cross-shell prompt for astronauts
@@ -144,18 +152,24 @@ brew "zellij"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# The best way of working with Protocol Buffers.
+brew "bufbuild/buf/buf"
 # Terraform
 brew "hashicorp/tap/terraform"
-# Simple cli to manage Flutter SDK versions per project
-brew "leoafarias/fvm/fvm"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
+# The easiest idempotent schema management by SQL.
+brew "sqldef/sqldef/mysqldef"
+# A Rust-based plugin manager for fish.
+brew "tetzng/pez/pez"
 # View, print, and comment on PDF documents
 cask "adobe-acrobat-reader"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Tools for building Android applications
 cask "android-studio"
+# AI Coding Agent IDE
+cask "antigravity"
 # Chromium based browser
 cask "arc"
 # Web browser focusing on privacy
@@ -164,12 +178,14 @@ cask "brave-browser"
 cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Voice and text chat software
 cask "discord"
-# Text editor
-cask "emacs-app"
 # Desktop client for Ente Auth
 cask "ente-auth"
 # Web browser
@@ -213,6 +229,8 @@ cask "microsoft-edge"
 cask "microsoft-excel"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
+# AI-powered translator
+cask "nani"
 # Neovim Client
 cask "neovide-app"
 # Reverse proxy, secure introspectable tunnels to localhost
@@ -265,11 +283,37 @@ go "github.com/air-verse/air"
 go "github.com/spf13/cobra-cli"
 go "github.com/go-fuego/fuego/cmd/fuego"
 go "github.com/ramya-rao-a/go-outline"
+go "golang.org/x/tools/cmd/goimports"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "github.com/pressly/goose/v3/cmd/goose"
 go "golang.org/x/tools/gopls"
+go "golang.org/x/vuln/cmd/govulncheck"
 go "github.com/99designs/gqlgen"
 go "github.com/mattn/hls2mp3"
 go "github.com/google/ko"
+go "github.com/tetzng/miglint/cmd/miglint"
 go "github.com/golang-migrate/migrate/v4/cmd/migrate"
+go "github.com/matryer/moq"
 go "github.com/ogen-go/ogen/cmd/ogen"
+go "google.golang.org/protobuf/cmd/protoc-gen-go"
+go "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
+go "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway"
+go "github.com/sqlc-dev/sqlc/cmd/sqlc"
+go "golang.org/x/tools/cmd/stringer"
 go "github.com/tetzng/typolice/cmd/typolice"
 go "github.com/google/yamlfmt/cmd/yamlfmt"
+cargo "axum-example"
+cargo "cargo-dist"
+cargo "cargo-insta"
+cargo "cargo-make"
+cargo "cargo-mutants"
+cargo "cargo-shuttle"
+cargo "cargo-tarpaulin"
+cargo "clip-to-notion"
+cargo "dioxus-cli"
+cargo "gelatyx"
+cargo "just"
+cargo "loco-cli"
+cargo "rustlings"
+cargo "sea-orm-cli"
+cargo "wasm-pack"
