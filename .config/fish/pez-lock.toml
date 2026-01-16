@@ -65,11 +65,7 @@ name = "autopair.fish"
 name = "fish"
 repo = "catppuccin/fish"
 source = "https://github.com/catppuccin/fish"
-commit_sha = "2c7edbb1ef5640cb4ef387647a53327149e51e80"
-
-[[plugins.files]]
-dir = "themes"
-name = "Catppuccin Latte.theme"
+commit_sha = "521560ce2075ca757473816aa31914215332bac9"
 
 [[plugins.files]]
 dir = "themes"

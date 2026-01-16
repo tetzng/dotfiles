@@ -29,7 +29,7 @@ end
 
 # Homebrew
 if test -d /opt/homebrew
-    eval (/opt/homebrew/bin/brew shellenv)
+    eval (/opt/homebrew/bin/brew shellenv fish)
 end
 
 # Homebrew
@@ -115,6 +115,17 @@ abbr -a gs "git status"
 abbr -a gsh "git push"
 abbr -a gsho "git push origin HEAD"
 abbr -a gsw "git switch"
+abbr -a j jj
+abbr -a jb "jj bookmark"
+abbr -a jc "jj commit"
+abbr -a jd "jj diff"
+abbr -a jf "jj git fetch"
+abbr -a ji "jj git init"
+abbr -a jl "jj log"
+abbr -a jr "jj git remote"
+abbr -a js "jj status"
+abbr -a jsh "jj git push"
+abbr -a jt "jj tug"
 abbr -a k "lsd --classify --long --tree"
 abbr -a l "lsd --classify"
 abbr -a la "lsd --almost-all --classify --long"
@@ -127,3 +138,7 @@ abbr -a si "silicon --output $HOME/Downloads/silicon_(date +%Y-%m-%d_%H%M%S).png
 abbr -a sic "silicon --output $HOME/Downloads/silicon_(date +%Y-%m-%d_%H%M%S).png --from-clipboard -l"
 abbr -a t tldr
 abbr -a v nvim
+
+# fish_add_path $HOME/.lmstudio/bin
+
+fish_config theme choose "Catppuccin Frappe"

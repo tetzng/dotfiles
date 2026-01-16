@@ -113,3 +113,9 @@ complete -c pez -n "__fish_pez_using_subcommand help; and not __fish_seen_subcom
 complete -c pez -n "__fish_pez_using_subcommand help; and not __fish_seen_subcommand_from init install uninstall upgrade list prune completions activate doctor migrate files help" -f -a "migrate" -d 'Migrate from fisher (reads fish_plugins)'
 complete -c pez -n "__fish_pez_using_subcommand help; and not __fish_seen_subcommand_from init install uninstall upgrade list prune completions activate doctor migrate files help" -f -a "files" -d 'List installed files for plugins'
 complete -c pez -n "__fish_pez_using_subcommand help; and not __fish_seen_subcommand_from init install uninstall upgrade list prune completions activate doctor migrate files help" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
+# Dynamic completions for installed plugins
+function __pez_installed_plugins
+    command pez list --format plain 2>/dev/null
+end
+
+complete -c pez -n '__fish_seen_subcommand_from uninstall upgrade' -f -a '(__pez_installed_plugins)'

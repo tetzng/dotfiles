@@ -61,6 +61,7 @@ complete -c atuin -n "__fish_atuin_using_subcommand history; and not __fish_seen
 complete -c atuin -n "__fish_atuin_using_subcommand history; and not __fish_seen_subcommand_from start end list last init-store prune dedup help" -f -a "prune" -d 'Delete history entries matching the configured exclusion filters'
 complete -c atuin -n "__fish_atuin_using_subcommand history; and not __fish_seen_subcommand_from start end list last init-store prune dedup help" -f -a "dedup" -d 'Delete duplicate history entries (that have the same command, cwd and hostname)'
 complete -c atuin -n "__fish_atuin_using_subcommand history; and not __fish_seen_subcommand_from start end list last init-store prune dedup help" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
+complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from start" -l command-from-env -d 'Collects the command from the `ATUIN_COMMAND_LINE` environment variable, which does not need escaping and is more compatible between OS and shells'
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from start" -s h -l help -d 'Print help'
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from end" -s e -l exit -r
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from end" -s d -l duration -r
@@ -68,7 +69,7 @@ complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_sub
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from list" -s r -l reverse -r -f -a "true\t''
 false\t''"
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from list" -l timezone -l tz -d 'Display the command time in another timezone other than the configured default' -r
-complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from list" -s f -l format -d 'Available variables: {command}, {directory}, {duration}, {user}, {host}, {exit} and {time}. Example: --format "{time} - [{duration}] - {directory}$\\t{command}"' -r
+complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from list" -s f -l format -d 'Available variables: {command}, {directory}, {duration}, {user}, {host}, {exit}, {time}, {session}, and {uuid} Example: --format "{time} - [{duration}] - {directory}$\\t{command}"' -r
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from list" -s c -l cwd
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from list" -s s -l session
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from list" -l human
@@ -76,7 +77,7 @@ complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_sub
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from list" -l print0 -d 'Terminate the output with a null, for better multiline support'
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from list" -s h -l help -d 'Print help (see more with \'--help\')'
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from last" -l timezone -l tz -d 'Display the command time in another timezone other than the configured default' -r
-complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from last" -s f -l format -d 'Available variables: {command}, {directory}, {duration}, {user}, {host} and {time}. Example: --format "{time} - [{duration}] - {directory}$\\t{command}"' -r
+complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from last" -s f -l format -d 'Available variables: {command}, {directory}, {duration}, {user}, {host}, {time}, {session}, {uuid} and {relativetime}. Example: --format "{time} - [{duration}] - {directory}$\\t{command}"' -r
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from last" -l human
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from last" -l cmd-only -d 'Show only the text of the command'
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from last" -s h -l help -d 'Print help (see more with \'--help\')'
@@ -95,19 +96,20 @@ complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_sub
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from help" -f -a "prune" -d 'Delete history entries matching the configured exclusion filters'
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from help" -f -a "dedup" -d 'Delete duplicate history entries (that have the same command, cwd and hostname)'
 complete -c atuin -n "__fish_atuin_using_subcommand history; and __fish_seen_subcommand_from help" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -s h -l help -d 'Print help'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "auto" -d 'Import history for the current shell'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "zsh" -d 'Import history from the zsh history file'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "zsh-hist-db" -d 'Import history from the zsh history file'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "bash" -d 'Import history from the bash history file'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "replxx" -d 'Import history from the replxx history file'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "resh" -d 'Import history from the resh history file'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "fish" -d 'Import history from the fish history file'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "nu" -d 'Import history from the nu history file'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "nu-hist-db" -d 'Import history from the nu history file'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "xonsh" -d 'Import history from xonsh json files'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "xonsh-sqlite" -d 'Import history from xonsh sqlite db'
-complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite help" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -s h -l help -d 'Print help'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "auto" -d 'Import history for the current shell'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "zsh" -d 'Import history from the zsh history file'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "zsh-hist-db" -d 'Import history from the zsh history file'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "bash" -d 'Import history from the bash history file'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "replxx" -d 'Import history from the replxx history file'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "resh" -d 'Import history from the resh history file'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "fish" -d 'Import history from the fish history file'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "nu" -d 'Import history from the nu history file'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "nu-hist-db" -d 'Import history from the nu history file'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "xonsh" -d 'Import history from xonsh json files'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "xonsh-sqlite" -d 'Import history from xonsh sqlite db'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "powershell" -d 'Import history from the powershell history file'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and not __fish_seen_subcommand_from auto zsh zsh-hist-db bash replxx resh fish nu nu-hist-db xonsh xonsh-sqlite powershell help" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from auto" -s h -l help -d 'Print help'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from zsh" -s h -l help -d 'Print help'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from zsh-hist-db" -s h -l help -d 'Print help'
@@ -119,6 +121,7 @@ complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subc
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from nu-hist-db" -s h -l help -d 'Print help'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from xonsh" -s h -l help -d 'Print help'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from xonsh-sqlite" -s h -l help -d 'Print help'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from powershell" -s h -l help -d 'Print help'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from help" -f -a "auto" -d 'Import history for the current shell'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from help" -f -a "zsh" -d 'Import history from the zsh history file'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from help" -f -a "zsh-hist-db" -d 'Import history from the zsh history file'
@@ -130,6 +133,7 @@ complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subc
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from help" -f -a "nu-hist-db" -d 'Import history from the nu history file'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from help" -f -a "xonsh" -d 'Import history from xonsh json files'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from help" -f -a "xonsh-sqlite" -d 'Import history from xonsh sqlite db'
+complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from help" -f -a "powershell" -d 'Import history from the powershell history file'
 complete -c atuin -n "__fish_atuin_using_subcommand import; and __fish_seen_subcommand_from help" -f -a "help" -d 'Print this message or the help of the given subcommand(s)'
 complete -c atuin -n "__fish_atuin_using_subcommand stats" -s c -l count -d 'How many top commands to list' -r
 complete -c atuin -n "__fish_atuin_using_subcommand stats" -s n -l ngram-size -d 'The number of consecutive commands to consider' -r
@@ -146,7 +150,8 @@ complete -c atuin -n "__fish_atuin_using_subcommand search" -l filter-mode -d 'A
 host\t''
 session\t''
 directory\t''
-workspace\t''"
+workspace\t''
+session-preload\t''"
 complete -c atuin -n "__fish_atuin_using_subcommand search" -l search-mode -d 'Allow overriding search mode over config' -r -f -a "prefix\t''
 full-text\t''
 fuzzy\t''
@@ -158,6 +163,7 @@ auto\t''"
 complete -c atuin -n "__fish_atuin_using_subcommand search" -l timezone -l tz -d 'Display the command time in another timezone other than the configured default' -r
 complete -c atuin -n "__fish_atuin_using_subcommand search" -s f -l format -d 'Available variables: {command}, {directory}, {duration}, {user}, {host}, {time}, {exit} and {relativetime}. Example: --format "{time} - [{duration}] - {directory}$\\t{command}"' -r
 complete -c atuin -n "__fish_atuin_using_subcommand search" -l inline-height -d 'Set the maximum number of lines Atuin\'s interface should take up' -r
+complete -c atuin -n "__fish_atuin_using_subcommand search" -l result-file -d 'File name to write the result to (hidden from help as this is meant to be used from a script)' -r
 complete -c atuin -n "__fish_atuin_using_subcommand search" -s i -l interactive -d 'Open interactive search UI'
 complete -c atuin -n "__fish_atuin_using_subcommand search" -l shell-up-key-binding -d 'Marker argument used to inform atuin that it was invoked from a shell up-key binding (hidden from help to avoid confusion)'
 complete -c atuin -n "__fish_atuin_using_subcommand search" -l human -d 'Use human-readable formatting for time'
@@ -393,6 +399,7 @@ complete -c atuin -n "__fish_atuin_using_subcommand help; and __fish_seen_subcom
 complete -c atuin -n "__fish_atuin_using_subcommand help; and __fish_seen_subcommand_from import" -f -a "nu-hist-db" -d 'Import history from the nu history file'
 complete -c atuin -n "__fish_atuin_using_subcommand help; and __fish_seen_subcommand_from import" -f -a "xonsh" -d 'Import history from xonsh json files'
 complete -c atuin -n "__fish_atuin_using_subcommand help; and __fish_seen_subcommand_from import" -f -a "xonsh-sqlite" -d 'Import history from xonsh sqlite db'
+complete -c atuin -n "__fish_atuin_using_subcommand help; and __fish_seen_subcommand_from import" -f -a "powershell" -d 'Import history from the powershell history file'
 complete -c atuin -n "__fish_atuin_using_subcommand help; and __fish_seen_subcommand_from account" -f -a "login" -d 'Login to the configured server'
 complete -c atuin -n "__fish_atuin_using_subcommand help; and __fish_seen_subcommand_from account" -f -a "register" -d 'Register a new account'
 complete -c atuin -n "__fish_atuin_using_subcommand help; and __fish_seen_subcommand_from account" -f -a "logout" -d 'Log out'
