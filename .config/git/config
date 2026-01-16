@@ -1,7 +1,7 @@
 [user]
 	name = Teppei Taguchi
 	email = tetzng.tt@gmail.com
-	signingkey = E1682121ED271AAE
+	signingkey = tetzng.tt@gmail.com
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
