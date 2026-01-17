@@ -21,15 +21,6 @@ local M = {
         transparent_background = true,
       },
     },
-    {
-      "projekt0n/github-nvim-theme",
-      main = "github-theme",
-      opts = {
-        options = {
-          transparent = true,
-        },
-      },
-    },
   },
   ---@class RandomColorscheme.UserConfig
   opts = {
@@ -41,8 +32,6 @@ local M = {
       "catppuccin-macchiato",
       "kanagawa-wave",
       "kanagawa-dragon",
-      "github_dark_dimmed",
-      "github_dark_tritanopia",
     },
     set_on_load = false,
   },
